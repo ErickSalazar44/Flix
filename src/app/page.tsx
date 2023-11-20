@@ -1,7 +1,11 @@
+import MovieSlider from "@/components/home/MovieSlider"
 
 const HomePage = () => {
   return (
-    <div></div>
+    <main>
+      {/* HOME HEADER  */}
+      <MovieSlider/>
+    </main>
   )
 }
 

@@ -27,7 +27,8 @@ const Navbar = () => {
                         src='/logo.webp'
                         width={169}
                         height={40}
-                        className='w-28 lg-w36'
+                        className='w-28'
+                        priority={true}
                     />
                 </Link>
                 <Link href={'/'} className="flex flex-1 justify-end">
