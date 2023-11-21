@@ -1,0 +1,27 @@
+/* Agrega estilos personalizados para la paginación */
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+    background-color: #ffffff;
+    /* Cambia este valor al color deseado */
+
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.swiper-paginacion {
+    margin-top: 20px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    width: 0;
+}
+
+.swiper-button-prev::after, 
+.swiper-button-next::after {
+    content: '';
+    display: none;
+}

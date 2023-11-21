@@ -11,7 +11,7 @@ const Navbar = () => {
         <header className={`fixed top-0 z-50 text-white w-full`}>
             <NavbarScroll /> {/* cliente */}
             <nav className='w-full h-[74.5px] lg:h-[84px] flex justify-between items-center z-50 px-8 md:px-10 lg:px-12 2xl:px-16'>
-                <ul className='flex gap-7 font-bold left-14 text-neutral-400 flex-1'>
+                <ul className='flex gap-7 font-medium text-neutral-400 flex-1'>
                     <li>
                          <MenuFunction> {/* cliente */}
                             <MenuIcon /> {/* servidor */}

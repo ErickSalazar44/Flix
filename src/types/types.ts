@@ -35,6 +35,7 @@ export type SeriesTV = {
     origin_country:    OriginCountry[];
 }
 
+
 export enum MediaType {
     Tv = "tv",
 }

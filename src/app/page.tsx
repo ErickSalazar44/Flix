@@ -1,10 +1,10 @@
-import MovieSlider from "@/components/home/MovieSlider"
+import HomeHeader  from "@/components/home/HomeHeader"
 
 const HomePage = () => {
   return (
     <main>
       {/* HOME HEADER  */}
-      <MovieSlider/>
+      <HomeHeader />
     </main>
   )
 }

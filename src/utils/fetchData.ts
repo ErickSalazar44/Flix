@@ -1,7 +1,7 @@
 export async function fetchData(path: string, language: string = "es-ES") {
 
     try {
-        const response = await fetch(`https://api.themoviedb.org/3${path}?language=${language}`, {
+        const response = await fetch(`https://api.themoviedb.org/3${path}?language=${language}&locale=ES`, {
             headers: {
                 Accept: "application/json",
                 Authorization: `Bearer ${process.env.VITE_API_URL}`,
