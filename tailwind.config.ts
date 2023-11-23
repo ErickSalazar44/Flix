@@ -9,34 +9,41 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        gradient:
+        gradiantLeft:
           "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0) 70%)",
-        gradiant:
-          "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);",
-        yGradiant:
-          "linear-gradient(180deg, rgba(255, 255, 255, 0) 70%, rgb(10, 10, 10, 40) 100.09%)",
-        yGradiantModal:
-          "linear-gradient(180deg, rgba(255, 255, 255, 0) 10%, rgb(10, 10, 10, 100) 100.09%)",
+        gradiantBotton:
+        "linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0) 70%)",
       },
       colors: {
         colorMenu: "#ffffffb3",
       },
       minHeight: {
-        homeSpaceFondo: "calc(75vh - 320px + 74.5px)",
-        homeSpaceFondoPC: "calc(75vh - 280px + 84px)",
+        homeSpaceFondo: "calc(75vh - 280px + 100px)",
+        homeSpaceFondoPC: "calc(75vh - 280px + 100px)",
       },
       backgroundColor: {
         navbar: "#0f0f0f",
       },
-      padding: {
-        navH: "80px",
+      height: {
+        'navbar': '4rem',
+        'navbar-md': '70px',
+        'bgHome': '90vh'
       },
       fontSize: {
         titulo: "calc(.9em + 3vw)",
       },
       screens: {
         movieId: { min: "380px", max: "640px" },
+        '3xl': { min: '1800px', max: '1920px'}
       },
+      keyframes: {
+        shimmer: {
+          '100%': {
+            transform: 'translateX(100%)',
+          },
+        },
+      },
+
     },
   },
   plugins: [],

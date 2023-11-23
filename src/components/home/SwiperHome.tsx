@@ -25,23 +25,51 @@ const SwiperHome = ({ movies, setCurrentIndex }: { movies: SeriesTV[] | undefine
         if (windowSize.width >= 1400) return 16;
         if (windowSize.width >= 1024) return 12;
         if (windowSize.width >= 700) return 10;
-        return 8;
+        return 6;
     }, [windowSize.width]);
 
 
     const breakpoints = {
-        300: { slidesPerView: 2 },
-        600: { slidesPerView: 3 },
-        800: { slidesPerView: 4 },
-        1024: { slidesPerView: 5 },
-        1200: { slidesPerView: 6 },
-        1600: { slidesPerView: 7 },
-        1800: { slidesPerView: 8 },
+        300:
+        {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        600:
+        {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+        800:
+        {
+            slidesPerView: 4,
+            spaceBetween: 30,
+        },
+        1024:
+        {
+            slidesPerView: 5,
+            spaceBetween: 30,
+        },
+        1200:
+        {
+            slidesPerView: 6,
+            spaceBetween: 30,
+        },
+        1500:
+        {
+            slidesPerView: 7,
+            spaceBetween: 40,
+        },
+        1800:
+        {
+            slidesPerView: 8,
+            spaceBetween: 40,
+        },
     };
 
 
     return (
-        <div className='relative'>
+        <div className="relative">
             <Swiper
                 pagination={{
                     clickable: true,
@@ -49,7 +77,6 @@ const SwiperHome = ({ movies, setCurrentIndex }: { movies: SeriesTV[] | undefine
                 }}
                 onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
                 breakpoints={breakpoints}
-                spaceBetween={40}
                 loop={true}
                 navigation={{
                     nextEl: ".swiper-button-next",
@@ -60,22 +87,22 @@ const SwiperHome = ({ movies, setCurrentIndex }: { movies: SeriesTV[] | undefine
             // autoplay={{ delay: 4500 }}
             >
                 {movies?.slice(0, showMovies).map((movie) => (
-                    <SwiperSlide key={movie.id} className='w-full cursor-pointer'>
-                            <Image
-                                src={getPosterUrl(movie, windowSize.width)}
-                                alt={`poster_path${movie.id}`}
-                                width={210}
-                                height={280}
-                                quality={90}
-                                className={`rounded `}
-                                style={{ width: 'auto', height: 'auto', objectFit: 'contain' }}
-                            />
+                    <SwiperSlide key={`movie-${movie.id}`} className='aspect-[9/14] cursor-pointer object-contain'>
+                        <Image
+                            src={getPosterUrl(movie, windowSize.width)}
+                            alt={`poster_path${movie.id}`}
+                            width={188}
+                            height={300}
+                            quality={90}
+                            className={`rounded aspect-[9/14]`}
+                            style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+                        />
                     </SwiperSlide>
+
                 ))}
             </Swiper>
 
             {/* Botón de avanzar */}
-
             <div className="swiper-button-next">
                 <div className="absolute -top-1 -right-8 md:-right-9 transform w-6 text-white opacity-80">
                     <ArrowRight />
@@ -88,6 +115,7 @@ const SwiperHome = ({ movies, setCurrentIndex }: { movies: SeriesTV[] | undefine
                     <ArrowLeft />
                 </div>
             </div>
+
             {/* Paginacion */}
             <div className='relative z-10 swiper-paginacion w-full text-center'></div>
         </div>

@@ -2,8 +2,6 @@
 .swiper-pagination-bullet,
 .swiper-pagination-bullet-active {
     background-color: #ffffff;
-    /* Cambia este valor al color deseado */
-
 }
 
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {

@@ -1,83 +1,83 @@
-'use client'
+"use client";
 import clsx from "clsx";
-import { useState } from "react";
-import MenuItem from './MenuItem';
-// icons
-import { CloseIcon, ArrowRight } from "@/icons/Icons";
+import { useEffect, useState } from "react";
+import MenuItem from "./MenuItem"; // componentes
+import { CloseIcon, ArrowRight } from "@/icons/Icons"; // icons
+import { menuItems } from "@/lib/data"; // data
 
-const menuItems = [
-    "Inicio",
-    "Series",
-    "Películas",
-    "Originales",
-    "Tendencias",
-    "Ver más",
-];
-
-const MenuFunction = ({ children }: {children: React.ReactNode}) => {
-
-    const [showMenu, setshowMenu] = useState(false);
-
-    const toggleMenu = () => {
-        setshowMenu(!showMenu);
-    };
+const MenuFunction = ({ children }: { children: React.ReactNode }) => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // estado global
 
     const menuContainerClasses = clsx(
-        'text-colorMenu transition-all duration-500 z-[70] fixed left-0 top-0 w-64 lg:w-96   min-h-screen bg-navbar px-8 md:px-10 lg:px-12 2xl:px-16',
+        "text-colorMenu transition-all duration-300 z-50 fixed left-0 top-0 w-64 lg:w-96   min-h-screen bg-black md:bg-navbar px-6 md:px-10 lg:px-12 2xl:px-16",
         {
-            'opacity-100': showMenu,
-            '-translate-x-full opacity-0': !showMenu,
-        }
-    );
-    
-    const overlayClasses = clsx(
-        'fixed w-full z-[60] right-0 top-0 min-h-screen bg-black opacity-40',
-        {
-            'fade-out': showMenu,
-            'fade-in hidden': !showMenu,
+            "opacity-100": isMenuOpen,
+            "-translate-x-full opacity-0": !isMenuOpen,
         }
     );
 
+    const overlayClasses = clsx(
+        "fixed overflow-hidden w-full right-0 top-0 min-h-screen bg-black opacity-40",
+        {
+            "fade-out": isMenuOpen,
+            "fade-in hidden": !isMenuOpen,
+        }
+    );
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.classList.add("disable-scroll");
+        } else {
+            document.body.classList.remove("disable-scroll");
+        }
+
+        return () => {
+            document.body.classList.remove("disable-scroll");
+        };
+    }, [isMenuOpen]);
+
     return (
-        <div>
+        <>
             <button
                 onClick={toggleMenu}
-                className='w-[24px] h-[24px]'
+                className='w-6 h-6'
                 aria-label='Abrir Menú'
             >
                 {children}
             </button>
-            <div className={menuContainerClasses}>
+            <aside className={menuContainerClasses}>
                 <div className='h-20 flex items-center'>
                     <button
-                        className='w-[24px] h-[24px] lg:w-[26px] lg:h-[26px]'
+                        className='w-6 h-6'
                         onClick={toggleMenu}
                         aria-label='Cerrar Menú'
                     >
-                        <CloseIcon/>
+                        <CloseIcon />
                     </button>
                 </div>
                 <ul className='flex flex-col gap-5 font-normal text-lg lg:gap-8 mb-3'>
-                    {
-                        menuItems.map(item => (
-                            <li key={item}>
-                                <MenuItem item={item}/>
-                            </li>
-                        ))
-                    }
+                    {menuItems.map((item) => (
+                        <li key={item}>
+                            <MenuItem item={item} />
+                        </li>
+                    ))}
                 </ul>
                 <div className='flex flex-col gap-4 mt-8'>
-                    <span className='w-full h-[1px] bg-colorMenu opacity-30'></span>
+                    <span className='w-full h-[1px] bg-colorMenu opacity-30' />
                     <div className='flex justify-between lg:gap-8 items-center'>
-                        <MenuItem item='Géneros'/>
-                        <ArrowRight/>
+                        <MenuItem item='Géneros' />
+                        <ArrowRight />
                     </div>
-                    <span className='w-full h-[1px] bg-colorMenu opacity-30'></span>
+                    <span className='w-full h-[1px] bg-colorMenu opacity-30' />
                 </div>
-            </div>
-            <div onClick={toggleMenu} className={overlayClasses}/>
-        </div>
-    )
-}
+            </aside>
+            <div onClick={toggleMenu} className={overlayClasses} />
+        </>
+    );
+};
 
-export default MenuFunction
+export default MenuFunction;

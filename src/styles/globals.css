@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --width-scroll: 8px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +25,27 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    scrollbar-gutter: stable;
+  /* overflow: hidden; */
 }
+
+@media (min-height: 900px) {
+  /* Espacio del scroll */
+  .main {
+    width: calc(100vw - (8px));
+  }
+}
+
+body.disable-scroll {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: var(--width-scroll);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4c4c4c;
+  border-radius: 3px;
+}
+

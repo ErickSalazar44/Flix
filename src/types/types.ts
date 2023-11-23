@@ -5,6 +5,12 @@ export interface MoviesContextProps {
     setMovies: React.Dispatch<React.SetStateAction<any[]>>;
 }
 
+export interface MenuContextProps {
+    isMenuOpen: boolean;
+    toggleMenu: () => void;
+}
+
+
 //* useFetch
 export type FetchResult<T> = [T | null, (url: string) => Promise<void>];
 
