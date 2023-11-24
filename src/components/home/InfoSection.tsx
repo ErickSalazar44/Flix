@@ -17,7 +17,7 @@ const InfoSection = ({ movies, currentIndex, genresTv }: { movies: SeriesTV[] | 
     return (
         <div className='relative px-6 md:px-10 lg:px-12 2xl:px-16 pb-10 z-10'>
             <div
-                className={`flex flex-col gap-4 justify-end min-h-homeSpaceFondo lg:min-h-homeSpaceFondoPC`}
+                className={`flex flex-col gap-4 justify-end min-h-homeSpaceFondo`}
             >
                 <h2
                     className={`text-white text-[1.875rem] font-medium lg:text-4xl`}

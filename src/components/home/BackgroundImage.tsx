@@ -11,11 +11,7 @@ const BackgroundImage = ({
     currentIndex: number;
 }) => {
     const [backgroundImage, setBackgroundImage] = useState("");
-    const [showImage, setShowImage] = useState(false);
 
-    const handleImageLoad = () => {
-        setShowImage(true);
-    };
 
     const { poster_path, backdrop_path } = movies?.[currentIndex] || {};
 
@@ -30,7 +26,6 @@ const BackgroundImage = ({
     );
 
     useEffect(() => {
-        setShowImage(false);
         const handleResize = () => {
             const url =
                 window.innerWidth >= 1024 ? backdropImageUrl : posterImageUrl;
@@ -47,27 +42,22 @@ const BackgroundImage = ({
 
     return (
         <section
-            className={`absolute flex flex-col pt-[80px] after:content-[''] after:absolute after:inset-0 after:bg-gradiantLeft after:h-bgHome h-bgHome w-full bg-cover bg-no-repeat before:content-[''] before:absolute before:inset-0 before:z-[1] before:bg-gradiantBotton before:h-bgHome `}
+            className={`absolute flex flex-col pt-[80px] after:content-[''] after:absolute after:inset-0 after:bg-gradiantLeft after:h-bgHome h-bgHome w-full bg-cover bg-no-repeat before:content-[''] before:absolute before:inset-0 before:z-[1] before:bg-gradiantBotton before:h-bgHome`}
         >
             <div className={"w-full top-0 right-0 h-bgHome absolute "}>
                 {backgroundImage && movies?.[currentIndex] && (
                     <Image
                         src={backgroundImage}
                         alt={`poster ${movies?.[currentIndex].name}`}
-                        quality={90}
                         fill
-                        sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, cal(100vw - 8px)'
-                        className={clsx("transition-opacity duration-300 main", {
-                            "opacity-0": !showImage,
-                            "opacity-100": showImage,
-                        })}
+                        sizes='80vw'
+                        className={"transition-opacity saturate-[1.2] duration-300 main"}
                         style={{
                             width: "100%",
                             height: "100%",
                             objectFit: "cover",
                         }}
                         priority={true}
-                        onLoad={handleImageLoad}
                     />
                 )}
             </div>

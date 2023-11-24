@@ -18,8 +18,7 @@ const config: Config = {
         colorMenu: "#ffffffb3",
       },
       minHeight: {
-        homeSpaceFondo: "calc(75vh - 280px + 100px)",
-        homeSpaceFondoPC: "calc(75vh - 280px + 100px)",
+        homeSpaceFondo: "calc(75vh - 280px + 90px)",
       },
       backgroundColor: {
         navbar: "#0f0f0f",
@@ -43,7 +42,6 @@ const config: Config = {
           },
         },
       },
-
     },
   },
   plugins: [],

@@ -24,7 +24,7 @@ export function InfoSectionSkeleton() {
     return (
         <div className='relative px-6 md:px-10 lg:px-12 2xl:px-16 pb-10 z-10'>
             <div
-                className={`flex flex-col gap-4 justify-end min-h-homeSpaceFondo lg:min-h-homeSpaceFondoPC`}
+                className={`flex flex-col gap-4 justify-end min-h-homeSpaceFondo`}
             >
                 <div
                     className={`overflow-hidden relative w-48  md:w-96 h-10 bg-zinc-800`}
