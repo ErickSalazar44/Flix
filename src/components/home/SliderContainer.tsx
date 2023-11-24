@@ -1,33 +1,23 @@
-import { ArrowLeft, ArrowRight } from "@/icons/Icons"
-import { useRef } from "react"
-// import Slider from "../UI/Slider"
-
-const SliderContainer = ({ children }: { children: React.ReactNode }) => {
-
-    const nextBtn = useRef(null)
-    const prevBtn = useRef(null)
+import { fetchData } from "@/utils/fetchData";
+import Slider from "../UI/Slider";
 
 
+export default async function SliderContainer({
+    path,
+    children,
+}: {
+    path: string;
+    children: React.ReactNode;
+}) {
 
+    const { results: data } = await fetchData(path);
 
     return (
         <section>
-            <header>
-                {children}
-            </header>
+            <header className='mb-4'>{children}</header>
             <div className='relative'>
-                {/* <Slider movies={movies} isMovie={isMovie} nextEl={nextBtn} prevEl={prevBtn}/> */}
-                {/* <SliderMovie movies={movies} isMovie={isMovie} nextEl={nextEl } prevEl={prevEl}/> */}
-                {/* Botón Controller */}
-                <div ref={nextBtn} className={` swiper-button-next absolute top-[60%] -right-8 transform -translate-y-1/2 w-8  text-white opacity-80 after:content-none`}>
-                    <ArrowRight />
-                </div>
-                <div ref={prevBtn} className={`swiper-button-prev absolute top-[60%] -left-8 transform -translate-y-1/2 w-8 text-white opacity-80 after:content-none`}>
-                    <ArrowLeft />
-                </div>
+                <Slider data={data} />
             </div>
         </section>
-    )
+    );
 }
-
-export default SliderContainer

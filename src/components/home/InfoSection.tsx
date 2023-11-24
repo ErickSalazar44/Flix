@@ -1,18 +1,16 @@
 
 import { Play } from "@/icons/Icons";
-import type { GenreTv, SeriesTV } from "@/types/types";
+import type { GenreTv, Movies } from "@/types/types";
 import { getGenreNamesByIds } from "@/utils/getGenreNamesByIds";
 
 
-const InfoSection = ({ movies, currentIndex, genresTv }: { movies: SeriesTV[] | undefined, currentIndex: number, genresTv: GenreTv | null }) => {
+const InfoSection = ({ movies, currentIndex, genresMovies }: { movies: Movies[] | undefined, currentIndex: number, genresMovies: GenreTv | null }) => {
 
 
     const genreNamesByIds =
-        genresTv?.genres && movies?.[currentIndex]?.genre_ids
-            ? getGenreNamesByIds(genresTv.genres, movies[currentIndex].genre_ids)
+        genresMovies?.genres && movies?.[currentIndex]?.genre_ids
+            ? getGenreNamesByIds(genresMovies.genres, movies[currentIndex].genre_ids)
             : [];
-
-
 
     return (
         <div className='relative px-6 md:px-10 lg:px-12 2xl:px-16 pb-10 z-10'>
@@ -22,7 +20,7 @@ const InfoSection = ({ movies, currentIndex, genresTv }: { movies: SeriesTV[] | 
                 <h2
                     className={`text-white text-[1.875rem] font-medium lg:text-4xl`}
                 >
-                    {movies?.[currentIndex]?.name}
+                    {movies?.[currentIndex]?.title}
                 </h2>
 
                 <ul className='flex text-xs movieId:text-sm gap-4 text-white lg:text-sm lg:gap-6'>

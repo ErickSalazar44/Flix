@@ -1,15 +1,18 @@
 import AnuncioSection from "@/components/home/AnuncioSection";
 import HomeHeader from "@/components/home/HomeHeader";
-import { trendingTvWeekly, tvGenresList } from "@/lib/api";
+import SliderContainer from "@/components/home/SliderContainer";
+import { movieGenresList, trendingMoviesWeekly } from "@/lib/api";
+import { Suspense } from "react";
 
 export default async function Home() {
-    const { results: seriesTrends } = await trendingTvWeekly();
-    const generos = await tvGenresList();
+    const { results: moviesTrends } = await trendingMoviesWeekly();
+    const generos = await movieGenresList();
+
     return (
         <main className='main'>
             {/* HOME HEADER  */}
 
-            <HomeHeader seriesTrends={seriesTrends} genresTv={generos} />
+            <HomeHeader moviesTrends={moviesTrends} genresMovies={generos} />
 
             {/* ANUNCIO */}
             <AnuncioSection />
@@ -17,22 +20,17 @@ export default async function Home() {
             {/* SLIDER MOVIE 1 */}
             <section className='px-6 md:px-10 lg:px-12 2xl:px-16 my-8'>
                 <div className='mb-7'>
-                    {/* <Slider
-                        path='/movie/popular'
-                        titulo='Lo más popular'
-                        isMovie='/movie'
-                    /> */}
+                    <Suspense fallback={<h3>HOLAAAA...</h3>}>
+                        <SliderContainer path='/trending/tv/week'>
+                            <h3 className='font-semibold text-lg mb-1'>Lo más popular</h3>
+                        </SliderContainer>
+                    </Suspense>
                 </div>
                 <div className='mb-7'>
-                    {/* <Slider
-                        path='/movie/popular'
-                        query={"page=2"}
-                        titulo='Del cine a tu casa'
-                        subtitulo={
-                            "Culturas valiosas. Historias diversas. Energía vibrante."
-                        }
-                        isMovie='/movie'
-                    /> */}
+                    <SliderContainer path='/movie/popular'>
+                        <h3 className="font-semibold text-lg mb-1">Del cine a tu casa</h3>
+                        <p className="opacity-80 text-xs sm:text-sm">Culturas valiosas. Historias diversas. Energía vibrante.</p>
+                    </SliderContainer>
                 </div>
             </section>
         </main>

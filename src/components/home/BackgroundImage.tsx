@@ -1,13 +1,12 @@
-import { SeriesTV } from "@/types/types";
+import { Movies } from "@/types/types";
 import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
-import clsx from "clsx";
 
 const BackgroundImage = ({
     movies,
     currentIndex,
 }: {
-    movies: SeriesTV[] | undefined;
+    movies: Movies[] | undefined;
     currentIndex: number;
 }) => {
     const [backgroundImage, setBackgroundImage] = useState("");
@@ -48,7 +47,7 @@ const BackgroundImage = ({
                 {backgroundImage && movies?.[currentIndex] && (
                     <Image
                         src={backgroundImage}
-                        alt={`poster ${movies?.[currentIndex].name}`}
+                        alt={`poster ${movies?.[currentIndex].original_title}`}
                         fill
                         sizes='80vw'
                         className={"transition-opacity saturate-[1.2] duration-300 main"}
