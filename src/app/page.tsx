@@ -27,7 +27,7 @@ export default async function Home() {
                     </Suspense>
                 </div>
                 <div className='mb-7'>
-                    <SliderContainer path='/movie/popular'>
+                    <SliderContainer path='/movie/popular' carruselID='1'>
                         <h3 className="font-semibold text-lg mb-1">Del cine a tu casa</h3>
                         <p className="opacity-80 text-xs sm:text-sm">Culturas valiosas. Historias diversas. Energía vibrante.</p>
                     </SliderContainer>

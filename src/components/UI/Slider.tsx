@@ -26,10 +26,10 @@ const Slider = ({
     };
 
     return (
-
         <Swiper
             breakpoints={breakpoints}
             slidesPerView={2}
+
         >
             {data?.map((movie, i) => (
                 <SwiperSlide key={movie.id}>
@@ -43,7 +43,6 @@ const Slider = ({
                 </SwiperSlide>
             ))}
         </Swiper>
-
     );
 };
 
