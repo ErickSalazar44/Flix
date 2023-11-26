@@ -44,7 +44,7 @@ const SwiperHome = ({
     };
 
     return (
-        <div className='relative h-80'>
+        <div className='relative'>
             <Swiper
                 pagination={{
                     clickable: true,

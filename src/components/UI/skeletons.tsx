@@ -51,28 +51,28 @@ export function HomePageSkeleton() {
 
                 </div>
                 <div className='relative grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-10 2xl:grid-cols-7 3xl:grid-cols-8 justify-between md:h-auto w-full'>
-                    <div className="aspect-[9/13] bg-zinc-800 relative overflow-hidden">
+                    <div className="aspect-[9/14] bg-zinc-800 relative overflow-hidden">
                         <span className={`${shimmer}`}></span>
                     </div>
-                    <div className="aspect-[9/13] bg-zinc-800 relative overflow-hidden">
+                    <div className="aspect-[9/14] bg-zinc-800 relative overflow-hidden">
                         <span className={`${shimmer}`}></span>
                     </div>
-                    <div className="hidden sm:block aspect-[9/13] bg-zinc-800 relative overflow-hidden">
+                    <div className="hidden sm:block aspect-[9/14] bg-zinc-800 relative overflow-hidden">
                         <span className={`${shimmer}`}></span>
                     </div>
-                    <div className="hidden md:block aspect-[9/13] bg-zinc-800 relative overflow-hidden">
+                    <div className="hidden md:block aspect-[9/14] bg-zinc-800 relative overflow-hidden">
                         <span className={`${shimmer}`}></span>
                     </div>
-                    <div className="hidden lg:block aspect-[9/13] bg-zinc-800 relative overflow-hidden">
+                    <div className="hidden lg:block aspect-[9/14] bg-zinc-800 relative overflow-hidden">
                         <span className={`${shimmer}`}></span>
                     </div>
-                    <div className="hidden xl:block aspect-[9/13] bg-zinc-800 relative overflow-hidden">
+                    <div className="hidden xl:block aspect-[9/14] bg-zinc-800 relative overflow-hidden">
                         <span className={`${shimmer}`}></span>
                     </div>
-                    <div className="hidden 2xl:block aspect-[9/13] bg-zinc-800 relative overflow-hidden">
+                    <div className="hidden 2xl:block aspect-[9/14] bg-zinc-800 relative overflow-hidden">
                         <span className={`${shimmer}`}></span>
                     </div>
-                    <div className="hidden 3xl:block aspect-[9/13] bg-zinc-800 relative overflow-hidden">
+                    <div className="hidden 3xl:block aspect-[9/14] bg-zinc-800 relative overflow-hidden">
                         <span className={`${shimmer}`}></span>
                     </div>
                 </div>

@@ -18,20 +18,17 @@ export default async function Home() {
             <AnuncioSection />
 
             {/* SLIDER MOVIE 1 */}
-            <section className='px-6 md:px-10 lg:px-12 2xl:px-16 my-8'>
-                <div className='mb-7'>
-                    <Suspense fallback={<h3>HOLAAAA...</h3>}>
-                        <SliderContainer path='/trending/tv/week' carruselID='1'>
-                            <h3 className='font-semibold text-lg mb-1'>Lo más popular</h3>
-                        </SliderContainer>
-                    </Suspense>
-                </div>
-                <div className='mb-7'>
-                    <SliderContainer path='/movie/popular' carruselID='2'>
-                        <h3 className="font-semibold text-lg mb-1">Del cine a tu casa</h3>
-                        <p className="opacity-80 text-xs sm:text-sm">Culturas valiosas. Historias diversas. Energía vibrante.</p>
+            <section className='px-6 md:px-10 lg:px-12 2xl:px-16 my-8 flex flex-col gap-12 lg:gap-14 xl:gap-16'>
+
+                <Suspense fallback={<h3>HOLAAAA...</h3>}>
+                    <SliderContainer path='/trending/tv/week' carruselID='1'>
+                        <h3 className='font-medium text-lg mb-1'>Lo más popular</h3>
                     </SliderContainer>
-                </div>
+                </Suspense>
+                <SliderContainer path='/movie/popular' carruselID='2'>
+                    <h3 className="font-medium text-lg mb-1">Del cine a tu casa</h3>
+                    <p className="text-xs font-light text-SemiTransparentWhite sm:text-sm">Culturas valiosas. Historias diversas. Energía vibrante.</p>
+                </SliderContainer>
             </section>
         </main>
     );

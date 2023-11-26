@@ -82,8 +82,10 @@ const Carrusel = ({
         };
     }, [totalTranslate, carruselId]);
 
+
+
     return (
-        <section className="relative ">
+        <section className="relative">
             <button
                 className={clsx(
                     'hidden md:block sm:transition-opacity sm:duration-300 sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:p-2 sm:-left-8 lg:-left-10',
@@ -97,26 +99,33 @@ const Carrusel = ({
             <button
                 className={clsx(
                     'hidden md:block sm:transition-opacity sm:duration-300 sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:p-2 sm:-right-8 lg:-right-10',
-                    { 'opacity-0 pointer-events-none': isEndReached},
-                    { 'opacity-100 pointer-events-auto': !isEndReached}
+                    { 'opacity-0 pointer-events-none': isEndReached },
+                    { 'opacity-100 pointer-events-auto': !isEndReached }
                 )}
                 onClick={nextSlide}
                 disabled={isEndReached}
             >
                 <ArrowRight />
             </button>
-            <div className='carrusel overflow-auto box-border'>
+            <div className='carrusel overflow-x-scroll '>
                 <div
                     ref={containerRef}
-                    className={`snap-x carrusel-container-${carruselId} pb-0 flex gap-3 md:gap-5 lg:gap-6 2xl:gap-8 transition-transform ease-in-out duration-500 lg:duration-300`}
+                    className={`carrusel-container-${carruselId} flex gap-3 md:gap-5 lg:gap-6 2xl:gap-8 transition-transform ease-in-out duration-500 lg:duration-300`}
                 >
                     {data?.map((movie, index) => (
-                        <img
-                            key={index}
-                            className={`snap-center h-52 md:h-56 lg:h-60 xl:h-72 2xl:h-80 aspect-[9/14] object-cover`}
-                            src={getPosterUrl(movie)}
-                            alt={`Imagen ${index + 1}`}
-                        />
+                        <div key={index}>
+                            <img
+
+                                className={`w-auto h-auto object-cover aspect-[9/13] xl:aspect-[9/14]`}
+                                src={getPosterUrl(movie)}
+                                alt={`Imagen ${index + 1}`}
+                            />
+                            <div className="mt-2 text-center w-32 md:w-36 lg:w-44 px-2">
+                                <h3 className="text-xs font-light line-clamp-1">
+                                    {movie?.original_name ? movie.original_name : movie.original_title}
+                                </h3>
+                            </div>
+                        </div>
                     ))}
                 </div>
             </div>

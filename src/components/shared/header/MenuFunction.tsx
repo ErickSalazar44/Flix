@@ -9,7 +9,7 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false); // estado global
 
     const menuContainerClasses = clsx(
-        "text-colorMenu transition-all duration-300 z-50 fixed left-0 top-0 w-64 lg:w-96   min-h-screen bg-black md:bg-navbar px-6 md:px-10 lg:px-12 2xl:px-16",
+        "text-SemiTransparentWhite transition-all duration-300 z-50 fixed left-0 top-0 w-64 lg:w-96   min-h-screen bg-black md:bg-navbar px-6 md:px-10 lg:px-12 2xl:px-16",
         {
             "opacity-100": isMenuOpen,
             "-translate-x-full opacity-0": !isMenuOpen,
@@ -67,12 +67,12 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
                     ))}
                 </ul>
                 <div className='flex flex-col gap-4 mt-8'>
-                    <span className='w-full h-[1px] bg-colorMenu opacity-30' />
+                    <span className='w-full h-[1px] bg-SemiTransparentWhite opacity-30' />
                     <div className='flex justify-between lg:gap-8 items-center'>
                         <MenuItem item='Géneros' />
                         <ArrowRight />
                     </div>
-                    <span className='w-full h-[1px] bg-colorMenu opacity-30' />
+                    <span className='w-full h-[1px] bg-SemiTransparentWhite opacity-30' />
                 </div>
             </aside>
             <div onClick={toggleMenu} className={overlayClasses} />

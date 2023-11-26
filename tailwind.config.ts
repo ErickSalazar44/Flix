@@ -15,7 +15,7 @@ const config: Config = {
         "linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0) 70%)",
       },
       colors: {
-        colorMenu: "#ffffffb3",
+        SemiTransparentWhite: "#ffffffb3",
       },
       minHeight: {
         homeSpaceFondo: "calc(75vh - 280px + 90px)",
@@ -32,7 +32,7 @@ const config: Config = {
         titulo: "calc(.9em + 3vw)",
       },
       screens: {
-        movieId: { min: "380px", max: "640px" },
+        'mv': { min: "380px", max: "640px" },
         '3xl': { min: '1800px', max: '1920px'}
       },
       keyframes: {

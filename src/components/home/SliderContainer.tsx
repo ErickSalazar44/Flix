@@ -16,7 +16,7 @@ export default async function SliderContainer({
 
     return (
         <section>
-            <header className='mb-4'>{children}</header>
+            <header className='mb-2 sm:mb-3'>{children}</header>
             <Carrusel data={data} carruselId={carruselID}/>
         </section>
     );

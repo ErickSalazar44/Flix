@@ -29,7 +29,7 @@ const HomeHeader = ({
             />
             <div className='px-6 md:px-10 lg:px-12 2xl:px-16'>
                 <h2 className='text-white text-lg z-20 relative font-medium mb-3'>
-                    Últimas series
+                    Últimas películas
                 </h2>
                 <SwiperHome
                     movies={moviesTrends}

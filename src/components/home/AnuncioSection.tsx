@@ -3,7 +3,7 @@ import Button from '../UI/Button';
 
 const AnuncioSection = () => {
     return (
-        <section className='max-w-[1400px] ml-auto mr-auto px-6 md:px-10 lg:px-12 2xl:px-16 mt-14 lg:mt-20 text-white sm:text-center md:grid md:grid-cols-2 md:text-left md:gap-8 md:items-center xl:gap-20'>
+        <section className='max-w-[1400px] ml-auto mr-auto px-6 md:px-10 lg:px-12 2xl:px-16 my-9 sm:my-14 md:my-20 lg:my-24 xl:my-32 text-white sm:text-center md:grid md:grid-cols-2 md:text-left md:gap-8 md:items-center xl:gap-20'>
             <div className='mb-4 lg:mb-0'>
                 <h4 className='text-lg lg:text-xl xl:text-3xl xl:mb-2'>
                     Episodios Gratuitos
