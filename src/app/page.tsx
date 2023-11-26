@@ -21,13 +21,13 @@ export default async function Home() {
             <section className='px-6 md:px-10 lg:px-12 2xl:px-16 my-8'>
                 <div className='mb-7'>
                     <Suspense fallback={<h3>HOLAAAA...</h3>}>
-                        <SliderContainer path='/trending/tv/week'>
+                        <SliderContainer path='/trending/tv/week' carruselID='1'>
                             <h3 className='font-semibold text-lg mb-1'>Lo más popular</h3>
                         </SliderContainer>
                     </Suspense>
                 </div>
                 <div className='mb-7'>
-                    <SliderContainer path='/movie/popular' carruselID='1'>
+                    <SliderContainer path='/movie/popular' carruselID='2'>
                         <h3 className="font-semibold text-lg mb-1">Del cine a tu casa</h3>
                         <p className="opacity-80 text-xs sm:text-sm">Culturas valiosas. Historias diversas. Energía vibrante.</p>
                     </SliderContainer>

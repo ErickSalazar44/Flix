@@ -1,0 +1,22 @@
+.carrusel::-webkit-scrollbar {
+    display: none;
+}
+
+.control-carrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    padding: 10px;
+    z-index: 40;
+}
+
+.prev {
+    left: -50px;
+}
+
+.next {
+    right: -50px;
+}

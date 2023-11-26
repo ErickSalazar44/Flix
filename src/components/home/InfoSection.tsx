@@ -1,16 +1,21 @@
-
 import { Play } from "@/icons/Icons";
 import type { GenreTv, Movies } from "@/types/types";
 import { getGenreNamesByIds } from "@/utils/getGenreNamesByIds";
 
+const InfoSection = ({
+    movies,
+    currentIndex,
+    genresMovies,
+}: {
+    movies: Movies[] ;
+    currentIndex: number;
+    genresMovies: GenreTv;
+}) => {
 
-const InfoSection = ({ movies, currentIndex, genresMovies }: { movies: Movies[] | undefined, currentIndex: number, genresMovies: GenreTv | null }) => {
-
-
-    const genreNamesByIds =
-        genresMovies?.genres && movies?.[currentIndex]?.genre_ids
-            ? getGenreNamesByIds(genresMovies.genres, movies[currentIndex].genre_ids)
-            : [];
+    const genreNamesByIds =  getGenreNamesByIds(
+        genresMovies.genres,
+        movies[currentIndex].genre_ids
+    );
 
     return (
         <div className='relative px-6 md:px-10 lg:px-12 2xl:px-16 pb-10 z-10'>
@@ -29,12 +34,12 @@ const InfoSection = ({ movies, currentIndex, genresMovies }: { movies: Movies[] 
                     ))}
                 </ul>
 
-                <button className="mt-4 w-[36px] h-[36px] lg:w-[45px] lg:h-[45px]">
+                <button className='mt-4 w-[36px] h-[36px] lg:w-[45px] lg:h-[45px]'>
                     <Play />
                 </button>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default InfoSection
+export default InfoSection;

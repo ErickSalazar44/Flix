@@ -1,5 +1,5 @@
 "use client";
-import type { GenreTv, Movies, SeriesTV } from "@/types/types";
+import type { GenreTv, Movies } from "@/types/types";
 import { useState } from "react";
 import SwiperHome from "./SwiperHome";
 import BackgroundImage from "./BackgroundImage";
