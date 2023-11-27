@@ -61,7 +61,11 @@ export type Movies = {
 }
 
 
-
+// Type guard para verificar si es un objeto de tipo Movies
+export const isMovies = (data: SeriesTV | Movies): data is Movies => {
+    return (data as Movies).original_title !== undefined;
+  };
+  
 
 export enum MediaType {
     Tv = "tv",

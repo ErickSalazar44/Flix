@@ -14,6 +14,7 @@ import { ArrowLeft, ArrowRight } from "@/icons/Icons";
 import useWindowSize from "@/hooks/useWindowSize";
 import { getPosterUrl } from "@/utils/getPosterUrl";
 import Image from "next/image";
+import { CarruselSkeleton } from "../UI/skeletons";
 
 const SwiperHome = ({
     movies,
@@ -63,7 +64,7 @@ const SwiperHome = ({
                 className='mySwiper-Home'
                 autoplay={{ delay: 10000 }}
             >
-                {swiperReady &&
+                {swiperReady ?
                     movies?.slice(0, showMovies).map((movie) => (
                         <SwiperSlide
                             key={`movie-${movie.id}`}
@@ -72,18 +73,22 @@ const SwiperHome = ({
                             <Image
                                 src={getPosterUrl(movie)}
                                 alt={`poster_path ${movie.title}`}
-                                fill
-                                quality={50}
-                                sizes='(max-width: 768px) 40vw, 50vw'
-                                className={`rounded aspect-[9/14]`}
+                                width={206}
+                                height={300}
+                                className={`rounded`}
+                                quality={80}
                                 style={{
-                                    width: "100%",
-                                    height: "100%",
+                                    width: "auto",
+                                    height: "auto",
                                     objectFit: "cover",
+                                    aspectRatio: '9/14'
                                 }}
+                                placeholder="empty"
                             />
                         </SwiperSlide>
-                    ))}
+                    )) : 
+                        <CarruselSkeleton/>      
+                    }
             </Swiper>
 
             {/* Botón de avanzar */}

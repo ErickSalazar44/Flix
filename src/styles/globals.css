@@ -48,3 +48,52 @@ body.disable-scroll {
   background-color: #4c4c4c;
   border-radius: 3px;
 }
+
+.carrusel::-webkit-scrollbar {
+  display: none;
+}
+
+.loader__contenedor {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: '';
+  position: absolute;
+  border-radius: inherit;
+}
+
+
+.loader::before {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(0deg,
+  rgb(127, 238, 76) 0%,
+  rgb(9, 19, 22) 100%);
+}
+
+.loader::after {
+  width: 85%;
+  height: 85%;
+  background-color: #111;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+@keyframes spin {
+  to {
+      transform: rotate(360deg);
+  }
+}
