@@ -1,0 +1,90 @@
+.letterAnimate {
+    view-timeline-name: --presentacion;
+    view-timeline-axis: block;
+    animation-timeline: --presentacion;
+    animation-name: scroll;
+    animation-range: entry 30% cover 50%;
+    animation-fill-mode: both;
+}
+
+.imgScroll {
+    view-timeline-name: --imagen;
+    view-timeline-axis: block;
+    animation-timeline: --imagen;
+    animation-name: scroll-img;
+    animation-range: entry 10% cover 40%;
+    animation-fill-mode: both;
+}
+
+.letterScroll {
+    view-timeline-name: --top;
+    view-timeline-axis: block;
+    animation-timeline: --top;
+    animation-name: scroll-top;
+    animation-range: entry -100% cover 50%;
+    animation-fill-mode: both;
+}
+
+.letterScroll2 {
+    view-timeline-name: --top2;
+    view-timeline-axis: block;
+    animation-timeline: --top2;
+    animation-name: scroll-top2;
+    animation-range: entry 10% cover 50%;
+    animation-fill-mode: both;
+}
+
+
+.test {
+    view-timeline-name: --letter;
+    view-timeline-axis: block;
+    animation-timeline: show;
+}
+
+@keyframes scroll-top2 {
+    from {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes scroll-top {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scroll-img {
+    from {
+        transform: translateY(50px);
+    }
+
+    to {
+
+        transform: translateY(0);
+    }
+}
+
+@keyframes scroll {
+    from {
+        opacity: 0;
+        transform: translateY(200%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

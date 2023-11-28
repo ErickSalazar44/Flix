@@ -68,19 +68,18 @@ const SwiperHome = ({
                     movies?.slice(0, showMovies).map((movie) => (
                         <SwiperSlide
                             key={`movie-${movie.id}`}
-                            className='aspect-[9/14] cursor-pointer object-contain'
+                            className='cursor-pointer object-cover'
                         >
                             <Image
                                 src={getPosterUrl(movie)}
                                 alt={`poster_path ${movie.title}`}
                                 width={206}
                                 height={300}
-                                className={`rounded`}
+                                className={`rounded object-cover aspect-[9/14]`}
                                 quality={80}
                                 style={{
                                     width: "auto",
                                     height: "auto",
-                                    objectFit: "cover",
                                     aspectRatio: '9/14'
                                 }}
                                 placeholder="empty"

@@ -15,7 +15,7 @@ export const movieGenresList = () => {
     const path = "/genre/movie/list";
     return fetchData(path);
 }
-
+//!
 export const moviePopular = () => {
     const path = "/movie/popular"
     return fetchData(path);

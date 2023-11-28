@@ -26,7 +26,7 @@ const config: Config = {
       height: {
         'navbar': '4rem',
         'navbar-md': '70px',
-        'bgHome': '90vh'
+        'bgHome': '100vh'
       },
       fontSize: {
         titulo: "calc(.9em + 3vw)",

@@ -59,7 +59,7 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
                         <CloseIcon />
                     </button>
                 </div>
-                <ul className='flex flex-col gap-5 font-normal text-lg lg:gap-8 mb-3'>
+                <ul className='flex flex-col gap-5 font-normal lg:gap-8 mb-3'>
                     {menuItems.map((item) => (
                         <li key={item}>
                             <MenuItem item={item} />

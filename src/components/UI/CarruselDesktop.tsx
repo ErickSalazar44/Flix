@@ -14,8 +14,9 @@ const CarruselDesktop = ({ data }: { data: SeriesTV[] | Movies[] }) => {
     const carruselRef = useRef(null);
 
     const breakpoints = {
-        1400: { slidesPerView: 7, spaceBetween: 30 },
-        1800: { slidesPerView: 8, spaceBetween: 40 },
+        1200: { slidesPerView: 6, spaceBetween: 30 },
+        1500: { slidesPerView: 7, spaceBetween: 30 },
+        1800: { slidesPerView: 8, spaceBetween: 30 },
     };
 
     useEffect(() => {
@@ -57,7 +58,7 @@ const CarruselDesktop = ({ data }: { data: SeriesTV[] | Movies[] }) => {
                     {data.map((movie: Movies | SeriesTV) => (
                         <SwiperSlide key={movie.id}>
                             <Image
-                                className={`rounded`}
+                                className={`rounded object-cover`}
                                 src={getPosterUrl(movie)}
                                 alt={`Imagen`}
                                 width={205}
