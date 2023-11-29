@@ -3,6 +3,8 @@ import Publicity2 from "@/components/home/Publicity2";
 import HomeHeader from "@/components/home/HomeHeader";
 import SliderContainer from "@/components/home/SliderContainer";
 import { movieGenresList, trendingMoviesWeekly } from "@/lib/api";
+import RevisaNuestroCatalogo from "@/components/home/RevisaNuestroCatalogo";
+
 
 export default async function Home() {
     const { results: moviesTrends } = await trendingMoviesWeekly();
@@ -32,10 +34,15 @@ export default async function Home() {
 
             {/* ANUNCIO 2*/}
             <Publicity2
-                title="¡Descubre el cine en casa con nosotros!"
+                textLarge="¡Loki Temporada 2, solo en Disney+! Explora el multiverso y descubre detalles exclusivos."
+                imgLarge='/publicidad/loki_s2.jpg'
+                imgSmall='/publicidad/anuncio2.jpeg'
+                titleSmall='¡Descubre el cine en casa con nosotros!'
+                btnTextLarge='VER TODO'
+                btnTextSmall='CÁTEGORIA'
             />
 
-            <div className="min-h-screen w-full"></div>
+            <RevisaNuestroCatalogo/>
         </main>
     );
 }

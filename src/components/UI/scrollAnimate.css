@@ -1,9 +1,9 @@
-.letterAnimate {
+.showAnimate {
     view-timeline-name: --presentacion;
     view-timeline-axis: block;
     animation-timeline: --presentacion;
     animation-name: scroll;
-    animation-range: entry 30% cover 50%;
+    animation-range: entry 0% cover 40%;
     animation-fill-mode: both;
 }
 
@@ -34,6 +34,28 @@
     animation-fill-mode: both;
 }
 
+.RevisaTodoNuestroCatalogo {
+    view-timeline-name: --michi;
+    view-timeline-axis: block;
+    animation-timeline: --michi;
+    animation-name: scroll-michi;
+    animation-range: entry 100% cover 100%;
+    animation-fill-mode: both;
+}
+
+@keyframes scroll-michi {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 .test {
     view-timeline-name: --letter;
@@ -44,7 +66,7 @@
 @keyframes scroll-top2 {
     from {
         opacity: 0;
-        transform: translateY(200px);
+        transform: translateY(300px);
     }
 
     to {
@@ -57,7 +79,7 @@
 @keyframes scroll-top {
     from {
         opacity: 0;
-        transform: translateY(100px);
+        transform: translateY(200px);
     }
 
     to {
@@ -68,7 +90,7 @@
 
 @keyframes scroll-img {
     from {
-        transform: translateY(50px);
+        transform: translateY(100px);
     }
 
     to {
@@ -80,11 +102,11 @@
 @keyframes scroll {
     from {
         opacity: 0;
-        transform: translateY(200%);
+        transform: translateX(200px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }

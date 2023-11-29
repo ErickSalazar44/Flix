@@ -1,36 +1,92 @@
+import Link from "next/link";
 import Button from "../UI/Button";
-import Image from 'next/image';
+import Image from "next/image";
+import "../UI/btn.css";
+import "../UI/scrollAnimate.css";
 
-const Publicity2 = ({ title }: { title: string }) => {
+interface PublicityProps {
+    titleSmall: string;
+    imgLarge: string;
+    imgSmall: string;
+    textLarge: string;
+    btnTextLarge: string;
+    btnTextSmall: string;
+}
 
+const Publicity2 = ({
+    titleSmall,
+    imgLarge,
+    imgSmall,
+    textLarge,
+    btnTextLarge,
+    btnTextSmall,
+}: PublicityProps) => {
     return (
-        <section
-            className='my-14 sm:my-16 xl:my-20 2xl:my-24  relative after:bg-gradiantLeft after:absolute after:w-full after:h-full after:top-0 after:z-10'
-        >
-            <div className="relative h-72 md:h-[500px] 2xl:h-[680px]"> 
-
-                <Image
-                    src={'/publicidad/anuncio2.jpeg'}
-                    alt="Disfruta"
-                    fill
-                    sizes='100vw'
-                    quality={100}
-                    className=" w-full object-cover sm:object-contain opacity-50 sm:opacity-60 md:opacity-100"
-                    style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                    }}
-                />
+        <>
+            <div className='hidden md:block letterScroll2 my-40 relative h-[560px] bg-[#050505] [clip-path:_polygon(0_0,0_100%,100%_92%,100%_0)]'>
+                <div className='[border-right:160px_solid_transparent] w-0 absolute z-50 top-0 left-[44.99%] h-[0px] [border-bottom:560px_solid_#050505]'></div>
+                <div className='absolute z-20 left-[44.99%] w-[55%] h-full'>
+                    <figure className='h-full'>
+                        <Image
+                            src={imgLarge}
+                            alt='Disfruta de la serie de loki'
+                            width={1502}
+                            height={560}
+                            quality={100}
+                            className='object-cover object-top w-full h-full'
+                        />
+                    </figure>
+                </div>
+                <div className='h-[560px] relative z-50 mx-auto w-full max-w-[1400px] flex flex-col justify-center'>
+                    <div className='w-full lg:max-w-lg pl-12 lg:pb-2 lg:pl-14 max-w-sm flex flex-col gap-8 lg:gap-10'>
+                        <figure>
+                            <img
+                                src='https://cdn.marvel.com/content/1x/loki_lob_log_eye_01_2.png'
+                                alt='Loki Logo'
+                                className='h-full lg:w-56'
+                            />
+                        </figure>
+                        <div className='lg:font-semibold lg:text-xl'>
+                            {textLarge}
+                        </div>
+                        <div className='relative showAnimate flex items-center overflow-hidden'>
+                            <Link href='#' className='btn'>
+                                <span className='btn-text text-sm'>
+                                    {btnTextLarge}
+                                </span>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div className='absolute z-20 bottom-4 flex items-start left-7 md:left-12 md:bottom-20 xl:left-16 2xl:bottom-52 flex-col justify-normal w-auto gap-5 text-white'>
-                <p className="font-semibold md:text-2xl lg:mb-2 lg:max-w-lg xl:max-w-2xl xl:text-3xl">{title}</p>
-                <Button text='CÁTEGORIA' />
-            </div>
-        </section>
+            <section className=' md:hidden my-24 sm:my-16 relative after:bg-gradiantLeft after:absolute after:w-full after:h-full after:top-0 after:z-10'>
+                <div className=' relative h-72 md:h-[500px]'>
+                    <Image
+                        src={imgSmall}
+                        alt='Disfruta'
+                        fill
+                        sizes='100vw'
+                        quality={100}
+                        className=' w-full object-cover sm:object-contain opacity-50 sm:opacity-60'
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                        }}
+                    />
+                </div>
+                <div className='absolute z-20 bottom-4 flex items-start left-7 flex-col justify-normal w-auto gap-5 text-white'>
+                    <p className='font-semibold'>{titleSmall}</p>
+                    <Button text={btnTextSmall} />
+                </div>
+            </section>
+        </>
     );
 };
 
 export default Publicity2;
 
+/*
+
+
+*/

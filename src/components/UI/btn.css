@@ -33,3 +33,91 @@
 .custom-button:hover::before {
     opacity: 0;
 }
+
+
+.btn{
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: hsla(0, 0%, 100%, 1);
+    padding: 0 18px;
+    border-radius: 0;
+    border: none;
+    overflow: hidden;
+}
+
+.btn:before,
+.btn:after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 10px;
+    height: 30px;
+    transform: rotate(45deg);
+    z-index: 3;
+    transition: opacity 0.5s;
+}
+
+.btn:hover:before,
+.btn:hover:after {
+    opacity: 0.3;
+}
+
+.btn:before {
+    bottom: -6px;
+    right: 11px;
+    border-right: 1px solid hsla(0, 0%, 100%, 1);
+}
+
+.btn:after {
+    top: -6px;
+    left: 11px;
+    border-left: 1px solid hsla(0, 0%, 100%, 1);
+}
+
+
+.btn .btn-text,
+.btn-text {
+    position: relative;
+    display: block;
+    line-height: 1;
+    padding: 1.1rem 1.5rem;
+    border-top: 1px solid hsla(0, 0%, 100%, 1);
+    border-bottom: 1px solid hsla(0, 0%, 100%, 1);
+    z-index: 3;
+    transition: all 0.5s;
+}
+
+.btn-text:hover {
+    border-top: 1px solid hsla(0, 0%, 100%, 0.3);
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.3);
+}
+
+.btn .btn-text:before,
+.btn .btn-text:after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 18px;
+    height: calc(100% - 13px);
+    z-index: 3;
+}
+
+.btn-text:before:hover {
+    opacity: 0.4;
+}
+
+.btn .btn-text:before {
+    left: -16px;
+    bottom: -1px;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 1);
+    border-left: 1px solid hsla(0, 0%, 100%, 1);
+}
+
+.btn .btn-text:after {
+    top: -1px;
+    right: -16px;
+    border-top: 1px solid hsla(0, 0%, 100%, 1);
+    border-right: 1px solid hsla(0, 0%, 100%, 1);
+}

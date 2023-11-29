@@ -3,6 +3,7 @@ import { inter } from '../fonts/fonts'
 import '../styles/globals.css'
 import { Providers } from './providers'
 import Navbar from '@/components/shared/header/Navbar'
+import Footer from '@/components/shared/footer/Footer'
 
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<Providers>
 					<Navbar />
 					{children}
+					<Footer/>
 				</Providers>
 			</body>
 		</html>
