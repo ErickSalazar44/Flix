@@ -78,7 +78,7 @@ body.disable-scroll {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(0deg,
-  rgb(127, 238, 76) 0%,
+  #0890b254 0%,
   rgb(9, 19, 22) 100%);
 }
 

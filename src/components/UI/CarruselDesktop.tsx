@@ -29,7 +29,7 @@ const CarruselDesktop = ({ data }: { data: SeriesTV[] | Movies[] }) => {
             },
             {
                 root: null,
-                rootMargin: '0px',
+                rootMargin: "0px",
                 threshold: 0.5, // Puedes ajustar este valor según tus necesidades
             }
         );
@@ -57,21 +57,23 @@ const CarruselDesktop = ({ data }: { data: SeriesTV[] | Movies[] }) => {
                 >
                     {data.map((movie: Movies | SeriesTV) => (
                         <SwiperSlide key={movie.id}>
-                            <Image
-                                className={`rounded object-cover`}
-                                src={getPosterUrl(movie)}
-                                alt={`Imagen`}
-                                width={205}
-                                height={296}
-                                quality={80}
-                                style={{
-                                    width: "auto",
-                                    height: "auto",
-                                    objectFit: "cover",
-                                    aspectRatio: '9/14'
-                                }}
-                                placeholder="empty"
-                            />
+                            <div className='transition duration-300 border-transparent border-4 hover:border-cyan-600'>
+                                <Image
+                                    className={`rounded object-cover`}
+                                    src={getPosterUrl(movie)}
+                                    alt={`Imagen`}
+                                    width={205}
+                                    height={296}
+                                    quality={80}
+                                    style={{
+                                        width: "auto",
+                                        height: "auto",
+                                        objectFit: "cover",
+                                        aspectRatio: "9/14",
+                                    }}
+                                    placeholder='empty'
+                                />
+                            </div>
                             <div className='mt-2 text-center px-2'>
                                 <h3 className='text-xs font-light line-clamp-1'>
                                     {isMovies(movie)
@@ -83,7 +85,7 @@ const CarruselDesktop = ({ data }: { data: SeriesTV[] | Movies[] }) => {
                     ))}
                 </Swiper>
             ) : (
-                <CarruselSkeleton/>
+                <CarruselSkeleton />
             )}
         </div>
     );

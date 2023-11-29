@@ -39,7 +39,7 @@
     view-timeline-axis: block;
     animation-timeline: --michi;
     animation-name: scroll-michi;
-    animation-range: entry 100% cover 100%;
+    animation-range: entry 90% cover 60%;
     animation-fill-mode: both;
 }
 

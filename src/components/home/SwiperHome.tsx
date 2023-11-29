@@ -61,14 +61,14 @@ const SwiperHome = ({
                 }}
                 modules={[Pagination, Navigation, Autoplay]}
                 onSwiper={() => setSwiperReady(true)}
-                className='mySwiper-Home'
+                className='mySwiper-Home select-none'
                 autoplay={{ delay: 10000 }}
             >
                 {swiperReady ?
                     movies?.slice(0, showMovies).map((movie) => (
                         <SwiperSlide
                             key={`movie-${movie.id}`}
-                            className='cursor-pointer object-cover'
+                            className='cursor-grab object-cover'
                         >
                             <Image
                                 src={getPosterUrl(movie)}
