@@ -15,7 +15,7 @@ export type FetchResult<T> = [T | null, (url: string) => Promise<void>];
 //* Result SERIES
 export type Result = {
     page: number;
-    results: SeriesTV[];
+    results: SeriesTV[] | Movies[];
     total_pages: number;
     total_results: number;
 };
@@ -59,14 +59,14 @@ export type Movies = {
 
 //* Result Movie ID
 
-type ProductionCompany = {
+export type ProductionCompany = {
     id: number;
     logo_path: string | null;
     name: string;
     origin_country: string;
 };
 
-type ProductionCountry = {
+export type ProductionCountry = {
     iso_3166_1: string;
     name: string;
 };

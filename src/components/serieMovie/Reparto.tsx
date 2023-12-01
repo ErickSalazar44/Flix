@@ -10,9 +10,9 @@ const Reparto = async ({ id }: { id: string }) => {
     const actoresConImagenes = obtenerActoresConImagenes(start);
 
     return (
-        <section>
+        <section className="py-7">
             <header className='flex justify-between items-center mb-4'>
-                <h3 className='text-lg'>Stars</h3>
+                <h3 className='text-base font-semibold'>Stars</h3>
                 <span className='text-xs'>
                     Dirigido Por{" "}
                     <span className='font-semibold text-white'>
@@ -25,7 +25,7 @@ const Reparto = async ({ id }: { id: string }) => {
                     className='flex gap-6 2xl:gap-8 transition-transform ease-in-out duration-500 lg:duration-300'
                 >
                     {actoresConImagenes.map((actor) => (
-                        <div key={`Actor-${actor.credit_id}`}>
+                        <article className="relative" key={`Actor-${actor.credit_id}`}>
                             <figure className="w-28">
                                 <Image
                                     src={`https://image.tmdb.org/t/p/w185/${actor.profile_path}`}
@@ -33,10 +33,13 @@ const Reparto = async ({ id }: { id: string }) => {
                                     width={128}
                                     height={192}
                                     quality={100}
-                                    className=" rounded object-center filter grayscale opacity-90"
+                                    className=" rounded object-center  opacity-90"
                                 />
                             </figure>
-                        </div>
+                            <footer className="bg-white text-center absolute bottom-0 w-full text-[#101010] py-2 rounded-b">
+                                <h4 className="text-sm line-clamp-1 ">{actor.character}</h4>
+                            </footer>
+                        </article>
                     ))}
                 </div>
             </div>

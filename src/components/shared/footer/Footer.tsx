@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Footer = () => {
     return (
-        <footer className='mt-16 lg:mt-20 w-full relative [background:#000_linear-gradient(180deg,#0000,#0890b23c)] pt-8'>
+        <footer className='lg:mt-20 w-full relative [background:#000_linear-gradient(180deg,#0000,#0890b23c)] pt-8'>
             <div className='max-w-6xl mx-auto mb-8 '>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
                     <div className='px-6 md:px-10 lg:px-12'>

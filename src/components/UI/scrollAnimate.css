@@ -16,6 +16,17 @@
     animation-fill-mode: both;
 }
 
+.imgScroll2 {
+    view-timeline-name: --imagen;
+    view-timeline-axis: block;
+    animation-timeline: --imagen;
+    animation-name: scroll-img2;
+    animation-range: entry 20% cover 30%;
+    animation-fill-mode: both;
+}
+
+
+
 .letterScroll {
     view-timeline-name: --top;
     view-timeline-axis: block;
@@ -56,13 +67,6 @@
 }
 
 
-
-.test {
-    view-timeline-name: --letter;
-    view-timeline-axis: block;
-    animation-timeline: show;
-}
-
 @keyframes scroll-top2 {
     from {
         opacity: 0;
@@ -91,6 +95,17 @@
 @keyframes scroll-img {
     from {
         transform: translateY(100px);
+    }
+
+    to {
+
+        transform: translateY(0);
+    }
+}
+
+@keyframes scroll-img2 {
+    from {
+        transform: translateY(200px);
     }
 
     to {
