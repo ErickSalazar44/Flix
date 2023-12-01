@@ -4,6 +4,7 @@ import HomeHeader from "@/components/home/HomeHeader";
 import SliderContainer from "@/components/home/SliderContainer";
 import { movieGenresList, trendingMoviesWeekly } from "@/lib/api";
 import RevisaNuestroCatalogo from "@/components/home/RevisaNuestroCatalogo";
+import Navbar from "@/components/shared/header/Navbar";
 
 
 export default async function Home() {
@@ -12,6 +13,7 @@ export default async function Home() {
 
     return (
         <main className='main'>
+            <Navbar />
             {/* HOME HEADER  */}
             <HomeHeader moviesTrends={moviesTrends} genresMovies={generos} />
 

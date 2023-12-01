@@ -13,6 +13,10 @@ const config: Config = {
           "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0) 70%)",
         gradiantBotton:
         "linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0) 70%)",
+        gradiantTop: 
+        "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 70%)",
+        gradiantFull:
+        "linear-gradient(0deg, rgba(0,0,0,1) 71%, rgba(0,0,0,0.9466357308584686) 20%, rgba(0,0,0,0.8259860788863109) 97%, rgba(0,0,0,0.5018382352941176) 100%)"
       },
       colors: {
         SemiTransparentWhite: "#ffffffb3",

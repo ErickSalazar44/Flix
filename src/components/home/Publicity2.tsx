@@ -33,6 +33,7 @@ const Publicity2 = ({
                             width={1502}
                             height={560}
                             quality={100}
+                            style={{width: 'auto', height: 'auto'}}
                             className='object-cover object-top w-full h-full'
                         />
                     </figure>
@@ -40,10 +41,12 @@ const Publicity2 = ({
                 <div className='h-[560px] relative z-50 mx-auto w-full max-w-[1400px] flex flex-col justify-center'>
                     <div className='w-full lg:max-w-lg pl-12 lg:pb-2 lg:pl-14 max-w-sm flex flex-col gap-8 lg:gap-10'>
                         <figure>
-                            <img
-                                src='https://cdn.marvel.com/content/1x/loki_lob_log_eye_01_2.png'
-                                alt='Loki Logo'
-                                className='h-full lg:w-56'
+                            <Image
+                                    src={'/publicidad/loki-logo.png'}
+                                    alt="Loki temporada 2 logo"
+                                    width={195}
+                                    height={92}
+                                    className="lg:w-56"                         
                             />
                         </figure>
                         <div className='lg:font-semibold lg:text-xl'>

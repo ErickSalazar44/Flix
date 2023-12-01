@@ -29,9 +29,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang="en">
 			<body className={inter.className}>
 				<Providers>
-					<Navbar />
 					{children}
-					<Footer/>
+					{/* <Footer/> */}
 				</Providers>
 			</body>
 		</html>

@@ -15,6 +15,7 @@ import useWindowSize from "@/hooks/useWindowSize";
 import { getPosterUrl } from "@/utils/getPosterUrl";
 import Image from "next/image";
 import { CarruselSkeleton } from "../UI/skeletons";
+import Link from "next/link";
 
 const SwiperHome = ({
     movies,
@@ -62,7 +63,7 @@ const SwiperHome = ({
                 modules={[Pagination, Navigation, Autoplay]}
                 onSwiper={() => setSwiperReady(true)}
                 className='mySwiper-Home select-none'
-                autoplay={{ delay: 10000 }}
+                // autoplay={{ delay: 10000 }}
             >
                 {swiperReady ?
                     movies?.slice(0, showMovies).map((movie) => (
@@ -70,20 +71,22 @@ const SwiperHome = ({
                             key={`movie-${movie.id}`}
                             className='cursor-grab object-cover'
                         >
-                            <Image
-                                src={getPosterUrl(movie)}
-                                alt={`poster_path ${movie.title}`}
-                                width={206}
-                                height={300}
-                                className={`rounded object-cover aspect-[9/14]`}
-                                quality={80}
-                                style={{
-                                    width: "auto",
-                                    height: "auto",
-                                    aspectRatio: '9/14'
-                                }}
-                                placeholder="empty"
-                            />
+                            <Link href={`/movie/${movie.id}`}>                            
+                                <Image
+                                    src={getPosterUrl(movie)}
+                                    alt={`poster_path ${movie.title}`}
+                                    width={206}
+                                    height={300}
+                                    className={`rounded object-cover aspect-[9/14]`}
+                                    quality={80}
+                                    style={{
+                                        width: "auto",
+                                        height: "auto",
+                                        aspectRatio: '9/14'
+                                    }}
+                                    placeholder="empty"
+                                />
+                            </Link>
                         </SwiperSlide>
                     )) : 
                         <CarruselSkeleton/>      

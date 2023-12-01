@@ -34,13 +34,15 @@ const CarruselDesktop = ({ data }: { data: SeriesTV[] | Movies[] }) => {
             }
         );
 
-        if (carruselRef.current) {
-            observer.observe(carruselRef.current);
-        }
+        const carruselRefCurrent = carruselRef.current; // Crear variable local
 
+        if (carruselRefCurrent) {
+            observer.observe(carruselRefCurrent);
+        }
+    
         return () => {
-            if (carruselRef.current) {
-                observer.unobserve(carruselRef.current);
+            if (carruselRefCurrent) {
+                observer.unobserve(carruselRefCurrent);
             }
         };
     }, [carruselRef]);

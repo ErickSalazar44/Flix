@@ -30,3 +30,8 @@ export const movieTopRated = () => {
     const path='/movie/top_rated'
     return fetchData(path);
 }
+
+export const fetchRepartoMovie = (id: string) => {
+    const path = `/movie/${id}/credits`
+    return fetchData(path)
+}
