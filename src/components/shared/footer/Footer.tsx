@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <footer className='lg:mt-20 w-full relative [background:#000_linear-gradient(180deg,#0000,#0890b23c)] pt-8'>
             <div className='max-w-6xl mx-auto mb-8 '>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
                     <div className='px-6 md:px-10 lg:px-12'>
                         <h4 className='mb-4'>Navegación</h4>
                         <ul className='font-light text-[#A0A0A0] text-xs flex flex-col gap-4'>
@@ -103,7 +103,7 @@ const Footer = () => {
                             las capacidades de la API.
                         </p>
                     </div>
-                    <div className='px-6 md:px-10 lg:px-12 hidden md:block'>
+                    <div className='px-6 md:px-10 lg:px-12 hidden lg:block'>
                         <h4 className='mb-4'>Cuenta</h4>
                         <p className='font-light text-[#A0A0A0] text-xs leading-7'>
                             proporcionamos 

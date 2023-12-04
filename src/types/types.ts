@@ -93,7 +93,7 @@ type VideoResult = {
 export type Movie = {
     adult: boolean;
     backdrop_path: string;
-    belongs_to_collection: null | any; // Puedes especificar un tipo más específico si tienes información sobre la colección
+    belongs_to_collection: null | any;
     budget: number;
     genres: Genre[];
     homepage: string;
@@ -121,7 +121,7 @@ export type Movie = {
     };
 };
 
-// Type guard para verificar si es un objeto de tipo Movies
+
 export const isMovies = (data: SeriesTV | Movies): data is Movies => {
     return (data as Movies).original_title !== undefined;
 };
@@ -153,8 +153,6 @@ export type Genre = {
 };
 
 //* Repart
-
-
 
 interface Cast {
     adult: boolean;
@@ -189,4 +187,26 @@ export interface Reparto {
     id: number,
     cast: Cast[],
     crew: Crew[]
+}
+
+//* Galeria 
+
+export interface ImageInfo {
+    aspect_ratio: number;
+    height: number;
+    iso_639_1: string;
+    file_path: string;
+    vote_average: number;
+    vote_count: number;
+    width: number;
+}
+
+
+export interface Galeria {
+
+    backdrops: ImageInfo[],
+    id: number,
+    logos: ImageInfo[],
+    posters: ImageInfo[]
+
 }

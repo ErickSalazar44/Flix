@@ -1,3 +1,7 @@
-import { Inter } from 'next/font/google'
+import { DM_Sans, Inter } from 'next/font/google'
 
-export const inter = Inter({ subsets: ['latin'] })
+export const inter = DM_Sans({ 
+    subsets: ['latin'],
+    display: 'swap' 
+})
+

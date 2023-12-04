@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<body className={inter.className}>
 				<Providers>
 					{children}
-					<Footer/>
+					{/* <Footer/> */}
 				</Providers>
 			</body>
 		</html>

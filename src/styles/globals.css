@@ -53,6 +53,13 @@ body.disable-scroll {
   display: none;
 }
 
+@media (min-width: 500px) {
+  .carrusel::-webkit-scrollbar {
+    display: block;
+    height: 6px;
+  }
+}
+
 
 .loader__contenedor {
   width: 100%;

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const RevisaNuestroCatalogo = () => {
     return (
-        <div className='RevisaTodoNuestroCatalogo relative w-full grid place-content-center'>
+        <div className='py-7 RevisaTodoNuestroCatalogo relative w-full grid place-content-center'>
             <div className='flex flex-col gap-8 items-center'>
                 <Image
                     src={'/michi.png'}
