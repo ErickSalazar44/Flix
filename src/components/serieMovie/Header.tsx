@@ -1,8 +1,9 @@
-import { Galeria, Movie } from "@/types/types";
-import { Time } from "../icons/Icons";
-import Image from "next/image";
+import Image from "next/image"; // NEXT
+// componentes
 import GetStartRating from "./GetStartRating";
 import Button from "../UI/Button";
+import type { Galeria, Movie } from "@/types/types"; // types
+import { Time } from "../icons/Icons"; // Icons
 
 const Header = ({ data, galeria }: { data: Movie; galeria: Galeria }) => {
     const releaseDate = data.release_date;
@@ -29,29 +30,28 @@ const Header = ({ data, galeria }: { data: Movie; galeria: Galeria }) => {
 
     return (
         <header>
-            <div className='hidden lg:flex lg:flex-col lg:gap-8 mb-4 lg:mb-6 xl:gap-10 2xl:gap-12'>
-                <picture className="flex w-full max-w-[500px] max-h-[200px]">
+            <div className='hidden mb-4 lg:flex lg:flex-col lg:gap-8 lg:mb-6 xl:gap-10 2xl:gap-12'>
+                <picture className='flex w-full max-w-[500px] max-h-[200px]'>
                     <Image
                         src={`https://image.tmdb.org/t/p/w500${galeria?.logos[0].file_path}`}
                         alt={`Logo ${data.title}`}
                         width={500}
-                        height={200}
-                        className='w-auto object-contain lg:[width:calc(18vw+70px)] max-w-[500px] max-h-[200px] h-full'
+                        height={382}
+                        className='object-contain lg:[width:calc(18vw+70px)] h-auto'
+                        priority={true}
                     />
                 </picture>
-                <Button text='Ver Ahora' />
+                <Button text='Ver Ahora'/>
             </div>
 
             <div className='mb-4 flex flex-col gap-4 lg:hidden'>
-                <h1 className='font-bold text-2xl sm:text-3xl line-clamp-2 lg:font-normal'>
-                    {data.title}
-                </h1>
+                <h1 className='font-bold text-2xl line-clamp-2 sm:text-3xl lg:font-normal'>{data.title}</h1>
                 <GetStartRating average={data.vote_average} />
             </div>
 
             <div className='flex flex-col lg:flex-col-reverse'>
-                <div className='text-[#b3b3b3] flex justify-between items-center mb-4 text-xs sm:text-sm '>
-                    <ul className='flex gap-2  '>
+                <div className='text-[#b3b3b3] flex justify-between items-center mb-4 text-xs sm:text-sm'>
+                    <ul className='flex gap-2'>
                         {data.genres.slice(0, 2).map((genre) => (
                             <li key={genre.id}>{genre.name}</li>
                         ))}
@@ -59,11 +59,9 @@ const Header = ({ data, galeria }: { data: Movie; galeria: Galeria }) => {
                     <div className='flex gap-2'>
                         <div className='flex gap-1'>
                             <Time />
-                            <p>{duracionEnSegundos}</p>
+                            <span>{duracionEnSegundos}</span>
                         </div>
-                        <p>
-                            {releaseMonth} {releaseYear}
-                        </p>
+                        <span>{releaseMonth} {releaseYear}</span>
                     </div>
                 </div>
                 <section className='mb-7'>
@@ -78,7 +76,7 @@ const Header = ({ data, galeria }: { data: Movie; galeria: Galeria }) => {
                 </section>
             </div>
 
-            <div className='border-t border-t-[#616161] lg:hidden'/>
+            <div className='border-t border-t-[#616161] lg:hidden' />
         </header>
     );
 };

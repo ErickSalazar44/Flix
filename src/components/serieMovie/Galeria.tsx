@@ -1,92 +1,53 @@
 "use client";
-import { Galeria } from "@/types/types";
-import "../UI/scrollAnimate.css";
-import "../../styles/animate.css"
+// REACT
 import { useState } from "react";
+// NEXT
+import Image from "next/image";
+// TYPES
+import { Galeria } from "@/types/types";
+// STYLES
+import "../UI/scrollAnimate.css";
+import "../../styles/animate.css";
 
-const Galeria = ({ id }: { id: string }) => {
-    const [galeria, setGaleria] = useState<Galeria | null>(null);
+
+const Galeria = ({ galeria }: { galeria: Galeria }) => {
     const [showImages, setShowImages] = useState(false);
-    const [showBackdrops, setShowBackdrops] = useState(false);
-    const [loading, setLoading] = useState(false);
 
     const handleClick = () => {
-        // Check if images are already loaded; if not, make the API call
-        if (!galeria && !loading) {
-            setLoading(true);
-            fetch(`/api/galeria?id=${id}`)
-                .then((res) => res.json())
-                .then((galeria) => setGaleria(galeria))
-                .catch((err) => console.error(err))
-                .finally(() => setLoading(false));
-        }
-
         // Toggle the state to show/hide images
         setShowImages((prevState) => !prevState);
     };
 
-    const handleToggleBackdrops = () => {
-        setShowBackdrops((prevState) => !prevState);
-    };
-
-    if (loading) {
-        return (
-            <div className="w-full grid place-content-center py-10">
-                <div className='loader'></div>
-            </div>
-        )
-    }
-
     return (
-        <div className="px-8 pt-10">
-            <div className='flex gap-4 sticky top-[5vh] z-50'>
+        <div>
+            <div className='flex gap-4 sticky top-[5vh] z-50 lg:top-[10vh]'>
                 <button
                     onClick={handleClick}
-                    className='text-SemiTransparentWhite bg-black/40 py-2 px-4 rounded'
+                    className='text-SemiTransparentWhite bg-black/70 py-2 px-4 rounded'
                 >
                     {showImages ? "Ocultar Galeria" : "Desplegar Galeria"}
-                </button>
-                <button
-                    onClick={handleToggleBackdrops}
-                    className={` ${showImages ? "block scale-in-hor-center" : "hidden"
-                        } text-SemiTransparentWhite bg-black/40 py-2 px-4 rounded`}
-                >
-                    {showBackdrops ? "Mostrar Posters" : "Mostrar Backdrops"}
                 </button>
             </div>
 
             {showImages && galeria && (
-
-                <div className='flex flex-col gap-[20vh] pt-[6vh]'>
-                    {showBackdrops
-                        ? galeria?.backdrops.map(
-                            (backdrop: any, index: number) => (
-                                <img
-                                    key={backdrop.file_path}
-                                    src={`https://image.tmdb.org/t/p/w500${backdrop.file_path}`}
-                                    alt=''
-                                    className={`self-center sticky top-[15vh] object-contain  ${index % 2 === 0
-                                        ? "imgScroll"
-                                        : "imgScroll2"
-                                        }`}
-                                />
-                            )
-                        )
-                        : galeria?.posters.map(
-                            (poster: any, index: number) => (
-                                <img
-                                    key={poster.file_path}
-                                    src={`https://image.tmdb.org/t/p/w500${poster.file_path}`}
-                                    alt=''
-                                    className={`self-center sticky top-[14vh] object-contain  ${index % 2 === 0
-                                        ? "imgScroll"
-                                        : "imgScroll2"
-                                        }`}
-                                />
-                            )
-                        )}
-                </div>
-
+                <picture className='flex flex-col gap-[20vh] pt-[6vh] lg:grid lg:grid-cols-3 lg:gap-8'>
+                    {galeria?.posters.map((poster: any, index: number) => (
+                        <Image
+                            key={poster.file_path}
+                            src={`https://image.tmdb.org/t/p/w342${poster.file_path}`}
+                            alt={`Galeria de Imagen ${galeria.id}`}
+                            width={342}
+                            height={513}
+                            className={`self-center sticky top-[14vh] object-contain rounded lg:static lg:top-auto ${
+                                index % 2 === 0 ? "imgScroll" : "imgScroll2"
+                            }`}
+                            style={{
+                                width: 'auto',
+                                height: 'auto'
+                            }}
+                        />
+                    ))}
+                </picture>
             )}
         </div>
     );

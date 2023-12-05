@@ -26,19 +26,18 @@ const Publicity2 = ({
             <div className='hidden md:block letterScroll2 my-40 relative h-[560px] bg-[#050505] [clip-path:_polygon(0_0,0_100%,100%_92%,100%_0)]'>
                 <div className='[border-right:160px_solid_transparent] w-0 absolute z-50 top-0 left-[44.99%] h-[0px] [border-bottom:560px_solid_#050505]'></div>
                 <div className='absolute z-20 left-[44.99%] w-[55%] h-full'>
-                    <figure className='h-full'>
+                    <figure className='h-full w-full  object-cover'>
                         <Image
                             src={imgLarge}
                             alt='Disfruta de la serie de loki'
-                            width={1502}
+                            width={1124}
                             height={560}
                             quality={100}
-                            style={{width: 'auto', height: 'auto'}}
-                            className='object-cover object-top w-full h-full'
+                            className="object-cover aspect-video h-full"
                         />
                     </figure>
                 </div>
-                <div className='h-[560px] relative z-50 mx-auto w-full max-w-[1400px] flex flex-col justify-center'>
+                <div className='h-[560px] relative z-50 mx-auto w-full max-w-6xl flex flex-col justify-center'>
                     <div className='w-full lg:max-w-lg pl-12 lg:pb-2 lg:pl-14 max-w-sm flex flex-col gap-8 lg:gap-10'>
                         <figure>
                             <Image
@@ -70,7 +69,7 @@ const Publicity2 = ({
                         fill
                         sizes='100vw'
                         quality={100}
-                        className=' w-full object-cover sm:object-contain opacity-50 sm:opacity-60'
+                        className=' w-full h-full object-cover sm:object-contain opacity-50 sm:opacity-60'
                         style={{
                             width: "100%",
                             height: "100%",

@@ -6,9 +6,7 @@ export async function fetchDataMovieId(path: string,language: string = "es-ES") 
                 Accept: "application/json",
                 Authorization: `Bearer ${process.env.VITE_API_URL}`,
             },
-            next: {
-                revalidate: 60
-            }
+            cache: 'no-store'
         });
 
         if (!response.ok) {

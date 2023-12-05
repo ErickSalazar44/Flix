@@ -4,15 +4,15 @@ import { PlayPause } from "../icons/Icons"
 
 const Button = ({ text }: { text: string }) => {
     return (
-        <div className='transition-all duration-500'>
+        <div className='transition-all duration-500 flex items-start'>
             <Link
                 href={'/'}
-                className="custom-button w-40 lg:w-[189px]"
+                className="custom-button "
             >
                 <span className='relative z-10'>
                     <PlayPause/>
                 </span>
-                <span className='relative text-xs lg:text-base z-10'>{text}</span>
+                <span className='relative text-xs lg:text-base lg:font-semibold z-10'>{text}</span>
             </Link>
         </div>
     )

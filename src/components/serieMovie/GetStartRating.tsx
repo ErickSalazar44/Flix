@@ -22,12 +22,11 @@ const renderStars = (maxRating: number, roundedRating: number) => {
 
 const GetStartRating = ( {average} :{average: number}) => {
     const roundedRating = calculateRoundedRating(average, MAX_RATING);
-    const roundedRating10 = calculateRoundedRating(average, 5);
 
     return (
         <div className="flex items-center gap-2">
             {renderStars(MAX_RATING, roundedRating)}
-            <p className="font-bold">{roundedRating10}</p>
+            <p className="font-bold">{average.toFixed(1)}</p>
         </div>
     );
 };
