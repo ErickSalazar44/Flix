@@ -8,8 +8,9 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import { useEffect, useRef, useState } from "react";
 import { CarruselSkeleton } from "./skeletons";
 import Image from "next/image";
+import Link from "next/link";
 
-const CarruselDesktop = ({ data }: { data: SeriesTV[] | Movies[] }) => {
+const CarruselDesktop = ({ data, type }: { data: SeriesTV[] | Movies[], type: string }) => {
     const [swiperReady, setSwiperReady] = useState(false);
     const carruselRef = useRef(null);
 
@@ -47,6 +48,8 @@ const CarruselDesktop = ({ data }: { data: SeriesTV[] | Movies[] }) => {
         };
     }, [carruselRef]);
 
+    console.log(`/media/${type}/${data[0].id}`)
+
     return (
         <div ref={carruselRef}>
             {swiperReady ? (
@@ -59,30 +62,32 @@ const CarruselDesktop = ({ data }: { data: SeriesTV[] | Movies[] }) => {
                 >
                     {data.map((movie: Movies | SeriesTV) => (
                         <SwiperSlide key={movie.id}>
-                            <div className='transition duration-300 border-transparent border-4 hover:border-cyan-600'>
-                                <Image
-                                    className={`rounded object-cover`}
-                                    src={getPosterUrl(movie)}
-                                    alt={`Imagen`}
-                                    width={205}
-                                    height={296}
-                                    quality={80}
-                                    style={{
-                                        width: "auto",
-                                        height: "auto",
-                                        objectFit: "cover",
-                                        aspectRatio: "9/14",
-                                    }}
-                                    placeholder='empty'
-                                />
-                            </div>
-                            <div className='mt-2 text-center px-2'>
-                                <h3 className='text-xs font-light line-clamp-1'>
-                                    {isMovies(movie)
-                                        ? (movie as Movies).original_title
-                                        : (movie as SeriesTV).original_name}
-                                </h3>
-                            </div>
+                            <Link href={`/media/${type}/${movie.id}`}>                            
+                                <div className='transition duration-300 border-transparent border-4 hover:border-cyan-600'>
+                                    <Image
+                                        className={`rounded object-cover`}
+                                        src={getPosterUrl(movie)}
+                                        alt={`Imagen`}
+                                        width={205}
+                                        height={296}
+                                        quality={80}
+                                        style={{
+                                            width: "auto",
+                                            height: "auto",
+                                            objectFit: "cover",
+                                            aspectRatio: "9/14",
+                                        }}
+                                        placeholder='empty'
+                                    />
+                                </div>
+                                <div className='mt-2 text-center px-2'>
+                                    <h3 className='text-xs font-light line-clamp-1'>
+                                        {isMovies(movie)
+                                            ? (movie as Movies).original_title
+                                            : (movie as SeriesTV).original_name}
+                                    </h3>
+                                </div>
+                            </Link>
                         </SwiperSlide>
                     ))}
                 </Swiper>

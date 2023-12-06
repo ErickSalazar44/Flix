@@ -7,8 +7,10 @@ import { useEffect, useState } from "react";
 
 const Carrusel = ({
     data,
+    type
 }: {
     data: SeriesTV[] | Movies[];
+    type: string
 }) => {
     const [isMobile, setIsMobile] = useState(false);
 
@@ -28,8 +30,8 @@ const Carrusel = ({
 
     return (
         <div>
-            {isMobile && <CarruselMovil data={data} />}
-            {!isMobile && <CarruselDesktop data={data} />}
+            {isMobile && <CarruselMovil data={data} type={type}/>}
+            {!isMobile && <CarruselDesktop data={data} type={type}/>}
         </div>
     );
 };

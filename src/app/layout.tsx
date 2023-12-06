@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
-import { inter } from '../fonts/fonts'
+import { DMSans } from '../fonts/fonts'
 import '../styles/globals.css'
 import { Providers } from './providers'
 import Footer from '@/components/shared/footer/Footer'
+import Navbar from '@/components/shared/header/Navbar'
 
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body className={DMSans.className}>
 				<Providers>
 					{children}
 					<Footer/>

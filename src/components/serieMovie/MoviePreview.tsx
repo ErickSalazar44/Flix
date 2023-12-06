@@ -1,27 +1,29 @@
 // Next
 import Image from "next/image";
 import Link from "next/link" 
-import { Movie } from '@/types/types'; // Type
+import { Media } from '@/types/types'; // Type
 import { Hd } from "../icons/Icons"; // Icons
 import { formatDate } from "@/utils/formatDate"; // utils
 
-const MoviePreview = ({ result }: { result: Movie }) => {
+const MoviePreview = ({ result, type }: { result: Media, type: string }) => {
+    const title = result.title ?? result.name
+    const time = result.release_date ?? result.first_air_date
     return (
-        <Link href={`/movie/${result.id}`} className="md:col-span-2 lg:col-span-3 xl:col-span-1">
-            <article className='relative letterScroll md:grid-cols-2 md:grid lg:grid-cols-3 xl:grid-cols-1'>
+        <Link href={`/media/${type}/${result.id}`}>
+            <article className='relative letterScroll md:grid-cols-2 md:grid lg:grid-cols-3 xl:grid-cols-1 h-full'>
                 <header className="relative before:content-[''] before:top-0 before:w-full before:h-full before:bg-gradiantTop before:absolute lg:col-span-2">
                     <div className='absolute top-0 p-4 z-10 xl:bottom-0 xl:top-auto'>
                         <h4 className='font-semibold text-xl line-clamp-1 lg:text-2xl xl:text-xl'>
-                            {result.title}
+                            {title}
                         </h4>
-                        <span className='text-xs md:text-sm lg:text-base xl:text-xs'> {formatDate(result.release_date)} </span>
+                        <span className='text-xs md:text-sm lg:text-base xl:text-xs'> {formatDate(time)} </span>
                     </div>
                     <Image
                         src={`https://image.tmdb.org/t/p/w780${result.backdrop_path}`}
-                        alt={`Poster ${result.title}`}
+                        alt={`Poster ${title}`}
                         width={500}
                         height={300}
-                        className="w-full"
+                        className="w-full h-full object-cover"
                     />
                 </header>
                 <footer className='bg-white text-black p-4 md:flex md:flex-col xl:hidden'>

@@ -1,26 +1,20 @@
-import React, { Suspense } from "react";
-// DATA
-import { fetchGaleriaMovie } from "@/lib/api";
-import { fetchDataMovieId } from "@/utils/fetchDataMovieId"; // UTILS
-// COMPONENTES
 import BgImage from "@/components/serieMovie/BgImage";
-import Header from "@/components/serieMovie/Header";
-import Reparto from "@/components/serieMovie/Reparto";
 import ContenedorCarrusel from "@/components/serieMovie/ContenedorCarrusel";
 import DetallesProduccion from "@/components/serieMovie/DetallesProduccion";
+import Header from "@/components/serieMovie/Header";
+import Reparto from "@/components/serieMovie/Reparto";
+import { fetchGaleriaMovie } from "@/lib/api";
+import { fetchDataMovieId } from "@/utils/fetchDataMovieId";
+import { Suspense } from "react";
 
-export default async function MovieId({ params }: { params: { id: string } }) {
-    const { id } = params;
-
-    // Hacer ambas solicitudes simultáneamente usando Promise.all
-    const [data, galeria] = await Promise.all([
-        fetchDataMovieId(`/movie/${id}`),
-        fetchGaleriaMovie(id),
-    ]);
-
-    if (!data) {
-        throw new Error(`Failed to fetch movie data for ID: ${id}`);
-    }
+export default async function PageMedia({
+    params,
+}: {
+    params: { mediaInfo: string[] };
+}) {
+    const [type, id] = params.mediaInfo;
+    const data = await fetchDataMovieId(`/${type}/${id}`);
+    const galeria = type === "movie" ? await fetchGaleriaMovie(id) : undefined;
 
     return (
         <div>
@@ -37,12 +31,12 @@ export default async function MovieId({ params }: { params: { id: string } }) {
                 <div className='flex flex-col md:flex-col-reverse'>
                     {/* SECCION ACTORES */}
                     <Suspense fallback={<span>CARGANDO ...</span>}>
-                        <Reparto id={id} />
+                        <Reparto type={type} id={id} />
                     </Suspense>
 
                     {/* SECCION RECOMENDADOS */}
                     <Suspense fallback={<span>CARGANDO ...</span>}>
-                        <ContenedorCarrusel id={id} />
+                        <ContenedorCarrusel type={type} id={id} />
                     </Suspense>
                 </div>
 

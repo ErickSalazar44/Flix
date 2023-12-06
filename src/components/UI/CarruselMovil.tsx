@@ -2,7 +2,7 @@ import { Movies, SeriesTV, isMovies } from "@/types/types";
 import { getPosterUrl } from "@/utils/getPosterUrl";
 import Link from "next/link";
 
-const CarruselMovil = ({ data }: { data: SeriesTV[] | Movies[] }) => {
+const CarruselMovil = ({ data, type }: { data: SeriesTV[] | Movies[], type: string }) => {
     const dataFilter = data.filter(
         (movie) => movie.poster_path !== null && movie.backdrop_path !== null
     );
@@ -13,7 +13,7 @@ const CarruselMovil = ({ data }: { data: SeriesTV[] | Movies[] }) => {
                 <div className='flex gap-3 md:gap-5 lg:gap-6 2xl:gap-8 transition-transform ease-in-out duration-500 lg:duration-300'>
                     {dataFilter?.map((movie, index) => (
                         <div key={index}>
-                            <Link href={`/movie/${movie.id}`}>
+                            <Link href={`/media/${type}/${movie.id}`}>
                                 <img
                                     className={`w-auto h-auto object-cover aspect-[9/13] xl:aspect-[9/14]`}
                                     src={getPosterUrl(movie)}

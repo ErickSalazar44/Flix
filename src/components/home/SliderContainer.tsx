@@ -10,6 +10,8 @@ export default async function SliderContainer({
     title: string;
     subtitle?: string;
 }) {
+
+    const type = path.includes('movie') ? 'movie' : 'tv'
     const { results: data } = await fetchData(path);
 
     return (
@@ -20,7 +22,7 @@ export default async function SliderContainer({
                     {subtitle}
                 </p>
             </header>
-            <Carrusel data={data}/>
+            <Carrusel data={data} type={type}/>
         </section>
     );
 }

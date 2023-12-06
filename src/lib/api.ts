@@ -33,14 +33,14 @@ export const movieTopRated = () => {
 }
 
 // SECCION DE REPARTO MOVIES
-export const fetchRepartoMovie = (id: string) => {
-    const path = `/movie/${id}/credits`
+export const fetchRepartoMovie = (type: string, id: string) => {
+    const path = `/${type}/${id}/credits`
     return fetchData(path)
 }
 
 // VIDEOS RECOMENDADO MOVIES
-export const fetchRecomendacionMovie = (id: string) => {
-    const path = `/movie/${id}/recommendations`
+export const fetchRecomendacionMovie = (type: string, id: string) => {
+    const path = `/${type}/${id}/recommendations`
     return fetchData(path)
 }
 

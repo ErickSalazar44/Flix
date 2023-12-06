@@ -12,7 +12,7 @@ export default async function Home() {
     const generos = await movieGenresList();
 
     return (
-        <main className='main'>
+        <main className='main '>
             <Navbar />
             {/* HOME HEADER  */}
             <HomeHeader moviesTrends={moviesTrends} genresMovies={generos} />
@@ -44,7 +44,7 @@ export default async function Home() {
                 btnTextSmall='CÁTEGORIA'
             />
 
-            <RevisaNuestroCatalogo/>
+            <RevisaNuestroCatalogo />
         </main>
     );
 }

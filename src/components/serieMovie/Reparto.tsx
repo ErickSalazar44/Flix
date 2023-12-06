@@ -4,10 +4,10 @@ import { obtenerActoresConImagenes } from "@/utils/obtenerActoresConImagenes";
 import Image from "next/image";
 import React from "react";
 
-const Reparto = async ({ id }: { id: string }) => {
+const Reparto = async ({ id, type }: { id: string, type: string }) => {
 
-    const start: Reparto = await fetchRepartoMovie(id);
-    const director = start.crew.find((miembro) => miembro.job === "Director");
+    const start: Reparto = await fetchRepartoMovie(type, id);
+    const director = start.crew.find((miembro) => miembro.job === "Director" || miembro.job === 'Series Director');
     const actoresConImagenes = obtenerActoresConImagenes(start);
 
     return (
@@ -40,10 +40,10 @@ const Reparto = async ({ id }: { id: string }) => {
                                                 width: 'auto',
                                                 height: 'auto'
                                             }}
-                                            className='rounded aspect-[9/14] opacity-90 w-auto sm:rounded-none h-auto '
+                                            className='rounded aspect-[9/13.5] opacity-90 w-auto sm:rounded-none h-auto '
                                         />
                                     </figure>
-                                    <footer className='bg-white text-center absolute bottom-0 w-full text-[#101010] py-2 rounded-b sm:rounded-none sm:static sm:p-[13px] sm:text-left sm:text-[#666] '>
+                                    <footer className='bg-white text-center absolute bottom-0 w-full text-[#101010] py-2 rounded-b sm:rounded-none sm:static sm:p-[13px] sm:text-left sm:text-[#666] md:max-w-[160px]'>
                                         <h4 className='text-sm line-clamp-1 sm:font-semibold sm:text-base'>
                                             {actor.character}
                                         </h4>

@@ -84,7 +84,7 @@ export const Search = () => (
 );
 
 export const Play = () => (
-    <svg viewBox='0 0 44 44' className='w-full cursor-pointer'>
+    <svg viewBox='0 0 44 44' className='w-full cursor-pointer fill-transparent'>
         <g transform='translate(1 1)' fillRule='evenodd'>
             <circle cx='21' cy='21' r='21'></circle>
             <path fill='#FFFFFF' d='M30 21.5L15 29V14z'></path>

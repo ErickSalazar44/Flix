@@ -1,3 +1,4 @@
+'use server'
 export async function fetchData(path: string, query: string = '' ,language: string = "es-ES") {
 
     try {

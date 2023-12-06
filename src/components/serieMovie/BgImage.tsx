@@ -1,8 +1,8 @@
-import { Movie } from "@/types/types"; // TYPES
+import { Media } from "@/types/types"; // TYPES
 import Image from "next/image"; // NEXT
 import { Play } from "../icons/Icons"; // ICONS
 
-const BgImage = ({ data }: { data: Movie }) => {
+const BgImage = ({ data }: { data: Media }) => {
     return (
         <div className='fixed -z-10 top-0 h-[60vh] w-full before:bg-gradiantBotton before:absolute before:w-full before:h-full before:top-0 before:content-[""] before:z-20 lg:h-[90vh] lg:absolute'>
             <Image
@@ -34,7 +34,7 @@ const BgImage = ({ data }: { data: Movie }) => {
                 priority={true}
             />
             <div className='relative z-50 w-full h-full lg:hidden'>
-                <button className='text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 fill-transparent border rounded-full'>
+                <button className='text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 border rounded-full'>
                     <Play />
                 </button>
             </div>
