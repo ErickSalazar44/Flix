@@ -1,12 +1,10 @@
 // Swiper
+import {Swiper, SwiperSlide} from 'swiper/react'
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "@/styles/swiper.css";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import '@/styles/swiper.css'
 
 import { Movies } from "@/types/types";
 import { useMemo, useState } from "react";
@@ -25,7 +23,7 @@ const SwiperHome = ({
     setCurrentIndex: (index: number) => void;
 }) => {
     const [swiperReady, setSwiperReady] = useState(false);
-
+    
     const windowSize = useWindowSize();
 
     const showMovies = useMemo(() => {
@@ -63,7 +61,6 @@ const SwiperHome = ({
                 modules={[Pagination, Navigation, Autoplay]}
                 onSwiper={() => setSwiperReady(true)}
                 className='mySwiper-Home select-none'
-                // autoplay={{ delay: 10000 }}
             >
                 {swiperReady ?
                     movies?.slice(0, showMovies).map((movie) => (
@@ -85,6 +82,7 @@ const SwiperHome = ({
                                         aspectRatio: '9/14'
                                     }}
                                     placeholder="empty"
+                                    priority={true}
                                 />
                             </Link>
                         </SwiperSlide>

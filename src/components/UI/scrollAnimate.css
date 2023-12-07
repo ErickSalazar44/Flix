@@ -8,11 +8,11 @@
 }
 
 .imgScroll {
-    view-timeline-name: --imagen;
+    view-timeline-name: --imagen2;
     view-timeline-axis: block;
-    animation-timeline: --imagen;
+    animation-timeline: --imagen2;
     animation-name: scroll-img;
-    animation-range: entry 10% cover 40%;
+    animation-range: entry exit;
     animation-fill-mode: both;
 }
 
@@ -24,8 +24,6 @@
     animation-range: entry 20% cover 30%;
     animation-fill-mode: both;
 }
-
-
 
 .letterScroll {
     view-timeline-name: --top;
@@ -54,6 +52,25 @@
     animation-fill-mode: both;
 }
 
+.scroll-parallax {
+    view-timeline-name: --parallax;
+    view-timeline-axis: block;
+    animation-timeline: --parallax;
+    animation-name: scroll-parallax;
+    animation-range: entry exit;
+    animation-fill-mode: both;
+}
+
+
+@keyframes scroll-parallax {
+    from {
+        transform: translate(0, 0%);
+    }
+    to {
+        transform: translate(0, -50%);
+    }
+}
+
 @keyframes scroll-michi {
     from {
         opacity: 0;
@@ -66,7 +83,6 @@
     }
 }
 
-
 @keyframes scroll-top2 {
     from {
         opacity: 0;
@@ -78,7 +94,6 @@
         transform: translateY(0);
     }
 }
-
 
 @keyframes scroll-top {
     from {
@@ -98,7 +113,6 @@
     }
 
     to {
-
         transform: translateY(0);
     }
 }
@@ -109,7 +123,6 @@
     }
 
     to {
-
         transform: translateY(0);
     }
 }

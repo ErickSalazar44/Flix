@@ -18,7 +18,6 @@ const DetallesProduccion = ({
 
     // Calcular inversión
     const inversion = data.budget;
-    console.log(data)
 
     return (
         <article className='md:max-w-5xl md:mx-auto flex flex-col gap-10  '>

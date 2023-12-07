@@ -2,23 +2,23 @@
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { getPosterUrl } from "@/utils/getPosterUrl";
-import { Movies, SeriesTV, isMovies } from "@/types/types";
+import { Movies, SeriesTV } from "@/types/types";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { useEffect, useRef, useState } from "react";
 import { CarruselSkeleton } from "./skeletons";
-import Image from "next/image";
 import Link from "next/link";
+import MovieCard from "./MovieCard";
+import './scrollAnimate.css'
 
-const CarruselDesktop = ({ data, type }: { data: SeriesTV[] | Movies[], type: string }) => {
+const CarruselDesktop = ({
+    data,
+    type,
+}: {
+    data: SeriesTV[] | Movies[];
+    type: string;
+}) => {
     const [swiperReady, setSwiperReady] = useState(false);
     const carruselRef = useRef(null);
-
-    const breakpoints = {
-        1200: { slidesPerView: 6, spaceBetween: 30 },
-        1500: { slidesPerView: 7, spaceBetween: 30 },
-        1800: { slidesPerView: 8, spaceBetween: 30 },
-    };
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -30,17 +30,17 @@ const CarruselDesktop = ({ data, type }: { data: SeriesTV[] | Movies[], type: st
             },
             {
                 root: null,
-                rootMargin: "0px",
-                threshold: 0.5, // Puedes ajustar este valor según tus necesidades
+                rootMargin: "300px",
+                threshold: 0,
             }
         );
 
-        const carruselRefCurrent = carruselRef.current; // Crear variable local
+        const carruselRefCurrent = carruselRef.current;
 
         if (carruselRefCurrent) {
             observer.observe(carruselRefCurrent);
         }
-    
+
         return () => {
             if (carruselRefCurrent) {
                 observer.unobserve(carruselRefCurrent);
@@ -48,45 +48,20 @@ const CarruselDesktop = ({ data, type }: { data: SeriesTV[] | Movies[], type: st
         };
     }, [carruselRef]);
 
-    console.log(`/media/${type}/${data[0].id}`)
-
     return (
         <div ref={carruselRef}>
             {swiperReady ? (
                 <Swiper
-                    breakpoints={breakpoints}
-                    slidesPerView={5}
-                    spaceBetween={20}
+                    slidesPerView={4}
+                    spaceBetween={5}
+                    loop={false}
                     className='mySwiper cursor-grab select-none'
                     onSwiper={() => setSwiperReady(true)}
                 >
-                    {data.map((movie: Movies | SeriesTV) => (
+                    {data.map((movie: Movies | SeriesTV, index) => (
                         <SwiperSlide key={movie.id}>
-                            <Link href={`/media/${type}/${movie.id}`}>                            
-                                <div className='transition duration-300 border-transparent border-4 hover:border-cyan-600'>
-                                    <Image
-                                        className={`rounded object-cover`}
-                                        src={getPosterUrl(movie)}
-                                        alt={`Imagen`}
-                                        width={205}
-                                        height={296}
-                                        quality={80}
-                                        style={{
-                                            width: "auto",
-                                            height: "auto",
-                                            objectFit: "cover",
-                                            aspectRatio: "9/14",
-                                        }}
-                                        placeholder='empty'
-                                    />
-                                </div>
-                                <div className='mt-2 text-center px-2'>
-                                    <h3 className='text-xs font-light line-clamp-1'>
-                                        {isMovies(movie)
-                                            ? (movie as Movies).original_title
-                                            : (movie as SeriesTV).original_name}
-                                    </h3>
-                                </div>
+                            <Link href={`/media/${type}/${movie.id}`} >
+                                <MovieCard result={movie} type={type} />
                             </Link>
                         </SwiperSlide>
                     ))}

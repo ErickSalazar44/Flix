@@ -10,9 +10,9 @@ const MoviePreview = ({ result, type }: { result: Media, type: string }) => {
     const time = result.release_date ?? result.first_air_date
     return (
         <Link href={`/media/${type}/${result.id}`}>
-            <article className='relative letterScroll md:grid-cols-2 md:grid lg:grid-cols-3 xl:grid-cols-1 h-full'>
+            <article className='relative md:grid-cols-2 md:grid lg:grid-cols-3 xl:grid-cols-1 h-full'>
                 <header className="relative before:content-[''] before:top-0 before:w-full before:h-full before:bg-gradiantTop before:absolute lg:col-span-2">
-                    <div className='absolute top-0 p-4 z-10 xl:bottom-0 xl:top-auto'>
+                    <div className='absolute scroll-parallax top-0 p-4 z-10 xl:bottom-0 xl:top-auto'>
                         <h4 className='font-semibold text-xl line-clamp-1 lg:text-2xl xl:text-xl'>
                             {title}
                         </h4>

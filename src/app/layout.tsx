@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
-import { DMSans } from '../fonts/fonts'
 import '../styles/globals.css'
+import { DMSans } from '../fonts/fonts'
 import { Providers } from './providers'
 import Footer from '@/components/shared/footer/Footer'
-import Navbar from '@/components/shared/header/Navbar'
+
+
 
 
 export const metadata: Metadata = {

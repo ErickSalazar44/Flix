@@ -18,7 +18,7 @@ const ContenedorCarrusel = async ({ id, type }: { id: string, type: string }) =>
     return (
         <div className='py-8 px-6 md:px-10 lg:px-12 2xl:px-16'>
             <h3 className='font-semibold mb-6 text-xl md:text-2xl'>Recomendaciones</h3>
-            <div className='flex flex-col gap-10 md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-2'>
+            <div className='flex flex-col gap-10 md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-2 xl:grid-cols-4'>
                 {dataFilter.map((result: Media, index: number) =>
                     index === 0 ? (
                         <div key={result.id} className="md:col-span-2 lg:col-span-3 xl:col-span-1 ">
@@ -26,7 +26,7 @@ const ContenedorCarrusel = async ({ id, type }: { id: string, type: string }) =>
                         </div>
                     ) : (
                         <div key={result.id}>
-                            <MovieCard type={type} result={result} index={index}/>
+                            <MovieCard type={type} result={result}/>
                         </div>
                     )
                 )}
