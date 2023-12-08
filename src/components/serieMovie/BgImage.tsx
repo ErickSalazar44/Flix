@@ -4,7 +4,7 @@ import { Play } from "../icons/Icons"; // ICONS
 
 const BgImage = ({ data }: { data: Media }) => {
     return (
-        <div className='fixed -z-10 top-0 h-[60vh] w-full before:bg-gradiantBotton before:absolute before:w-full before:h-full before:top-0 before:content-[""] before:z-20 lg:h-[90vh] lg:absolute'>
+        <div className='fixed -z-10 top-0 h-[60vh] w-full before:bg-gradiantBotton before:absolute before:w-full before:h-full before:top-0 before:content-[""] before:z-20 lg:h-[96vh] lg:absolute'>
             <Image
                 src={`https://image.tmdb.org/t/p/w780${data.poster_path}`}
                 alt={`Poster ${data.title}`}

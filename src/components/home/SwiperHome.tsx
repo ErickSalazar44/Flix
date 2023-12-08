@@ -1,5 +1,5 @@
 // Swiper
-import {Swiper, SwiperSlide} from 'swiper/react'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -14,6 +14,7 @@ import { getPosterUrl } from "@/utils/getPosterUrl";
 import Image from "next/image";
 import { CarruselSkeleton } from "../UI/skeletons";
 import Link from "next/link";
+import { startViewTransition } from '@/utils/TransitionNavigate';
 
 const SwiperHome = ({
     movies,
@@ -23,7 +24,7 @@ const SwiperHome = ({
     setCurrentIndex: (index: number) => void;
 }) => {
     const [swiperReady, setSwiperReady] = useState(false);
-    
+
     const windowSize = useWindowSize();
 
     const showMovies = useMemo(() => {
@@ -50,7 +51,7 @@ const SwiperHome = ({
                     clickable: true,
                     el: ".swiper-paginacion",
                 }}
-                onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
+                onSlideChange={(swiper) => startViewTransition(() => setCurrentIndex(swiper.realIndex))}
                 slidesPerView={2}
                 breakpoints={breakpoints}
                 loop={true}
@@ -68,7 +69,7 @@ const SwiperHome = ({
                             key={`movie-${movie.id}`}
                             className='cursor-grab object-cover'
                         >
-                            <Link href={`/media/movie/${movie.id}`} as={`/media/movie/${movie.id}`}>                            
+                            <Link href={`/media/movie/${movie.id}`} as={`/media/movie/${movie.id}`}>
                                 <Image
                                     src={getPosterUrl(movie)}
                                     alt={`poster_path ${movie.title}`}
@@ -86,17 +87,16 @@ const SwiperHome = ({
                                 />
                             </Link>
                         </SwiperSlide>
-                    )) : 
-                        <CarruselSkeleton/>      
-                    }
+                    )) :
+                    <CarruselSkeleton />
+                }
             </Swiper>
 
             {/* Botón de avanzar */}
             <div className='swiper-button-next'>
                 <div
-                    className={`${
-                        !swiperReady && "hidden"
-                    }  absolute -top-1 -right-8 md:-right-9 w-6 text-white opacity-80`}
+                    className={`${!swiperReady && "hidden"
+                        }  absolute -top-1 -right-8 md:-right-9 w-6 text-white opacity-80`}
                 >
                     <ArrowRight />
                 </div>
@@ -105,9 +105,8 @@ const SwiperHome = ({
             {/* Botón de retroceder */}
             <div className='swiper-button-prev'>
                 <div
-                    className={`${
-                        !swiperReady && "hidden"
-                    } absolute -top-1 -left-8 md:-right-9 w-6 text-white opacity-80`}
+                    className={`${!swiperReady && "hidden"
+                        } absolute -top-1 -left-8 md:-right-9 w-6 text-white opacity-80`}
                 >
                     <ArrowLeft />
                 </div>

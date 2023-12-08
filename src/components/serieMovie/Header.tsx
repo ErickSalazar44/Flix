@@ -60,7 +60,7 @@ const Header = ({ data, galeria }: { data: Media; galeria: Galeria }) => {
                 <GetStartRating average={data.vote_average} />
             </div>
 
-            <div className='flex flex-col lg:flex-col-reverse'>
+            <div className='flex flex-col lg:flex-col-reverse lg:min-h-[192px]'>
                 <div className='text-[#b3b3b3] flex justify-between items-center mb-4 text-xs sm:text-sm'>
                     <ul className='flex gap-2'>
                         {data.genres.slice(0, 2).map((genre) => (

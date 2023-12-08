@@ -1,9 +1,9 @@
 import Link from "next/link";
 import MenuFunction from "./MenuFunction";
 import NavbarScroll from "./NavbarScroll";
-import { MenuIcon, Search } from "@/icons/Icons";
 import Image from "next/image";
 import NavbarItem from "./NavbarItems";
+import { MenuIcon, Search } from "@/icons/Icons";
 
 const Navbar = () => {
     return (

@@ -20,7 +20,7 @@ const DetallesProduccion = ({
     const inversion = data.budget;
 
     return (
-        <article className='md:max-w-5xl md:mx-auto flex flex-col gap-10  '>
+        <article className='md:max-w-5xl md:mx-auto flex flex-col gap-10'>
             <div>
                 <h4 className='mb-2 font-semibold'>Compañías de Producción</h4>
                 <ul className='text-xs flex flex-col gap-1'>

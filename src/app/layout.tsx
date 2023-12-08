@@ -4,9 +4,6 @@ import { DMSans } from '../fonts/fonts'
 import { Providers } from './providers'
 import Footer from '@/components/shared/footer/Footer'
 
-
-
-
 export const metadata: Metadata = {
 	title: 'Alura Flix: Descubre una Plataforma de Streaming Única 🎬🍿',
 	description: 'Explora películas y series en Alura Flix, el proyecto final de Oracle Next Education. Con tecnologías avanzadas como React.js y Vite, disfruta de una experiencia interactiva y eficiente. Encuentra detalles, trailers y reseñas, y descubre nuevas joyas en nuestra base de datos de The Movie Database. ¡Sumérgete en el entretenimiento audiovisual ahora!',
@@ -31,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<body className={DMSans.className}>
 				<Providers>
 					{children}
-					<Footer/>
+					<Footer />
 				</Providers>
 			</body>
 		</html>

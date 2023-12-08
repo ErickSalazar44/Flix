@@ -53,15 +53,15 @@ const CarruselDesktop = ({
             {swiperReady ? (
                 <Swiper
                     slidesPerView={4}
-                    spaceBetween={5}
+                    spaceBetween={8}
                     loop={false}
                     className='mySwiper cursor-grab select-none'
                     onSwiper={() => setSwiperReady(true)}
                 >
                     {data.map((movie: Movies | SeriesTV, index) => (
-                        <SwiperSlide key={movie.id}>
-                            <Link href={`/media/${type}/${movie.id}`} >
-                                <MovieCard result={movie} type={type} />
+                        <SwiperSlide key={movie.id} className="rounded overflow-hidden">
+                            <Link href={`/media/${type}/${movie.id}`}>
+                                <MovieCard result={movie}/>
                             </Link>
                         </SwiperSlide>
                     ))}

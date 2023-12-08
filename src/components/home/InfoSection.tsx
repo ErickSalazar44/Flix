@@ -14,7 +14,7 @@ const InfoSection = ({
 
     const genreNamesByIds =  getGenreNamesByIds(
         genresMovies.genres,
-        movies[currentIndex].genre_ids
+        movies[currentIndex]?.genre_ids
     );
 
     return (
