@@ -1,12 +1,12 @@
-import { Movies } from "@/types/types";
 import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
+import { MoviesAndSeries } from "@/types/types";
 
 const BackgroundImage = ({
     movies,
     currentIndex,
 }: {
-    movies: Movies[] | undefined;
+    movies: MoviesAndSeries[] | undefined;
     currentIndex: number;
 }) => {
     const [backgroundImage, setBackgroundImage] = useState("");

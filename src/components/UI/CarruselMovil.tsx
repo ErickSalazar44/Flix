@@ -1,8 +1,8 @@
-import { Movies, SeriesTV, isMovies } from "@/types/types";
+import { MoviesAndSeries } from "@/types/types";
 import { getPosterUrl } from "@/utils/getPosterUrl";
 import Link from "next/link";
 
-const CarruselMovil = ({ data, type }: { data: SeriesTV[] | Movies[], type: string }) => {
+const CarruselMovil = ({ data, type }: { data: MoviesAndSeries[], type: string }) => {
     const dataFilter = data.filter(
         (movie) => movie.poster_path !== null && movie.backdrop_path !== null
     );
@@ -23,9 +23,9 @@ const CarruselMovil = ({ data, type }: { data: SeriesTV[] | Movies[], type: stri
                                 />
                                 <div className='mt-2 text-center w-32 md:w-36 lg:w-44 px-2'>
                                     <h3 className='text-xs font-light line-clamp-1'>
-                                        {isMovies(movie)
-                                            ? (movie as Movies).original_title
-                                            : (movie as SeriesTV).original_name}
+                                        {
+                                            movie.original_title ?? movie.original_name
+                                        }
                                     </h3>
                                 </div>
                             </Link>

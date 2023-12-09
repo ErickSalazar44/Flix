@@ -1,5 +1,4 @@
 import Publicity from "@/components/home/Publicity";
-import Publicity2 from "@/components/home/Publicity2";
 import HomeHeader from "@/components/home/HomeHeader";
 import SliderContainer from "@/components/home/SliderContainer";
 import { movieGenresList, trendingMoviesWeekly } from "@/lib/api";
@@ -13,7 +12,7 @@ export default async function Home() {
 
     return (
         <main className='main '>
-            <Navbar />
+            {/* <Navbar /> */}
             {/* HOME HEADER  */}
             <HomeHeader moviesTrends={moviesTrends} genresMovies={generos} />
 
@@ -21,39 +20,24 @@ export default async function Home() {
             <Publicity />
 
             {/* SLIDER MOVIE 1 */}
-            <section className='px-6 md:px-10 lg:px-12 2xl:px-16 my-8 flex flex-col gap-12 lg:gap-6'>
+            <section className='px-6 md:px-10 lg:px-12 2xl:px-16 my-8 flex flex-col gap-12 lg:gap-4 text-[#e0e0e0]'>
                 <SliderContainer
                     path='/trending/tv/week'
-                    title='Lo más popular'
-                />
-
-                <SliderContainer
-                    path='/movie/now_playing'
-                    title='Del cine a tu casa'
-                    subtitle='Culturas valiosas. Historias diversas. Energía vibrante.'
+                    title='SERIES POPULARES'
                 />
                 <SliderContainer
-                    path='/trending/tv/week'
-                    title='Lo más popular'
+                    path='/movie/popular'
+                    title='OBRAS MAESTRAS MODERNAS'
                 />
-
                 <SliderContainer
-                    path='/movie/now_playing'
-                    title='Del cine a tu casa'
-                    subtitle='Culturas valiosas. Historias diversas. Energía vibrante.'
+                    path='/movie/upcoming'
+                    title='FAVORITAS DE FESTIVALES DE CINE'
+                />
+                <SliderContainer
+                    path='/movie/top_rated'
+                    title='DESTACADOS DE ALURA'
                 />
             </section>
-
-            {/* ANUNCIO 2*/}
-            <Publicity2
-                textLarge="¡Loki Temporada 2, solo en Disney+! Explora el multiverso y descubre detalles exclusivos."
-                imgLarge='/publicidad/loki_s2.jpg'
-                imgSmall='/publicidad/anuncio2.jpeg'
-                titleSmall='¡Descubre el cine en casa con nosotros!'
-                btnTextLarge='VER TODO'
-                btnTextSmall='CÁTEGORIA'
-            />
-
             <RevisaNuestroCatalogo />
         </main>
     );

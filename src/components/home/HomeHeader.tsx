@@ -1,5 +1,5 @@
 "use client";
-import type { GenreTv, Movies } from "@/types/types";
+import type { GenreTv, MoviesAndSeries } from "@/types/types";
 import { useState } from "react";
 import SwiperHome from "./SwiperHome";
 import BackgroundImage from "./BackgroundImage";
@@ -10,7 +10,7 @@ const HomeHeader = ({
     moviesTrends,
     genresMovies,
 }: {
-    moviesTrends: Movies[];
+    moviesTrends: MoviesAndSeries[];
     genresMovies: GenreTv;
 }) => {
     // estado para manejar la imagen de fondo que se va mostrar
@@ -28,7 +28,7 @@ const HomeHeader = ({
                 genresMovies={genresMovies}
             />
             <div className='px-6 md:px-10 lg:px-12 2xl:px-16'>
-                <h2 className='text-white text-lg z-20 relative font-medium mb-3'>
+                <h2 className='text-white z-20 relative font-medium mb-3 uppercase'>
                     Últimas películas
                 </h2>
                 <SwiperHome

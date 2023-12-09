@@ -15,31 +15,13 @@ export type FetchResult<T> = [T | null, (url: string) => Promise<void>];
 //* Result SERIES
 export type Result = {
     page: number;
-    results: SeriesTV[] | Movies[];
+    results: MoviesAndSeries[];
     total_pages: number;
     total_results: number;
 };
 
-export type SeriesTV = {
-    adult: boolean;
-    backdrop_path: string;
-    id: number;
-    name: string;
-    original_language: OriginalLanguage;
-    original_name: string;
-    overview: string;
-    poster_path: string;
-    media_type: MediaType;
-    genre_ids: number[];
-    popularity: number;
-    first_air_date: Date;
-    vote_average: number;
-    vote_count: number;
-    origin_country: OriginCountry[];
-};
-
 //* Result Movies
-export type Movies = {
+export type MoviesAndSeries = {
     adult: boolean;
     backdrop_path: string;
     id: number;
@@ -53,8 +35,12 @@ export type Movies = {
     popularity: number;
     release_date: Date;
     video: boolean;
+    name: string;
+    original_name: string;
+    first_air_date: Date;
     vote_average: number;
     vote_count: number;
+    origin_country: OriginCountry[];
 };
 
 //* Result Movie o Serie ID
@@ -169,10 +155,6 @@ type LastEpisode = {
     season_number: number;
     show_id: number;
     still_path: string;
-};
-
-export const isMovies = (data: SeriesTV | Movies): data is Movies => {
-    return (data as Movies).original_title !== undefined;
 };
 
 export enum MediaType {

@@ -16,7 +16,9 @@ const config: Config = {
         gradiantTop: 
         "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%)",
         gradiantFull:
-        "linear-gradient(0deg, rgba(0,0,0,1) 71%, rgba(0,0,0,0.9466357308584686) 20%, rgba(0,0,0,0.8259860788863109) 97%, rgba(0,0,0,0.5018382352941176) 100%)"
+        "linear-gradient(0deg, rgba(0,0,0,1) 71%, rgba(0,0,0,0.9466357308584686) 20%, rgba(0,0,0,0.8259860788863109) 97%, rgba(0,0,0,0.5018382352941176) 100%)",
+        gradiantBottonCard:
+        "linear-gradient(0deg, rgba(0,0,0,0.6951155462184874) 0%, rgba(0,0,0,0) 80%)"
       },
       colors: {
         SemiTransparentWhite: "#ffffffb3",

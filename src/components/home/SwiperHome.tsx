@@ -6,7 +6,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '@/styles/swiper.css'
 
-import { Movies } from "@/types/types";
+import { MoviesAndSeries } from "@/types/types";
 import { useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight } from "@/icons/Icons";
 import useWindowSize from "@/hooks/useWindowSize";
@@ -20,7 +20,7 @@ const SwiperHome = ({
     movies,
     setCurrentIndex,
 }: {
-    movies: Movies[] | undefined;
+    movies: MoviesAndSeries[] | undefined;
     setCurrentIndex: (index: number) => void;
 }) => {
     const [swiperReady, setSwiperReady] = useState(false);

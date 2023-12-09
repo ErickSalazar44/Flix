@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import '../styles/globals.css'
+import '../styles/viewTransitions.css'
+import '../styles/loading.css'
 import { DMSans } from '../fonts/fonts'
 import { Providers } from './providers'
 import Footer from '@/components/shared/footer/Footer'

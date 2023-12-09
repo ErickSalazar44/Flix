@@ -1,6 +1,6 @@
 "use client";
 
-import { Movies, SeriesTV } from "@/types/types";
+import { MoviesAndSeries } from "@/types/types";
 import CarruselDesktop from "./CarruselDesktop";
 import CarruselMovil from "./CarruselMovil";
 import { useEffect, useState } from "react";
@@ -9,7 +9,7 @@ const Carrusel = ({
     data,
     type
 }: {
-    data: SeriesTV[] | Movies[];
+    data: MoviesAndSeries[];
     type: string
 }) => {
     const [isMobile, setIsMobile] = useState(false);

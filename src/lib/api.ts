@@ -1,6 +1,6 @@
 import { fetchData } from "@/utils/fetchData";
 
-//!
+// HOME
 export const trendingMoviesWeekly = () => {
     const path = "/trending/movie/week";
     return fetchData(path);
@@ -30,6 +30,12 @@ export const tvTopRated = () => {
 export const movieTopRated = () => {
     const path='/movie/top_rated'
     return fetchData(path);
+}
+
+// PROXIMOS EXTRENOS
+export const movieUpconmming = () => {
+    const path = '/movie/upcoming'
+    return fetchData(path)
 }
 
 // SECCION DE REPARTO MOVIES
