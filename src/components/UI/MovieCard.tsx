@@ -20,7 +20,7 @@ const MovieCard = ({ result }: { result: any}) => {
                 className="w-full"
             />
             <div className='absolute scroll-parallax bottom-0 pl-4 pb-1 z-10 group-hover:text-white transition-colors duration-300 hover:duration-300 hover:transition'>
-                <h4 className='font-bold text-lg line-clamp-1 uppercase leading-3'>
+                <h4 className='font-semibold text-lg line-clamp-1 uppercase leading-4'>
                     {title}
                 </h4>
                 <span className='text-xs uppercase'>

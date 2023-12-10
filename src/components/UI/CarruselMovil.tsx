@@ -10,7 +10,7 @@ const CarruselMovil = ({ data, type }: { data: MoviesAndSeries[], type: string }
     return (
         <section className='relative'>
             <div className='carrusel overflow-x-scroll '>
-                <div className='flex gap-3 md:gap-5 lg:gap-6 2xl:gap-8 transition-transform ease-in-out duration-500 lg:duration-300'>
+                <figure className='flex gap-3 md:gap-5 lg:gap-6 2xl:gap-8 transition-transform ease-in-out duration-500 lg:duration-300'>
                     {dataFilter?.map((movie, index) => (
                         <div key={index}>
                             <Link href={`/media/${type}/${movie.id}`}>
@@ -31,7 +31,7 @@ const CarruselMovil = ({ data, type }: { data: MoviesAndSeries[], type: string }
                             </Link>
                         </div>
                     ))}
-                </div>
+                </figure>
             </div>
         </section>
     );

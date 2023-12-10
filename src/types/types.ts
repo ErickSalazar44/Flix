@@ -141,6 +141,7 @@ type Season = {
 };
 
 
+
 type LastEpisode = {
     id: number;
     name: string;

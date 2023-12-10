@@ -5,14 +5,17 @@ export default async function SliderContainer({
     path,
     title,
     subtitle,
+    page,
 }: {
     path: string;
     title: string;
     subtitle?: string;
+    page?: string
 }) {
 
     const type = path.includes('movie') ? 'movie' : 'tv'
-    const { results: data } = await fetchData(path);
+    const query = page ? `page=${page}` : ''
+    const { results: data } = await fetchData(path,query);
 
     return (
         <section>

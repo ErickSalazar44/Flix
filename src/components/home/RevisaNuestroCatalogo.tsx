@@ -1,10 +1,10 @@
 import Link from "next/link";
-import '../UI/scrollAnimate.css'
 import Image from "next/image";
+import '../UI/scrollAnimate.css'
 
 const RevisaNuestroCatalogo = () => {
     return (
-        <div className='py-7 RevisaTodoNuestroCatalogo relative w-full grid place-content-center'>
+        <div className='mt-7 py-7 sm:mt-20 RevisaTodoNuestroCatalogo relative w-full grid place-content-center'>
             <div className='flex flex-col gap-8 items-center'>
                 <Image
                     src={'/michi.png'}

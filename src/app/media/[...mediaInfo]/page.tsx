@@ -41,7 +41,7 @@ export default async function PageMedia({
                 </div>
 
                 {/* INFORMACION DE LA PELICULA */}
-                <div className='bg-[#EAEAEA] text-[#666666] py-8 mb-60 pt-8 px-6 md:px-10 lg:px-12 2xl:px-16'>
+                <div className='bg-[#EAEAEA] text-[#666666] py-8 pt-8 px-6 md:px-10 lg:px-12 2xl:px-16'>
                     <DetallesProduccion data={data} galeria={galeria} />
                 </div>
             </main>

@@ -8,12 +8,12 @@ import Link from "next/link";
 
 const Footer = () => {
     return (
-        <footer className='lg:mt-20 w-full relative [background:#000_linear-gradient(180deg,#0000,#0890b23c)] pt-8'>
+        <footer className='lg:mt-20 w-full relative [background:#000_linear-gradient(180deg,#0000,#0890b23c)] pt-8 md:pt-20'>
             <div className='max-w-6xl mx-auto mb-8 '>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
                     <div className='px-6 md:px-10 lg:px-12'>
-                        <h4 className='mb-4'>Navegación</h4>
-                        <ul className='font-light text-[#A0A0A0] text-xs flex flex-col gap-4'>
+                        <h4 className='mb-4 uppercase'>Navegación</h4>
+                        <ul className='text-[#A0A0A0] text-xs flex flex-col gap-4'>
                             <li>
                                 <Link href={"/"}>Explora lo más popular</Link>
                             </li>
@@ -32,8 +32,8 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className='px-6 md:px-10 lg:px-12'>
-                        <h4 className='mb-4'>Contactame</h4>
-                        <ul className='font-light text-[#A0A0A0] text-xs flex flex-col gap-2'>
+                        <h4 className='mb-4 uppercase'>Contactame</h4>
+                        <ul className='text-[#A0A0A0] text-xs flex flex-col gap-2'>
                             <li>
                                 <Link
                                     className='flex items-center gap-2'
@@ -84,8 +84,8 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className='px-6 md:px-10 lg:px-12 hidden sm:block'>
-                        <h4 className='mb-4'>AluraFlix</h4>
-                        <p className='font-light text-[#A0A0A0] text-xs leading-7'>
+                        <h4 className='mb-4 uppercase'>AluraFlix</h4>
+                        <p className='text-[#A0A0A0] text-xs leading-7'>
                             Ofrece entretenimiento 
                             <br />
                             y educación
@@ -104,11 +104,9 @@ const Footer = () => {
                         </p>
                     </div>
                     <div className='px-6 md:px-10 lg:px-12 hidden lg:block'>
-                        <h4 className='mb-4'>Cuenta</h4>
-                        <p className='font-light text-[#A0A0A0] text-xs leading-7'>
-                            proporcionamos 
-                            <br />
-                            servicios
+                        <h4 className='mb-4 uppercase'>Cuenta</h4>
+                        <p className='text-[#A0A0A0] text-xs leading-7'>
+                            proporcionamos servicios
                             <br />
                             de página web
                             <br />
@@ -128,7 +126,7 @@ const Footer = () => {
             
             <div className='max-w-6xl mx-auto px-6 md:px-10 lg:px-12'>
                 <div className="py-8 border-t-[1px] border-t-gray-700">
-                    <h5 className="font-light text-[#A0A0A0] text-xs">Hecho con 💙 <span className="text-xs">© 2023</span></h5>
+                    <h5 className="text-[#A0A0A0] text-xs">Hecho con 💙 <span className="text-xs">© 2023</span></h5>
                 </div>
             </div>
         </footer>
