@@ -1,14 +1,12 @@
 import Image from "next/image"; // NEXT
 // componentes
 import GetStartRating from "./GetStartRating";
-import Button from "../UI/Button";
-import type { Galeria, Media } from "@/types/types"; // types
-import { Time } from "../icons/Icons"; // Icons
+import { Time, Play } from "../icons/Icons"; // Icons
+import type { Media } from "@/types/types"; // types
+import Link from "next/link";
 
-const Header = ({ data, galeria }: { data: Media; galeria: Galeria }) => {
-    const releaseDate = data.release_date
-        ? data.release_date
-        : data.last_air_date;
+const Header = ({ data }: { data: Media }) => {
+    const releaseDate = data.release_date || data.last_air_date
     const parsedDate = new Date(releaseDate);
     const monthNames = [
         "Enero",
@@ -32,36 +30,44 @@ const Header = ({ data, galeria }: { data: Media; galeria: Galeria }) => {
     const title = data.title ?? data.name;
 
     return (
-        <header>
-            <div className='hidden mb-4 lg:flex lg:flex-col lg:gap-8 lg:mb-6 xl:gap-10 2xl:gap-12'>
-                {galeria?.logos[0] ? (
-                    <picture className='flex w-full max-w-[500px] max-h-[200px]'>
-                        <Image
-                            src={`https://image.tmdb.org/t/p/w500${galeria?.logos[0].file_path}`}
-                            alt={`Logo ${data.title}`}
-                            width={500}
-                            height={382}
-                            className='object-contain lg:[width:calc(18vw+70px)] h-auto'
-                            priority={true}
-                        />
-                    </picture>
-                ) : (
-                    <h1 className='font-bold text-5xl xl:text-6xl'>
-                        {title}
-                    </h1>
-                )}
-                <Button text='Ver Ahora' />
-            </div>
-
-            <div className='mb-2 sm:mb-4 flex flex-col gap-1 sm:gap-4 lg:hidden'>
-                <h1 className='font-bold text-2xl line-clamp-2 sm:text-3xl lg:font-normal'>
+        <header className='lg:flex lg:justify-between lg:items-center'>
+            <div className='mb-2 sm:mb-4 flex flex-col gap-1 sm:gap-4 items-start flex-1'>
+                <h1 className='font-bold text-2xl line-clamp-2 sm:text-3xl lg:font-semibold uppercase max-w-sm'>
                     {title}
                 </h1>
-                <GetStartRating average={data.vote_average} />
+                <div className='hidden lg:flex lg:flex-col gap-2 text-sm'>
+                    <ul className='flex gap-2 opacity-80'>
+                        {data.genres.map((genre) => (
+                            <li key={genre.id}>{genre.name}</li>
+                        ))}
+                    </ul>
+                    <div className='flex gap-2'>
+                        <div className='flex gap-2'>
+                            <span>
+                                {data.runtime ? `Duracion ${data.runtime}` : `${data.number_of_seasons} temporadas ${data.number_of_episodes} capitulos`}
+                            </span>
+                            <Time />
+                        </div>
+
+                        <div>
+                            {releaseMonth} {releaseYear}
+                        </div>
+                    </div>
+                </div>
+                <span className='lg:hidden'>
+                    <GetStartRating average={data.vote_average} />
+                </span>
+
+                <Link href={`/trailer/movie/123`} className='hidden lg:flex uppercase border rounded-xl px-2 py-1 items-center text-xs font-bold justify-center'>
+                    <span className='w-6 block'>
+                        <Play />
+                    </span>
+                    <span className='mr-2'>ver Tráiler</span>
+                </Link>
             </div>
 
-            <div className='flex flex-col lg:flex-col-reverse lg:min-h-[192px]'>
-                <div className='text-[#b3b3b3] flex justify-between items-center mb-4 text-xs sm:text-sm'>
+            <div className='flex flex-col lg:min-h-[192px]'>
+                <div className='text-[#b3b3b3] flex justify-between items-center mb-4 text-xs sm:text-sm lg:hidden'>
                     <ul className='flex gap-2'>
                         {data.genres.slice(0, 2).map((genre) => (
                             <li key={genre.id}>{genre.name}</li>
@@ -83,9 +89,9 @@ const Header = ({ data, galeria }: { data: Media; galeria: Galeria }) => {
                         </span>
                     </div>
                 </div>
-                <section className='mb-7'>
-                    <header className='max-w-4xl'>
-                        <h3 className='mb-2 sm:font-semibold sm:text-lg lg:font-normal lg:mb-4'>
+                <section className='mb-7 flex justify-between gap-6'>
+                    <header className='max-w-xl'>
+                        <h3 className='mb-2 sm:font-semibold sm:text-lg lg: text-xl uppercase'>
                             {data.tagline ? data.tagline : "Synopsis"}
                         </h3>
                         <p className='leading-8 text-sm sm:leading-9 text-[#f7f7f7] font-light [text-wrap:balance] sm:[text-wrap:wrap] sm:text-base lg:leading-7 lg:line-clamp-5'>
@@ -93,6 +99,16 @@ const Header = ({ data, galeria }: { data: Media; galeria: Galeria }) => {
                         </p>
                     </header>
                 </section>
+            </div>
+
+            <div className='hidden xl:flex flex-1 justify-end'>
+                <Image
+                    src={`https://image.tmdb.org/t/p/w342${data.poster_path}`}
+                    alt={`Poster ${title}`}
+                    width={180}
+                    height={270}
+                    className="rounded"
+                />
             </div>
 
             <div className='border-t border-t-[#616161] lg:hidden' />

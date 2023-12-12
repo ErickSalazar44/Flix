@@ -69,7 +69,7 @@ const SwiperHome = ({
                             key={`movie-${movie.id}`}
                             className='cursor-grab object-cover'
                         >
-                            <Link href={`/media/movie/${movie.id}`} as={`/media/movie/${movie.id}`}>
+                            <Link href={`/movie/${movie.id}`} as={`/movie/${movie.id}`}>
                                 <Image
                                     src={getPosterUrl(movie)}
                                     alt={`poster_path ${movie.title}`}

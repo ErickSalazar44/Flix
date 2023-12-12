@@ -1,6 +1,5 @@
 import Galeria from "@/components/serieMovie/Galeria";
 import type {
-    Galeria as GaleriaType,
     Media,
     ProductionCompany,
     ProductionCountry,
@@ -8,11 +7,10 @@ import type {
 
 const DetallesProduccion = ({
     data,
-    galeria,
 }: {
     data: Media;
-    galeria: GaleriaType;
 }) => {
+
     // Calcular ganancias
     const ganancias = data.revenue;
 
@@ -53,7 +51,7 @@ const DetallesProduccion = ({
                         }` : 'No tenemos informacion por el momento'}</span>
                     </div>
                     {/* SECCION DE IMAGENES */}
-                    <Galeria galeria={galeria} />
+                    <Galeria/>
                 </>
             )}
         </article>

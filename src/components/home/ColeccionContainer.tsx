@@ -80,8 +80,8 @@ const ColeccionContainer = async ({
                     {details.parts.map((part: MoviesAndSeries) => (
                         <Link
                             key={part.id}
-                            href={`/media/movie/${part.id}`}
-                            as={`/media/movie/${part.id}`}
+                            href={`/movie/${part.id}`}
+                            as={`/movie/${part.id}`}
                         >
                             <MovieCard result={part} />
                         </Link>

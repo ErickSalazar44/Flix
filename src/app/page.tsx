@@ -11,7 +11,7 @@ export default async function Home() {
     const generos = await movieGenresList();
 
     return (
-        <main className='main '>
+        <main className='scrollMove'>
             <Navbar />
             {/* HOME HEADER  */}
             <HomeHeader moviesTrends={moviesTrends} genresMovies={generos} />

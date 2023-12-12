@@ -13,7 +13,7 @@ const CarruselMovil = ({ data, type }: { data: MoviesAndSeries[], type: string }
                 <figure className='flex gap-3 md:gap-5 lg:gap-6 2xl:gap-8 transition-transform ease-in-out duration-500 lg:duration-300'>
                     {dataFilter?.map((movie, index) => (
                         <div key={index}>
-                            <Link href={`/media/${type}/${movie.id}`}>
+                            <Link href={`/${type}/${movie.id}`}>
                                 <img
                                     className={`w-auto h-auto object-cover aspect-[9/13] xl:aspect-[9/14]`}
                                     src={getPosterUrl(movie)}

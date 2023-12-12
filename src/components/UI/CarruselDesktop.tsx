@@ -71,7 +71,7 @@ const CarruselDesktop = ({
                             key={movie.id}
                             className='rounded overflow-hidden'
                         >
-                            <Link href={`/media/${type}/${movie.id}`} as={`/media/${type}/${movie.id}`}>
+                            <Link href={`/${type}/${movie.id}`} as={`/${type}/${movie.id}`}>
                                 <MovieCard result={movie} />
                             </Link>
                         </SwiperSlide>

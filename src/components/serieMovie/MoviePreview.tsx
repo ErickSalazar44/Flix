@@ -1,17 +1,16 @@
 // Next
 import Image from "next/image";
-import Link from "next/link" 
 import { Media } from '@/types/types'; // Type
-import { Hd } from "../icons/Icons"; // Icons
+import { Hd, Play } from "../icons/Icons"; // Icons
 import { formatDate } from "@/utils/formatDate"; // utils
 
-const MoviePreview = ({ result, type }: { result: Media, type: string }) => {
+const MoviePreview = ({ result }: { result: Media }) => {
     const title = result.title ?? result.name
     const time = result.release_date ?? result.first_air_date
     return (
-        <Link href={`/media/${type}/${result.id}`}>
+
             <article className='relative md:grid-cols-2 md:grid lg:grid-cols-3 xl:grid-cols-1 h-full'>
-                <header className="relative before:content-[''] before:top-0 before:w-full before:h-full before:bg-gradiantBottonCard before:absolute lg:col-span-2">
+                <header className="relative group before:content-[''] before:top-0 before:w-full before:h-full before:bg-gradiantBottonCard before:absolute lg:col-span-2">
                     <div className='absolute scroll-parallax pl-4 pb-1 z-10 bottom-0'>
                         <h4 className='font-semibold text-xl line-clamp-1 lg:text-2xl xl:text-xl'>
                             {title}
@@ -25,6 +24,9 @@ const MoviePreview = ({ result, type }: { result: Media, type: string }) => {
                         height={300}
                         className="w-full h-full object-cover"
                     />
+                    <span className="absolute w-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-[20%] border rounded-full inline-block opacity-0 group-hover:opacity-100 hover:transition group-hover:-translate-y-[50%] hover:duration-300 transition duration-300">
+                        <Play />
+                    </span>
                 </header>
                 <footer className='bg-white text-black p-4 md:flex md:flex-col xl:hidden'>
                     <div className="md:flex-1">
@@ -39,7 +41,7 @@ const MoviePreview = ({ result, type }: { result: Media, type: string }) => {
                     </div>
                 </footer>
             </article>
-        </Link>
+
     )
 }
 

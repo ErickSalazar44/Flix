@@ -7,7 +7,7 @@ import { MenuIcon, Search } from "@/icons/Icons";
 
 const Navbar = () => {
     return (
-        <header className={`fixed top-0 z-50 w-full main`}>
+        <header className={`fixed top-0 z-50 w-full scrollMove`}>
             <NavbarScroll /> {/* cliente */}
             <nav className='relative z-10 w-full h-navbar md:h-navbar-md flex justify-between items-center px-6 md:px-10 lg:px-12 2xl:px-16'>
                 <ul className='flex items-center gap-7 text-neutral-400 flex-1'>
