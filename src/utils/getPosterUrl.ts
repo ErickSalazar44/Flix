@@ -1,4 +1,4 @@
-import { Movies, SeriesTV } from "@/types/types";
+import { MoviesAndSeries } from "@/types/types";
 
 export const getPosterUrl = (movie: MoviesAndSeries) => {
     const baseUrl = "https://image.tmdb.org/t/p/";

@@ -3,7 +3,6 @@ import '../styles/globals.css'
 import '../styles/viewTransitions.css'
 import '../styles/loading.css'
 import { DMSans } from '../fonts/fonts'
-import { Providers } from './providers'
 import Footer from '@/components/shared/footer/Footer'
 
 export const metadata: Metadata = {
@@ -24,14 +23,13 @@ export const metadata: Metadata = {
 	]
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode}) {
+export default function RootLayout(props: {children: React.ReactNode, modal: React.ReactNode}) {
 	return (
 		<html lang="en">
 			<body className={DMSans.className}>
-				<Providers>
-					{children}
+					{props.modal}
+					{props.children}
 					<Footer />
-				</Providers>
 			</body>
 		</html>
 	)

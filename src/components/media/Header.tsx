@@ -58,7 +58,7 @@ const Header = ({ data }: { data: Media }) => {
                     <GetStartRating average={data.vote_average} />
                 </span>
 
-                <Link href={`/trailer/movie/123`} className='hidden lg:flex uppercase border rounded-xl px-2 py-1 items-center text-xs font-bold justify-center'>
+                <Link href={`/`} className='hidden lg:flex uppercase border rounded-xl px-2 py-1 items-center text-xs font-bold justify-center'>
                     <span className='w-6 block'>
                         <Play />
                     </span>

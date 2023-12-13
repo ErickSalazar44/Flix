@@ -4,7 +4,7 @@ import '../UI/scrollAnimate.css'
 
 const RevisaNuestroCatalogo = () => {
     return (
-        <div className='mt-7 py-7 sm:mt-20 RevisaTodoNuestroCatalogo relative w-full grid place-content-center'>
+        <section className='mt-7 py-7 sm:mt-20 RevisaTodoNuestroCatalogo relative w-full grid place-content-center'>
             <div className='flex flex-col gap-8 items-center'>
                 <Image
                     src={'/michi.png'}
@@ -25,7 +25,7 @@ const RevisaNuestroCatalogo = () => {
                     VER TODO
                 </Link>
             </div>
-        </div>
+        </section>
     );
 };
 

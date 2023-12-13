@@ -1,13 +1,12 @@
 import Navbar from "@/components/shared/header/Navbar";
 
-export default function LayoutSerieMovie({ children, modal }: { children: React.ReactNode, modal: React.ReactNode }) {
+export default function LayoutSerieMovie({ children }: { children: React.ReactNode}) {
     return (
-        <main className="">
+        <main>
             <div className="hidden lg:block">
                 <Navbar />
             </div>
             {children}
-            {modal}
         </main>
     )
 }

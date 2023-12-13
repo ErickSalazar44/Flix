@@ -1,4 +1,4 @@
-import Galeria from "@/components/serieMovie/Galeria";
+import Galeria from "@/components/media/Galeria";
 import type {
     Media,
     ProductionCompany,

@@ -11,6 +11,9 @@ const Reparto = async ({ id, type }: { id: string, type: string }) => {
     const director = start.crew.find((miembro) => miembro.job === "Director" || miembro.job === 'Series Director');
     const actoresConImagenes = obtenerActoresConImagenes(start);
 
+    // En el caso no haya actores no retornara nada
+    if (start.cast.length === 0) return 
+
     return (
         <section className='py-7 px-6 md:px-10 lg:px-12 2xl:px-16 sm:py-8 md:bg-[#EAEAEA]'>
             <div className='md:max-w-5xl md:mx-auto'>
@@ -27,9 +30,10 @@ const Reparto = async ({ id, type }: { id: string, type: string }) => {
                     <div className='flex gap-6 transition-transform ease-in-out duration-500 '>
                         {actoresConImagenes.map((actor) => (
                             <Link
-                                href={`/${type}/${id}/actor/${actor.id}`}
+                                href={`/actor/${actor.id}-${type}`}
                                 className='relative w-full'
                                 key={`Actor-${actor.credit_id}`}
+                                scroll={false}
                             >
                                 <div className="h-full w-full">
                                     <figure className='w-28 sm:w-40 relative after:content-[""] after:absolute after:inset-0 after:bg-gradiantBottonCard'>

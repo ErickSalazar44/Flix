@@ -1,6 +1,6 @@
 import { fetchData } from "@/utils/fetchData";
 import Image from "next/image";
-import MovieCard from "../UI/MovieCard";
+import MovieCard from "../UI/card/MovieCard";
 import Link from "next/link";
 import { MoviesAndSeries } from "@/types/types";
 
@@ -80,8 +80,8 @@ const ColeccionContainer = async ({
                     {details.parts.map((part: MoviesAndSeries) => (
                         <Link
                             key={part.id}
-                            href={`/movie/${part.id}`}
-                            as={`/movie/${part.id}`}
+                            href={`/media/${part.id}-movie`}
+                            as={`/media/${part.id}-movie`}
                         >
                             <MovieCard result={part} />
                         </Link>

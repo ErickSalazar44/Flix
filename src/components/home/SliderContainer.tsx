@@ -1,5 +1,5 @@
 import { fetchData } from "@/utils/fetchData";
-import Carrusel from "../UI/Carrusel";
+import Carrusel from "../UI/slider/Carrusel";
 
 export default async function SliderContainer({
     path,
@@ -14,7 +14,7 @@ export default async function SliderContainer({
 }) {
 
     const type = path.includes('movie') ? 'movie' : 'tv'
-    const query = page ? `page=${page}` : ''
+    const query = page ? `language=es-Es&page=${page}` : ''
     const { results: data } = await fetchData(path,query);
 
     return (

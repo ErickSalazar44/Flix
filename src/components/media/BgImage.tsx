@@ -1,6 +1,7 @@
 import { Media } from "@/types/types"; // TYPES
 import Image from "next/image"; // NEXT
-import { Play } from "../icons/Icons"; // ICONS
+import { CloseIcon, Play } from "../icons/Icons"; // ICONS
+import Link from "next/link";
 
 const BgImage = ({ data }: { data: Media }) => {
     return (
@@ -32,6 +33,11 @@ const BgImage = ({ data }: { data: Media }) => {
                 priority={true}
             />
             <div className='relative z-50 w-full h-full'>
+                <div className="absolute right-5 top-4">
+                    <Link href={'/'}>
+                        <CloseIcon/>
+                    </Link>
+                </div>
                 <button className='lg:hidden text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 border rounded-full'>
                     <Play />
                 </button>

@@ -9,7 +9,7 @@ import { Galeria } from "@/types/types";
 import "../UI/scrollAnimate.css";
 import "../../styles/animate.css";
 
-import { usePathname } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import { ImageInfo } from "@/types/types";
 
 
@@ -17,8 +17,9 @@ import { ImageInfo } from "@/types/types";
 const Galeria = () => {
     const [galeria, setGaleria] = useState<Galeria | null>(null)
     const [showImages, setShowImages] = useState(false);
-    const pathname = usePathname()
-    const id = pathname.split('/')[3]
+    const params = useParams()
+
+    const id = String(params.mediaInfo).split('-')[0];
 
     const fetchGaleriaMovie = () => {
         fetch(`/api/galeria?id=${id}`)
@@ -26,7 +27,6 @@ const Galeria = () => {
         .then(data => setGaleria(data))
         .catch(err => setShowImages(false))
     }
-
 
     const handleClick = () => {
         // Toggle the state to show/hide images

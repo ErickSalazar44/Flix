@@ -5,10 +5,10 @@ import "swiper/css/pagination";
 import { MoviesAndSeries } from "@/types/types";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { useEffect, useRef, useState } from "react";
-import { CarruselSkeleton } from "./skeletons";
+import { CarruselSkeleton } from "../skeletons";
 import Link from "next/link";
-import MovieCard from "./MovieCard";
-import "./scrollAnimate.css";
+import MovieCard from "../card/MovieCard";
+import "../scrollAnimate.css";
 
 const CarruselDesktop = ({
     data,
@@ -71,7 +71,7 @@ const CarruselDesktop = ({
                             key={movie.id}
                             className='rounded overflow-hidden'
                         >
-                            <Link href={`/${type}/${movie.id}`} as={`/${type}/${movie.id}`}>
+                            <Link href={`/media/${movie.id}-${type}`} as={`/media/${movie.id}-${type}`}>
                                 <MovieCard result={movie} />
                             </Link>
                         </SwiperSlide>

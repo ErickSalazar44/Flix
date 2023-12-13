@@ -9,8 +9,8 @@ const MoviePreview = ({ result }: { result: Media }) => {
     const time = result.release_date ?? result.first_air_date
     return (
 
-            <article className='relative md:grid-cols-2 md:grid lg:grid-cols-3 xl:grid-cols-1 h-full'>
-                <header className="relative group before:content-[''] before:top-0 before:w-full before:h-full before:bg-gradiantBottonCard before:absolute lg:col-span-2">
+            <article className='relative grid-cols-1 sm:grid-cols-2 grid lg:grid-cols-2 xl:grid-cols-1 h-full'>
+                <header className="relative  group before:content-[''] before:top-0 before:w-full before:h-full before:bg-gradiantBottonCard before:absolute ">
                     <div className='absolute scroll-parallax pl-4 pb-1 z-10 bottom-0'>
                         <h4 className='font-semibold text-xl line-clamp-1 lg:text-2xl xl:text-xl'>
                             {title}

@@ -1,4 +1,5 @@
 import { fetchData } from "@/utils/fetchData";
+import { fetchDataNoStore } from "@/utils/fetchDataNoStore";
 
 // HOME MOVIES
 export const trendingMoviesWeekly = () => {
@@ -12,20 +13,14 @@ export const movieGenresList = () => {
     return fetchData(path);
 }
 
-// PROXIMOS EXTRENOS
-export const movieUpconmming = () => {
-    const path = '/movie/upcoming'
-    return fetchData(path)
-}
-
 // SECCION DE REPARTO MOVIES
 export const fetchRepartoMovie = (type: string, id: string) => {
     const path = `/${type}/${id}/credits`
-    return fetchData(path)
+    return fetchDataNoStore(path)
 }
 
 // VIDEOS RECOMENDADO MOVIES
 export const fetchRecomendacionMovie = (type: string, id: string) => {
     const path = `/${type}/${id}/recommendations`
-    return fetchData(path)
+    return fetchDataNoStore(path)
 }

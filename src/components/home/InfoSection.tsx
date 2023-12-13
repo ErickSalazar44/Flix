@@ -16,7 +16,7 @@ const InfoSection = ({
         genresMovies.genres,
         movies[currentIndex]?.genre_ids
     );
-
+        //TODO arreglar la transicion title Home
     return (
         <div className='relative px-6 md:px-10 lg:px-12 2xl:px-16 pb-10 z-10 transition-all'>
             <div

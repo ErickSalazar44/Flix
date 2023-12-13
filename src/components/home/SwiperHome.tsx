@@ -52,7 +52,8 @@ const SwiperHome = ({
                     el: ".swiper-paginacion",
                 }}
                 onSlideChange={(swiper) => startViewTransition(() => setCurrentIndex(swiper.realIndex))}
-                slidesPerView={2}
+                slidesPerView={3}
+                slidesPerGroup={3}
                 breakpoints={breakpoints}
                 loop={true}
                 navigation={{
@@ -69,7 +70,7 @@ const SwiperHome = ({
                             key={`movie-${movie.id}`}
                             className='cursor-grab object-cover'
                         >
-                            <Link href={`/movie/${movie.id}`} as={`/movie/${movie.id}`}>
+                            <Link href={`/media/${movie.id}-movie`} as={`/media/${movie.id}-movie`}>
                                 <Image
                                     src={getPosterUrl(movie)}
                                     alt={`poster_path ${movie.title}`}

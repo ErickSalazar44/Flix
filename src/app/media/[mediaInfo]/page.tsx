@@ -1,20 +1,21 @@
-import BgImage from "@/components/serieMovie/BgImage";
-import ContenedorCarrusel from "@/components/serieMovie/ContenedorCarrusel";
-import DetallesProduccion from "@/components/serieMovie/DetallesProduccion";
-import Header from "@/components/serieMovie/Header";
-import Reparto from "@/components/serieMovie/Reparto";
-import { fetchDataMovieId } from "@/utils/fetchDataMovieId";
+import BgImage from "@/components/media/BgImage";
+import ContenedorCarrusel from "@/components/media/ContenedorCarrusel";
+import DetallesProduccion from "@/components/media/DetallesProduccion";
+import Header from "@/components/media/Header";
+import Reparto from "@/components/media/Reparto";
+import { fetchDataNoStore } from "@/utils/fetchDataNoStore";
 import { Suspense } from "react";
 
 export default async function PageMedia({
     params,
 }: {
-    params: { mediaType: string, mediaId: string };
+    params: { mediaInfo: string };
 }) {
 
-    const {mediaType, mediaId} = params;
-    const data = await fetchDataMovieId(`/${mediaType}/${mediaId}`);
-
+    const [id, type ] = params.mediaInfo.split('-')
+    // traer los datos con su trailer
+    const query = 'language=es-ES&append_to_response=videos'
+    const data = await fetchDataNoStore(`/${type}/${id}`,query);
 
     return (
         <div className="scrollMove">
@@ -32,12 +33,12 @@ export default async function PageMedia({
                 <div className='flex flex-col md:flex-col-reverse'>
                     {/* SECCION ACTORES */}
                     <Suspense fallback={<span>CARGANDO ...</span>}>
-                        <Reparto type={mediaType} id={mediaId} />
+                        <Reparto type={type} id={id} />
                     </Suspense>
 
                     {/* SECCION RECOMENDADOS */}
                     <Suspense fallback={<span>CARGANDO ...</span>}>
-                        <ContenedorCarrusel type={mediaType} id={mediaId} />
+                        <ContenedorCarrusel type={type} id={id} />
                     </Suspense>
                 </div>
 
