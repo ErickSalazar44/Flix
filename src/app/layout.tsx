@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout(props: {children: React.ReactNode, modal: React.ReactNode}) {
 	return (
 		<html lang="en">
-			<body className={DMSans.className}>
+			<body className={`select-none max-w-[1920px] mx-auto ${DMSans.className}`}>
 					{props.modal}
 					{props.children}
 					<Footer />

@@ -6,11 +6,11 @@ export default function ActorModal({
 }: {
     params: { id: string };
 }) {
-    const id = params;
-    console.log(id)
+    const path = params;
+
     return (
         <Modal>
-            <Frame/>
+            <Frame path={path}/>
         </Modal>
     )
 }

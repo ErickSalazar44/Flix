@@ -52,8 +52,7 @@ const SwiperHome = ({
                     el: ".swiper-paginacion",
                 }}
                 onSlideChange={(swiper) => startViewTransition(() => setCurrentIndex(swiper.realIndex))}
-                slidesPerView={3}
-                slidesPerGroup={3}
+                slidesPerView={0}
                 breakpoints={breakpoints}
                 loop={true}
                 navigation={{
@@ -62,7 +61,7 @@ const SwiperHome = ({
                 }}
                 modules={[Pagination, Navigation, Autoplay]}
                 onSwiper={() => setSwiperReady(true)}
-                className='mySwiper-Home select-none'
+                className='mySwiper-Home'
             >
                 {swiperReady ?
                     movies?.slice(0, showMovies).map((movie) => (
@@ -83,7 +82,6 @@ const SwiperHome = ({
                                         height: "auto",
                                         aspectRatio: '9/14'
                                     }}
-                                    placeholder="empty"
                                     priority={true}
                                 />
                             </Link>

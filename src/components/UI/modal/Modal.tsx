@@ -1,11 +1,12 @@
 'use client'
-import { useCallback, useRef, useEffect, MouseEventHandler } from 'react'
+import { useCallback, useRef, useEffect, MouseEventHandler, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 export default function Modal({ children }: { children: React.ReactNode }) {
     const overlay = useRef(null)
     const wrapper = useRef(null)
     const router = useRouter()
+    const [disableScroll, setDisableScroll] = useState(true);
 
     const onDismiss = useCallback(() => {
         router.back()
@@ -15,6 +16,7 @@ export default function Modal({ children }: { children: React.ReactNode }) {
         (e) => {
             if (e.target === overlay.current || e.target === wrapper.current) {
                 if (onDismiss) onDismiss()
+                setDisableScroll(false);
             }
         },
         [onDismiss, overlay, wrapper]
@@ -23,7 +25,9 @@ export default function Modal({ children }: { children: React.ReactNode }) {
     const onKeyDown = useCallback(
         (e: KeyboardEvent) => {
             if (e.key === 'Escape') onDismiss()
+            setDisableScroll(false);
         },
+
         [onDismiss]
     )
 
@@ -31,6 +35,18 @@ export default function Modal({ children }: { children: React.ReactNode }) {
         document.addEventListener('keydown', onKeyDown)
         return () => document.removeEventListener('keydown', onKeyDown)
     }, [onKeyDown])
+
+    useEffect(() => {
+        if (disableScroll) {
+            document.body.classList.add("disable-scroll");
+        } else {
+            document.body.classList.remove("disable-scroll");
+        }
+
+        return () => {
+            document.body.classList.remove("disable-scroll");
+        };
+    }, [disableScroll]);
 
     return (
         <div
@@ -40,7 +56,7 @@ export default function Modal({ children }: { children: React.ReactNode }) {
         >
             <div
                 ref={wrapper}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full sm:w-10/12 md:w-8/12 lg:w-1/2 p-6"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
             >
                 {children}
             </div>

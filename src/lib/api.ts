@@ -24,3 +24,9 @@ export const fetchRecomendacionMovie = (type: string, id: string) => {
     const path = `/${type}/${id}/recommendations`
     return fetchDataNoStore(path)
 }
+
+// Informacion del Actor por Id 
+export const fetchActorForId = (type: string, id: string) => {
+    const path = `/person/${id}`
+    return fetchDataNoStore(path)
+}
