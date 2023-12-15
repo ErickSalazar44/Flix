@@ -22,9 +22,9 @@ const InfoSection = ({
             <div
                 className={`flex flex-col gap-4 justify-end sm:max-w-lg min-h-homeSpaceFondo`}
             >
-                <div className="flex flex-col gap-4 [view-transition-name:_title-home]">
+                <div className="flex flex-col justify-end gap-4 min-h-[100px]">
                     <h2
-                        className={`text-white line-clamp-2 text-2xl mv:text-3xl md:text-[1.9rem] font-medium lg:text-4xlb uppercase`}
+                        className={`text-white line-clamp-2 text-2xl mv:text-3xl md:text-[1.9rem] font-medium lg:text-4xlb uppercase animation-opacity`}
                     >
                         {movies?.[currentIndex]?.title}
                     </h2>

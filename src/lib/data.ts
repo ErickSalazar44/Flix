@@ -6,3 +6,19 @@ export const menuItems = [
     "Tendencias",
     "Ver más",
 ];
+
+
+export const monthNames = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
+];

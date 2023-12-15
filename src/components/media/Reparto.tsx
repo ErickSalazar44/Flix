@@ -1,9 +1,8 @@
 import { fetchRepartoMovie } from "@/lib/api";
 import { Reparto } from "@/types/types";
 import { obtenerActoresConImagenes } from "@/utils/obtenerActoresConImagenes";
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
+import RepartoCard from "../UI/card/RepartoCard";
 
 const Reparto = async ({ id, type }: { id: string, type: string }) => {
 
@@ -29,34 +28,7 @@ const Reparto = async ({ id, type }: { id: string, type: string }) => {
                 <div className='relative overflow-scroll carrusel'>
                     <div className='flex gap-6 transition-transform ease-in-out duration-500 '>
                         {actoresConImagenes.map((actor) => (
-                            <Link
-                                href={`/actor/${actor.id}-${type}`}
-                                className='relative w-full'
-                                key={`Actor-${actor.credit_id}`}
-                                scroll={false}
-                            >
-                                <div className="h-full w-full">
-                                    <figure className='w-28 sm:w-40 relative after:content-[""] after:absolute after:inset-0 after:bg-gradiantBottonCard'>
-                                        <Image
-                                            src={`https://image.tmdb.org/t/p/w342/${actor.profile_path}`}
-                                            alt={`Actor ${actor.name}`}
-                                            width={342}
-                                            height={513}
-                                            style={{
-                                                width: 'auto',
-                                                height: 'auto'
-                                            }}
-                                            className='rounded aspect-[9/13.5] opacity-90 w-auto h-auto '
-                                        />
-                                    </figure>
-                                    <footer className='text-center absolute bottom-0 w-full py-2 sm:p-[13px] sm:text-left sm:text-[#fff] md:max-w-[160px] bg-transparent'>
-                                        <h4 className='text-sm line-clamp-1 sm:font-semibold sm:text-base'>
-                                            {actor.character}
-                                        </h4>
-                                        <span className="hidden sm:block text-sm sm:line-clamp-1 truncate">{actor.name}</span>
-                                    </footer>
-                                </div>
-                            </Link>
+                            <RepartoCard key={`Actor-${actor.credit_id}`} actor={actor} type={type}/>
                         ))}
                     </div>
                 </div>

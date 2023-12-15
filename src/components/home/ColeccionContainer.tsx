@@ -3,6 +3,7 @@ import Image from "next/image";
 import MovieCard from "../UI/card/MovieCard";
 import Link from "next/link";
 import { MoviesAndSeries } from "@/types/types";
+import GetstartRatingUI2 from "../UI/puntuacion/GetstartRatingUI2";
 
 const ColeccionContainer = async ({
     id,
@@ -17,7 +18,7 @@ const ColeccionContainer = async ({
     const width = details.parts.length * 438 + details.parts.length * 8;
 
     return (
-        <section className='my-10 sm:my-16 relative h-full min-h-[700px] sm:h-[800px] lg:h-[96vh] xl:h-[98vh] flex flex-col'>
+        <section className='my-10 sm:my-16 relative h-full min-h-[700px] sm:h-[800px] lg:h-[96vh] xl:h-[100vh] flex flex-col'>
             <figure className='absolute -z-10 opacity-40 sm:opacity-50 w-full h-full bottom-0'>
                 <Image
                     src={`https://image.tmdb.org/t/p/original${details.parts[1].backdrop_path}`}
@@ -35,7 +36,7 @@ const ColeccionContainer = async ({
                     alt={`Movie Collection ${details.name}`}
                     width={1280}
                     height={800}
-                    className='hidden lg:block 2xl:hidden object-cover h-full'
+                    className='hidden md:block 2xl:hidden object-cover h-full'
                     style={{
                         width: "100%",
                         height: "100%",
@@ -46,14 +47,14 @@ const ColeccionContainer = async ({
                     alt={`Movie Collection ${details.name}`}
                     width={780}
                     height={439}
-                    className='lg:hidden object-cover '
+                    className='md:hidden object-cover '
                     style={{
                         width: "100%",
                         height: "100%",
                     }}
                 />
             </figure>
-            <div className='relative z-10 m-6 md:m-10 lg:m-12 2xl:m-16 flex flex-col gap-4 flex-1'>
+            <div className='relative z-10 p-6 md:p-10 lg:p-12 2xl:px-16 2xl:py-12 flex flex-col gap-4 flex-1'>
                 <div className="max-w-xl">
                     <h4>COLECCIÓN SEMANAL</h4>
                 </div>
@@ -83,10 +84,13 @@ const ColeccionContainer = async ({
                             href={`/media/${part.id}-movie`}
                             as={`/media/${part.id}-movie`}
                         >
-                            <MovieCard result={part} />
+                            <MovieCard animate={false} result={part} />
                         </Link>
                     ))}
                 </div>
+            </div>
+            <div className="absolute top-12 hidden 2xl:block right-16">
+                <GetstartRatingUI2 data={details.parts[0]} />
             </div>
         </section>
     );

@@ -1,23 +1,7 @@
 import { fetchActorForId } from '@/lib/api'
+import { Actor } from '@/types/types'
 import Image from 'next/image'
 
-
-interface Actor {
-    adult: boolean;
-    also_known_as: string[];
-    biography: string;
-    birthday: string;
-    deathday: string | null;
-    gender: number;
-    homepage: string | null;
-    id: number;
-    imdb_id: string;
-    known_for_department: string;
-    name: string;
-    place_of_birth: string;
-    popularity: number;
-    profile_path: string | null;
-}
 
 export default async function Frame({ path }: { path: any }) {
 
@@ -34,7 +18,8 @@ export default async function Frame({ path }: { path: any }) {
                     height={513}
                     style={{
                         width: 'auto',
-                        height: 'auto'
+                        height: 'auto',
+                        viewTransitionName: `actores-${actor.id}`
                     }}
                     className='rounded aspect-[9/13.5] w-auto h-auto '
                 />

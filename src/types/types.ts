@@ -4,6 +4,10 @@ export interface MoviesContextProps {
     setMovies: React.Dispatch<React.SetStateAction<any[]>>;
 }
 
+export interface YouTubePlayerProps {
+    videoId: string;
+}
+
 export interface MenuContextProps {
     isMenuOpen: boolean;
     toggleMenu: () => void;
@@ -62,7 +66,7 @@ type SpokenLanguage = {
     name: string;
 };
 
-type VideoResult = {
+export type VideoResult = {
     iso_639_1: string;
     iso_3166_1: string;
     name: string;
@@ -186,7 +190,7 @@ export type Genre = {
 
 //* Repart
 
-interface Cast {
+export interface Cast {
     adult: boolean;
     gender: number;
     id: number;
@@ -220,6 +224,24 @@ export interface Reparto {
     cast: Cast[],
     crew: Crew[]
 }
+
+export interface Actor {
+    adult: boolean;
+    also_known_as: string[];
+    biography: string;
+    birthday: string;
+    deathday: string | null;
+    gender: number;
+    homepage: string | null;
+    id: number;
+    imdb_id: string;
+    known_for_department: string;
+    name: string;
+    place_of_birth: string;
+    popularity: number;
+    profile_path: string | null;
+}
+
 
 //* Galeria 
 

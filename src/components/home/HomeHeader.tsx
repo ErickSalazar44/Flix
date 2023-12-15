@@ -17,7 +17,7 @@ const HomeHeader = ({
     const [currentIndex, setCurrentIndex] = useState(0); 
 
     return (
-        <div className='relative'>
+        <div className='relative h-screen'>
             <BackgroundImage
                 currentIndex={currentIndex}
                 movies={moviesTrends}

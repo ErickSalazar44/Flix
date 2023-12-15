@@ -1,29 +1,45 @@
-.scale-in-hor-center {
-	animation: scale-in-hor-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+.fade-enter {
+  opacity: 0;
+  transform: translateY(-50px);
 }
 
-.flip-in-hor-bottom {
-	animation: flip-in-hor-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms, transform 500ms;
 }
 
-@keyframes scale-in-hor-center {
-    0% {
-      transform: scaleX(0);
-      opacity: 1;
-    }
-    100% {
-      transform: scaleX(1);
-      opacity: 1;
-    }
-  }
+.fade-exit {
+  opacity: 1;
+}
 
-  @keyframes flip-in-hor-bottom {
-    0% {
-      transform: rotateX(40deg);
-      opacity: 0;
-    }
-    100% {
-      transform: rotateX(0);
-      opacity: 1;
-    }
-  }
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms, ;
+}
+
+
+
+.modal-enter {
+  opacity: 0;
+  transform: translateY(-100px);
+}
+
+.modal-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms, transform 500ms;
+}
+
+.modal-exit {
+  opacity: 1;
+
+  transform: translateY(0) scale(1);
+}
+
+.modal-exit-active {
+  opacity: 0;
+  transform: translateY(100px) scale(0);
+  transition: opacity 500ms, transform 500ms;
+}
+

@@ -1,4 +1,3 @@
-"use client";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import MenuItem from "./MenuItem"; // componentes
@@ -18,10 +17,7 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
 
     const overlayClasses = clsx(
         "fixed overflow-hidden w-full right-0 top-0 min-h-screen bg-black opacity-40",
-        {
-            "fade-out": isMenuOpen,
-            "fade-in hidden": !isMenuOpen,
-        }
+        {"hidden": !isMenuOpen,}
     );
 
     const toggleMenu = () => {

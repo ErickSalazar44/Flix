@@ -23,7 +23,7 @@ export default async function PageMedia({
             <BgImage data={data} />
 
             {/* SECCION PRINCIPAL */}
-            <main className='relative w-full carrusel pb-0 mt-[60vh] bg-gradiantTop backdrop-blur-3xl lg:backdrop-blur-none lg:bg-none lg:mt-[70vh] xl:mt-[65vh]'>
+            <main className='relative w-full carrusel pb-0 mt-[60vh] bg-gradiantTop backdrop-blur-3xl lg:backdrop-blur-none lg:bg-none lg:mt-0 lg:pt-[70vh] xl:pt-[65vh]'>
 
                 {/* INFO MOVIE */}
                 <div className='pt-8 px-6 md:px-10 lg:px-12 2xl:px-16'>
@@ -47,6 +47,7 @@ export default async function PageMedia({
                     <DetallesProduccion data={data}/>
                 </div>
             </main>
+
         </div>
     );
 }

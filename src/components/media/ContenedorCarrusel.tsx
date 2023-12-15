@@ -38,7 +38,7 @@ const ContenedorCarrusel = async ({
 
                     ) : (
                         <Link href={`/media/${result.id}-${type}`} key={result.id}>
-                            <MovieCard result={result} />
+                            <MovieCard animate={true} result={result} />
                         </Link>
                     )
                 )}

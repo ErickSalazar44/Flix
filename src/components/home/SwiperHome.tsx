@@ -14,7 +14,7 @@ import { getPosterUrl } from "@/utils/getPosterUrl";
 import Image from "next/image";
 import { CarruselSkeleton } from "../UI/skeletons";
 import Link from "next/link";
-import { startViewTransition } from '@/utils/TransitionNavigate';
+
 
 const SwiperHome = ({
     movies,
@@ -51,7 +51,7 @@ const SwiperHome = ({
                     clickable: true,
                     el: ".swiper-paginacion",
                 }}
-                onSlideChange={(swiper) => startViewTransition(() => setCurrentIndex(swiper.realIndex))}
+                onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
                 slidesPerView={0}
                 breakpoints={breakpoints}
                 loop={true}

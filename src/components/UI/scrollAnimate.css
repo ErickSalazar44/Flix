@@ -61,7 +61,6 @@
     animation-fill-mode: both;
 }
 
-
 @keyframes scroll-parallax {
     from {
         transform: translate(0, 0%);

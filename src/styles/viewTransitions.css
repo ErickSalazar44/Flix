@@ -1,7 +1,15 @@
 ::view-transition-old(root),
 ::view-transition-new(root) {
+    animation: none;
     animation-duration: 0s;
 }
+
+::view-transition-old(none-home),
+::view-transition-new(none-home) {
+    animation: none;
+    animation-duration: 0s;
+}
+
 
 /* The old view is the thumbnail */
 ::view-transition-old(title-home) {
@@ -12,6 +20,18 @@
     animation: slide-in-bottom 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
 }
 
+/* The old view is the thumbnail */
+::view-transition-old(bg-home) {
+    animation: fade-out 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+::view-transition-new(bg-home) {
+    animation: fade-in 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+.animation-opacity {
+    animation: fade-in 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
 
 @keyframes slide-in-bottom {
     0% {
@@ -25,6 +45,11 @@
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+@keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
 
 @keyframes fade-out {
