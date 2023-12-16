@@ -4,6 +4,7 @@ import '../styles/viewTransitions.css'
 import '../styles/loading.css'
 import { DMSans } from '../fonts/fonts'
 import Footer from '@/components/shared/footer/Footer'
+import ShowTrailer from '@/components/media/ShowTrailer'
 
 export const metadata: Metadata = {
 	title: 'Alura Flix: Descubre una Plataforma de Streaming Única 🎬🍿',
@@ -29,6 +30,7 @@ export default function RootLayout(props: {children: React.ReactNode, modal: Rea
 			<body className={`select-none max-w-[1920px] mx-auto ${DMSans.className}`}>
 					{props.modal}
 					{props.children}
+					<ShowTrailer/>
 					<Footer />
 			</body>
 		</html>

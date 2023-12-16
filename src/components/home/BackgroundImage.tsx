@@ -50,7 +50,7 @@ const BackgroundImage = ({
                         alt={`poster ${movies?.[currentIndex].original_title}`}
                         fill
                         sizes='80vw'
-                        className={"saturate-[1.2] scrollMove "}
+                        className={"saturate-[1.2] scrollMove"}
                         style={{
                             width: "100%",
                             height: "100%",

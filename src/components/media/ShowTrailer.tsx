@@ -2,27 +2,23 @@
 
 import { CSSTransition } from 'react-transition-group';
 import TrailerPlayer from "./TrailerPlayer";
-import Modal from "../UI/modal/Modal";
+import ModalTrailer from "../UI/modal/ModalTrailer";
 import useTrailer from "@/store/useTrailer";
 import '@/styles/animate.css'
-import { useState } from 'react';
 
 const ShowTrailer = () => {
 
-    const {modalIsOpen, selectedVideoId, setModalIsOpen} = useTrailer((state) => state)
-
+    const {modalIsOpen, selectedVideoId} = useTrailer((state) => state)
 
     return (
         <div>
-
             <CSSTransition
                 in={modalIsOpen}
                 timeout={500}
                 unmountOnExit
                 classNames='fade'
             >
-
-                <Modal>
+                <ModalTrailer>
                     <CSSTransition
                         in={modalIsOpen}
                         timeout={1000}
@@ -31,10 +27,8 @@ const ShowTrailer = () => {
                     >
                         <TrailerPlayer videoId={selectedVideoId}/>
                     </CSSTransition>
-                </Modal>
+                </ModalTrailer>
             </CSSTransition>
-
-
         </div>
     );
 };

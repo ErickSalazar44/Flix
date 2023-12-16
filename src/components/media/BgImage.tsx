@@ -6,13 +6,10 @@ import GetstartRatingUI2 from "../UI/puntuacion/GetstartRatingUI2";
 import TrailerTrigerBtn from "../UI/Btn/TrailerTrigerBtn";
 
 const BgImage = ({ data }: { data: Media }) => {
-
-    const {poster_path, backdrop_path } = data
+    const { poster_path, backdrop_path } = data;
 
     //title
     const title = data.title ?? data.name;
-    // video 
-    const videoId = data.videos.results[0].key
 
     return (
         <div className='fixed -z-10 top-0 h-[60vh] w-full before:bg-gradiantBotton before:absolute before:w-full before:h-full before:top-0 before:content-[""] before:z-20 lg:h-screen lg:absolute scrollMove'>
@@ -48,11 +45,13 @@ const BgImage = ({ data }: { data: Media }) => {
                         <CloseIcon />
                     </Link>
                 </div>
-                <TrailerTrigerBtn videoId={videoId}>
+
+                <TrailerTrigerBtn videos={data.videos}>
                     <span className='lg:hidden text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 border rounded-full'>
                         <Play />
                     </span>
                 </TrailerTrigerBtn>
+
                 <div className='hidden lg:block absolute top-[10vh] z-50 right-[4rem] font-semibold text-sm'>
                     <GetstartRatingUI2 data={data} />
                 </div>

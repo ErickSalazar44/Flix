@@ -14,7 +14,7 @@ export default async function PageMedia({
 
     const [id, type ] = params.mediaInfo.split('-')
     // traer los datos con su trailer
-    const query = 'language=es-ES&append_to_response=videos'
+    const query = 'language=es-LA&append_to_response=videos'
     const data = await fetchDataNoStore(`/${type}/${id}`,query);
 
     return (

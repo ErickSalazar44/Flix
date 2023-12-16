@@ -1,11 +1,30 @@
 'use client'
 import useTrailer from "@/store/useTrailer"
 
-const TrailerTrigerBtn = ({videoId, children}: {videoId : string, children: React.ReactNode}) => {
-    const {setModalIsOpen, setSelectedVideoId} = useTrailer((state) => state)
 
+const TrailerTrigerBtn = ({ videos, children }: { videos: any, children: React.ReactNode }) => {
+    const { setModalIsOpen, setSelectedVideoId, miniReproductor, selectedVideoId, setMiniReproductor } = useTrailer((state) => state)
+    const sinVideo = videos.results.length === 0
+    const videoId = videos.results[0]?.key
 
     const handleTrailer = () => {
+        // si el video no esta disponible No hacer nada
+        if (sinVideo) return
+
+        // si el video se esta reproduciendo solo extender el Modal
+        if (selectedVideoId === videoId) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.body.style.overflow = 'hidden';
+            setMiniReproductor(false)
+        }
+
+        // si el reproductor esta en mini solo cambiar de video 
+        if (miniReproductor) {
+            setSelectedVideoId(videoId)
+            return setModalIsOpen(true)
+        }
+
+        // Abrir modal y reproducir el nuevo video
         window.scrollTo({ top: 0, behavior: 'smooth' });
         document.body.style.overflow = 'hidden';
         setSelectedVideoId(videoId)
@@ -13,8 +32,8 @@ const TrailerTrigerBtn = ({videoId, children}: {videoId : string, children: Reac
     }
 
     return (
-        <button onClick={handleTrailer} >
-            {children}
+        <button onClick={handleTrailer} disabled={sinVideo}>
+            {!sinVideo && children}
         </button>
     )
 }

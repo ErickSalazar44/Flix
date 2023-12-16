@@ -12,7 +12,6 @@ const Header = ({ data }: { data: Media }) => {
     const releaseMonth = monthNames[parsedDate.getMonth()];
     const releaseYear = parsedDate.getFullYear();
 
-    //title
     const title = data.title ?? data.name;
 
     return (
@@ -46,12 +45,12 @@ const Header = ({ data }: { data: Media }) => {
                     <GetStartRating average={data.vote_average} />
                 </span>
 
-                <TrailerTrigerBtn videoId={data.videos.results[0].key}>
-                    <div className='flex uppercase border rounded-xl px-2 py-1 items-center text-xs font-bold justify-center'>
+                <TrailerTrigerBtn videos={data.videos}>
+                    <div className='hidden lg:flex uppercase border rounded-xl px-2 py-1 items-center text-xs font-bold justify-center'>
                         <span className='w-6 block'>
                             <Play />
                         </span>
-                        <span className='mr-2'>ver Tráiler</span>
+                        <span className='mr-2'>ver Tráiler'</span>
                     </div>
                 </TrailerTrigerBtn>
             </div>

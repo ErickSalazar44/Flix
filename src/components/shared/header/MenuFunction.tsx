@@ -26,13 +26,13 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
 
     useEffect(() => {
         if (isMenuOpen) {
-            document.body.classList.add("disable-scroll");
+            document.body.style.overflow = 'hidden';
         } else {
-            document.body.classList.remove("disable-scroll");
+            document.body.style.overflow = 'auto';
         }
 
         return () => {
-            document.body.classList.remove("disable-scroll");
+            document.body.style.overflow = 'auto';
         };
     }, [isMenuOpen]);
 
