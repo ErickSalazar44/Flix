@@ -14,7 +14,7 @@ export default async function SliderContainer({
 }) {
 
     const type = path.includes('movie') ? 'movie' : 'tv'
-    const query = page ? `language=es-Es&page=${page}` : ''
+    const query = page ? `language=es-ES&page=${page}` : ''
     const { results: data } = await fetchData(path,query);
 
     return (

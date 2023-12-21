@@ -91,8 +91,8 @@ export type Media = {
     video: boolean;
     adult: boolean;
     backdrop_path: string;
-    created_by: any[]; 
-    episode_run_time: any[]; 
+    created_by: any[];
+    episode_run_time: any[];
     first_air_date: string;
     genres: Genre[];
     homepage: string;
@@ -143,8 +143,6 @@ type Season = {
     season_number: number;
     vote_average: number;
 };
-
-
 
 type LastEpisode = {
     id: number;
@@ -206,23 +204,23 @@ export interface Cast {
 }
 
 interface Crew {
-    adult: boolean,
-    gender: number,
-    id: number,
-    known_for_department: string,
-    name: string,
-    original_name: string,
-    popularity: number,
-    profile_path: string,
-    credit_id: string,
-    department: string,
-    job: string
+    adult: boolean;
+    gender: number;
+    id: number;
+    known_for_department: string;
+    name: string;
+    original_name: string;
+    popularity: number;
+    profile_path: string;
+    credit_id: string;
+    department: string;
+    job: string;
 }
 
 export interface Reparto {
-    id: number,
-    cast: Cast[],
-    crew: Crew[]
+    id: number;
+    cast: Cast[];
+    crew: Crew[];
 }
 
 export interface Actor {
@@ -242,8 +240,7 @@ export interface Actor {
     profile_path: string | null;
 }
 
-
-//* Galeria 
+//* Galeria
 
 export interface ImageInfo {
     aspect_ratio: number;
@@ -255,12 +252,35 @@ export interface ImageInfo {
     width: number;
 }
 
-
 export interface Galeria {
-
-    backdrops: ImageInfo[],
-    id: number,
-    logos: ImageInfo[],
-    posters: ImageInfo[]
-
+    backdrops: ImageInfo[];
+    id: number;
+    logos: ImageInfo[];
+    posters: ImageInfo[];
 }
+
+// Filter Panel Search
+
+export interface OrganizarPorItem {
+    id: string | number;
+    name: string;
+}
+
+export interface CategoriaPanel {
+    movie: {
+        organizarPor: OrganizarPorItem[];
+    };
+    tv: {
+        organizarPor: OrganizarPorItem[];
+    };
+}
+export type OrganizadoPorMovie =
+    | "trending"
+    | "now_playing"
+    | "popular"
+    | "top_rated"
+    | "upcoming";
+export type OrganizadoPorTv =
+    | "trending"
+    | "popular"
+    | "top_rated";

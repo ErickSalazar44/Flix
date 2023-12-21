@@ -2,7 +2,7 @@
 
 export async function fetchData(
     path: string,
-    query: string = "language=es-Es",
+    query: string = "language=es-ES",
 ) {
     try {
         const requestOptions: RequestInit = {

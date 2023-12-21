@@ -3,7 +3,6 @@ import '../styles/globals.css'
 import '../styles/viewTransitions.css'
 import '../styles/loading.css'
 import { DMSans } from '../fonts/fonts'
-import Footer from '@/components/shared/footer/Footer'
 import ShowTrailer from '@/components/media/ShowTrailer'
 
 export const metadata: Metadata = {
@@ -31,7 +30,6 @@ export default function RootLayout(props: {children: React.ReactNode, modal: Rea
 					{props.modal}
 					{props.children}
 					<ShowTrailer/>
-					<Footer />
 			</body>
 		</html>
 	)

@@ -44,7 +44,7 @@ const Navbar = () => {
     const navClasses = clsx(
         "relative z-10 w-full h-navbar md:h-navbar-md transition duration-300 ease-in",
         "flex justify-between items-center px-6 md:px-10 lg:px-12 2xl:px-16",
-        { "bg-transparent": lastScrollTop <= 200, "bg-black/90 md:bg-navbar/90 backdrop-blur-lg": lastScrollTop > 200 }
+        { "bg-transparent": lastScrollTop <= 200, "bg-black/90 md:bg-navbar/90 [backdrop-filter:blur(20px)_saturate(180%)]": lastScrollTop > 200 }
     );
 
     return (
@@ -72,7 +72,7 @@ const Navbar = () => {
                 </Link>
 
                 <div className="flex flex-1 justify-end">
-                    <Link href={"/"} className=''>
+                    <Link href={"/search/movie"} className=''>
                         <Search />
                     </Link>
                 </div>

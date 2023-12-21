@@ -12,26 +12,27 @@ const BgImage = ({ data }: { data: Media }) => {
     const title = data.title ?? data.name;
 
     return (
-        <div className='fixed -z-10 top-0 h-[60vh] w-full before:bg-gradiantBotton before:absolute before:w-full before:h-full before:top-0 before:content-[""] before:z-20 lg:h-screen lg:absolute scrollMove'>
+        <div className='fixed -z-10 top-0 h-[60vh] w-full before:bg-gradiantBotton before:absolute before:w-full before:h-full before:top-0 before:content-[""] before:z-20 after:bg-gradiantTop2 after:absolute after:w-full after:h-full after:top-0 after:content-[""] after:z-20 lg:h-screen lg:absolute scrollMove'>
             <Image
                 src={`https://image.tmdb.org/t/p/w780${poster_path}`}
                 alt={`Poster ${title}`}
                 fill
                 sizes='(min-width: 640px) 640px, 450px'
-                className='block sm:hidden object-cover object-top aspect-[9/14]'
+                className='block sm:hidden object-cover object-top aspect-[9/14] saturate-[1.2]'
                 style={{
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
                     aspectRatio: "9/14",
                 }}
+                priority={true}
             />
             <Image
                 src={`https://image.tmdb.org/t/p/original${backdrop_path}`}
                 alt={`Poster ${title}`}
                 fill
-                sizes='80vw'
-                className='hidden sm:block object-cover object-top'
+                sizes='(min-width: 641px) and (max-width: 1024px) 50vw, (min-width: 1025px) and (max-width: 1400px) 60vw, (min-width: 1401px) and (max-width: 1980px) 100vw'
+                className='hidden sm:block object-cover object-top saturate-[1.2]'
                 style={{
                     width: "100%",
                     height: "100%",

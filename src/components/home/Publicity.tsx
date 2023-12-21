@@ -13,6 +13,7 @@ const Publicity = () => {
                 <span className=' text-5xl lg:text-6xl font-semibold'>
                     Películas.
                 </span>
+                <br />
                 <span className='hidden md:inline-block text-5xl lg:text-6xl font-semibold'>
                     Forjadas en la pantalla.
                 </span>
@@ -27,7 +28,7 @@ const Publicity = () => {
                                     alt='Banner Publicitario Frieren - Más allá del final del viaje'
                                     width={920}
                                     height={371}
-                                    className='hover:opacity-100 hover:saturate-[1.2] transition-opacity duration-500 sm:opacity-40 h-full w-full object-center'
+                                    className='hover:opacity-100 hover:saturate-[1.2] transition-opacity duration-500 sm:opacity-40 h-full w-full object-center rounded-lg'
                                 />
                             </figure>
                         </div>
@@ -39,7 +40,7 @@ const Publicity = () => {
                                     width={440}
                                     height={782}
                                     quality={60}
-                                    className='hover:opacity-100 hover:saturate-[1.2] transition-opacity duration-500 sm:opacity-40 h-full w-full object-left object-cover  '
+                                    className='hover:opacity-100 hover:saturate-[1.2] transition-opacity duration-500 sm:opacity-40 h-full w-full object-left object-cover  rounded-lg'
                                 />
                             </figure>
                         </div>
@@ -51,7 +52,7 @@ const Publicity = () => {
                                     width={600}
                                     quality={90}
                                     height={338}
-                                    className='hover:opacity-100 hover:saturate-[1.2] transition-opacity duration-500 sm:opacity-40 h-full w-full object-left object-cover  '
+                                    className='hover:opacity-100 hover:saturate-[1.2] transition-opacity duration-500 sm:opacity-40 h-full w-full object-left object-cover rounded-lg '
                                 />
                             </figure>
                         </div>
@@ -63,7 +64,7 @@ const Publicity = () => {
                                     width={600}
                                     quality={90}
                                     height={338}
-                                    className='hover:opacity-100 hover:saturate-[1.2] transition-opacity duration-500 sm:opacity-40 h-full w-full object-left object-cover  '
+                                    className='hover:opacity-100 hover:saturate-[1.2] transition-opacity duration-500 sm:opacity-40 h-full w-full object-left object-cover rounded-lg '
                                 />
                             </figure>
                         </div>

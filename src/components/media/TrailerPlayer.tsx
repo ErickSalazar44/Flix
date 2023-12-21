@@ -11,7 +11,6 @@ const TrailerPlayer = ({ videoId }: { videoId: string | null }) => {
     );
 
     const ReproductorPantallaGrande = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
         document.body.style.overflow = 'hidden';
         setMiniReproductor(false)
     }
@@ -21,7 +20,7 @@ const TrailerPlayer = ({ videoId }: { videoId: string | null }) => {
     }
 
     return (
-        <section className={"aspect-video w-full overflow-hidden rounded-xl group"}>
+        <section className={"aspect-video w-full overflow-hidden rounded-2xl group"}>
             <div className={`absolute w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center ${!miniReproductor && 'hidden'}`}>
                 <button onClick={ReproductorPantallaGrande} className="w-8 h-8 opacity-0 group-hover:opacity-100">
                     <Extender />

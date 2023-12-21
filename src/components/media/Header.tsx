@@ -50,7 +50,7 @@ const Header = ({ data }: { data: Media }) => {
                         <span className='w-6 block'>
                             <Play />
                         </span>
-                        <span className='mr-2'>ver Tráiler'</span>
+                        <span className='mr-2'>ver Tráiler</span>
                     </div>
                 </TrailerTrigerBtn>
             </div>

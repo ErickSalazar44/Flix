@@ -1,19 +1,17 @@
 'use client'
 import { useCallback, useRef, useEffect, MouseEventHandler } from 'react'
-import { useRouter } from 'next/navigation'
 import useTrailer from '@/store/useTrailer'
 
 export default function ModalTrailer({ children }: { children: React.ReactNode }) {
     const overlay = useRef(null)
     const wrapper = useRef(null)
-    const router = useRouter()
 
     const {miniReproductor, setMiniReproductor} = useTrailer((state) => state)
 
     const onDismiss = useCallback(() => {
             document.body.style.overflow = "auto";
             return setMiniReproductor(true)
-    }, [router])
+    }, [ setMiniReproductor])
 
     const onClick: MouseEventHandler = useCallback(
         (e) => {

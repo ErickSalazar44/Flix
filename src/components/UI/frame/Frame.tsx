@@ -5,8 +5,8 @@ import Image from 'next/image'
 
 export default async function Frame({ path }: { path: any }) {
 
-    const [id, type] = path.id.split('-')
-    const actor: Actor = await fetchActorForId(`${type}_credits`, id)
+    const [id,] = path.id.split('-')
+    const actor: Actor = await fetchActorForId(id)
 
     return (
         <div className="h-full w-full relative z-50">

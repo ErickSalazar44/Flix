@@ -5,6 +5,7 @@ import { movieGenresList, trendingMoviesWeekly } from "@/lib/api";
 import RevisaNuestroCatalogo from "@/components/home/RevisaNuestroCatalogo";
 import Navbar from "@/components/shared/header/Navbar";
 import ColeccionContainer from "@/components/home/ColeccionContainer";
+import Footer from "@/components/shared/footer/Footer";
 
 export default async function Home() {
     const { results: moviesTrends } = await trendingMoviesWeekly();
@@ -77,6 +78,7 @@ export default async function Home() {
             </section>
 
             <RevisaNuestroCatalogo />
+            <Footer />
         </main>
     );
 }

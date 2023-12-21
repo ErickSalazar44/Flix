@@ -69,7 +69,6 @@ const CarruselDesktop = ({
                     {data.map((movie: MoviesAndSeries) => (
                         <SwiperSlide
                             key={movie.id}
-                            className='rounded overflow-hidden'
                         >
                             <Link href={`/media/${movie.id}-${type}`} as={`/media/${movie.id}-${type}`}>
                                 <MovieCard result={movie} />
