@@ -1,7 +1,7 @@
 import { formatDate } from "@/utils/formatDate"
 import Image from "next/image"
-import '../scrollAnimate.css'
 import { Play } from '@/icons/Icons';
+import '../scrollAnimate.css'
 
 const MovieCard = ({ result, animate}: { result: any, animate?: boolean}) => {
 

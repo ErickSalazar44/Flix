@@ -53,7 +53,7 @@ export function InfoSectionGenerosSkeleton() {
 
 export function InfoSectionSkeleton() {
     return (
-        <div className='relative px-6 md:px-10 lg:px-12 2xl:px-16 pb-10 z-10'>
+        <div className='relative px-5 md:px-8 lg:px-12 2xl:px-16 pb-10 z-10'>
             <div
                 className={`flex flex-col gap-4 justify-end min-h-homeSpaceFondo`}
             >
@@ -76,7 +76,7 @@ export function HomePageSkeleton() {
     return (
         <div>
             <InfoSectionSkeleton />
-            <div className='px-6 md:px-10 lg:px-12 2xl:px-16'>
+            <div className='px-5 md:px-8 lg:px-12 2xl:px-16'>
                 <div className='w-32 h-5 md:h-7 overflow-hidden bg-zinc-800 relative mb-3'>
                     <span className={`${shimmer}`}></span>
                 </div>

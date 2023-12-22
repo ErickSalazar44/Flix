@@ -4,7 +4,7 @@ import "../UI/scrollAnimate.css";
 const Publicity = () => {
     return (
         <div>
-            <div className='px-6 md:px-10 lg:px-12 2xl:px-16 relative mx-auto pt-24 opacity-50'>
+            <div className='px-5 md:px-8 lg:px-12 2xl:px-16 relative mx-auto pt-24 opacity-50'>
                 <h2 className='letterScroll font-medium text-4xl '>
                     Explora a fondo.
                 </h2>

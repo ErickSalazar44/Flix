@@ -18,7 +18,7 @@ const InfoSection = ({
     );
         //TODO arreglar la transicion title Home
     return (
-        <div className='relative px-6 md:px-10 lg:px-12 2xl:px-16 pb-10 z-10 transition-all'>
+        <div className='relative px-5 md:px-8 lg:px-12 2xl:px-16 pb-10 z-10 transition-all'>
             <div
                 className={`flex flex-col gap-4 justify-end sm:max-w-lg min-h-homeSpaceFondo`}
             >

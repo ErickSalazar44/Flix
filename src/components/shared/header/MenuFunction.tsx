@@ -1,14 +1,15 @@
+'use client'
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import MenuItem from "./MenuItem"; // componentes
-import { CloseIcon, ArrowRight } from "@/icons/Icons"; // icons
+import { CloseIcon, ArrowRight, MenuIcon } from "@/icons/Icons"; // icons
 import { menuItems } from "@/lib/data"; // data
 
 const MenuFunction = ({ children }: { children: React.ReactNode }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false); // estado global
 
     const menuContainerClasses = clsx(
-        "text-SemiTransparentWhite transition-all duration-300 z-50 fixed left-0 top-0 w-64 lg:w-96   min-h-screen bg-black md:bg-navbar px-6 md:px-10 lg:px-12 2xl:px-16",
+        "text-SemiTransparentWhite transition-all duration-300 z-50 fixed left-0 top-0 w-64 lg:w-96   min-h-screen bg-black md:bg-navbar px-5 md:px-8 lg:px-12 2xl:px-16",
         {
             "opacity-100": isMenuOpen,
             "-translate-x-full opacity-0": !isMenuOpen,
@@ -43,7 +44,7 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
                 className='w-6 h-6'
                 aria-label='Abrir Menú'
             >
-                {children}
+            <MenuIcon/>
             </button>
             <aside className={menuContainerClasses}>
                 <div className='h-20 flex items-center'>
@@ -56,6 +57,7 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
                     </button>
                 </div>
                 <ul className='flex flex-col gap-5 font-normal lg:gap-8 mb-3'>
+                    
                     {menuItems.map((item) => (
                         <li key={item}>
                             <MenuItem item={item} />
@@ -69,6 +71,9 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
                         <ArrowRight />
                     </div>
                     <span className='w-full h-[1px] bg-SemiTransparentWhite opacity-30' />
+                    <div className="my-4">
+                        {children}
+                    </div>
                 </div>
             </aside>
             <div onClick={toggleMenu} className={overlayClasses} />

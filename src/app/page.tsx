@@ -3,19 +3,30 @@ import HomeHeader from "@/components/home/HomeHeader";
 import SliderContainer from "@/components/home/SliderContainer";
 import { movieGenresList, trendingMoviesWeekly } from "@/lib/api";
 import RevisaNuestroCatalogo from "@/components/home/RevisaNuestroCatalogo";
-import Navbar from "@/components/shared/header/Navbar";
 import ColeccionContainer from "@/components/home/ColeccionContainer";
 import Footer from "@/components/shared/footer/Footer";
+import NavSearch from "@/components/search/NavSearch";
+import FormSearch from "@/components/shared/header/FormSearch";
 
-export default async function Home() {
+export default async function Home({searchParams}: {searchParams: { q: string};}) {
     const { results: moviesTrends } = await trendingMoviesWeekly();
     const generos = await movieGenresList();
 
     return (
         <main className='scrollMove'>
-            <Navbar />
+            {/* NAVBAR */}
+            <NavSearch type={'movie'} duration={200}>
+                <FormSearch 
+                    defaultValue={searchParams.q || ""}
+                    type={'movie'} 
+                />
+            </NavSearch>
+
             {/* HOME HEADER  */}
-            <HomeHeader moviesTrends={moviesTrends} genresMovies={generos} />
+            <HomeHeader 
+                moviesTrends={moviesTrends} 
+                genresMovies={generos} 
+            />
 
             {/* COLECCION */}
             <ColeccionContainer
@@ -24,7 +35,7 @@ export default async function Home() {
                 subTitle='Rivalidades y Redenciones'
             />
             {/* SLIDER MOVIE 1 */}
-            <section className='px-6 md:px-10 lg:px-12 2xl:px-16 my-8 flex flex-col gap-12 lg:gap-4 text-[#e0e0e0]'>
+            <section className='px-5 md:px-8 lg:px-12 2xl:px-16 my-8 flex flex-col gap-12 lg:gap-4 text-[#e0e0e0]'>
                 <SliderContainer
                     path='/trending/tv/week'
                     title='SERIES POPULARES'
@@ -55,7 +66,7 @@ export default async function Home() {
             />
 
             {/* SLIDER MOVIE AND SERIE 2 */}
-            <section className='px-6 md:px-10 lg:px-12 2xl:px-16 my-8 flex flex-col gap-12 lg:gap-6 text-[#e0e0e0]'>
+            <section className='px-5 md:px-8 lg:px-12 2xl:px-16 my-8 flex flex-col gap-12 lg:gap-6 text-[#e0e0e0]'>
                 <SliderContainer
                     path='/movie/now_playing'
                     title='SERIES POPULARES'

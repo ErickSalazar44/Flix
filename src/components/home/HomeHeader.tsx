@@ -27,7 +27,7 @@ const HomeHeader = ({
                 movies={moviesTrends}
                 genresMovies={genresMovies}
             />
-            <div className='px-6 md:px-10 lg:px-12 2xl:px-16'>
+            <div className='px-5 md:px-8 lg:px-12 2xl:px-16'>
                 <h2 className='text-white z-20 relative font-medium mb-3 uppercase'>
                     Últimas películas
                 </h2>
