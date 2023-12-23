@@ -32,7 +32,7 @@ const SelectDesign = ({
         <div className='relative text-[#999]'>
             <button
                 onClick={handleActiveSelect}
-                className='w-full rounded-lg text-sm hover:text-white'
+                className='w-full rounded-lg text-xs lg:text-sm hover:text-white'
             >
                 {title}
             </button>
@@ -40,7 +40,7 @@ const SelectDesign = ({
             {activeSelect && (
                 <ul
                     onMouseLeave={() => setActiveSelect(false)}
-                    className='bg-[#111] rounded-lg mt-3 absolute z-50 w-52 text-xs font-semibold'
+                    className='bg-[#111] rounded-lg mt-5 absolute z-50 w-52 text-xs font-semibold'
                 >
                     {options.map(({ id, name }) => (
                         <li

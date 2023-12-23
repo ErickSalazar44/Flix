@@ -14,7 +14,7 @@ const FormSearch: React.FC<SearchFormProps> = ({ defaultValue, type }) => {
     }
 
     return (
-        <form className='relative w-full lg:w-72' action={searchAction}>
+        <form className='relative w-full md:w-48 lg:w-72' action={searchAction}>
             <input
                 id='myInputSearch'
                 defaultValue={defaultValue}

@@ -1,6 +1,7 @@
 import { Play } from "@/icons/Icons";
 import type { GenreTv, MoviesAndSeries } from "@/types/types";
 import { getGenreNamesByIds } from "@/utils/getGenreNamesByIds";
+import Link from "next/link";
 
 const InfoSection = ({
     movies,
@@ -24,7 +25,7 @@ const InfoSection = ({
             >
                 <div className="flex flex-col justify-end gap-4 min-h-[100px]">
                     <h2
-                        className={`text-white line-clamp-2 text-2xl mv:text-3xl md:text-[1.9rem] font-medium lg:text-4xlb uppercase animation-opacity`}
+                        className={`text-white line-clamp-2 text-xl mv:text-2xl md:text-[1.9rem] font-medium lg:text-4xlb uppercase animation-opacity`}
                     >
                         {movies?.[currentIndex]?.title}
                     </h2>
@@ -36,9 +37,9 @@ const InfoSection = ({
                     </ul>
                 </div>
 
-                <button className='mt-4 w-[36px] h-[36px] lg:w-[45px] lg:h-[45px]'>
+                <Link href={`/media/${movies?.[currentIndex].id}-movie`} className='sm:mt-4 w-[36px] h-[36px] lg:w-[45px] lg:h-[45px]'>
                     <Play />
-                </button>
+                </Link>
             </div>
         </div>
     );

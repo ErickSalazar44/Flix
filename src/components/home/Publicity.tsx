@@ -1,5 +1,6 @@
 import Image from "next/image";
 import "../UI/scrollAnimate.css";
+import Link from "next/link";
 
 const Publicity = () => {
     return (
@@ -22,51 +23,59 @@ const Publicity = () => {
                 <div className='mx-auto mt-20 mb-20 md:mb-40 max-w-[1400px]'>
                     <div className='max-h-[88vh]  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-10'>
                         <div className='hidden md:block md:col-span-2 md:row-span-1'>
-                            <figure className='imgScroll h-full cursor-pointer'>
-                                <Image
-                                    src={"/publicidad/frieren.png"}
-                                    alt='Banner Publicitario Frieren - Más allá del final del viaje'
-                                    width={920}
-                                    height={371}
-                                    className='hover:opacity-100 hover:saturate-[1.2] transition-opacity duration-500 sm:opacity-40 h-full w-full object-center rounded-lg'
-                                />
-                            </figure>
+                            <Link href='/media/209867-tv'>                            
+                                <figure className='imgScroll h-full cursor-pointer'>
+                                    <Image
+                                        src={"/publicidad/frieren.png"}
+                                        alt='Banner Publicitario Frieren - Más allá del final del viaje'
+                                        width={920}
+                                        height={371}
+                                        className='hover:opacity-100 hover:saturate-[1.2] transition-opacity duration-500 sm:opacity-40 h-full w-full object-center rounded-lg'
+                                    />
+                                </figure>
+                            </Link>
                         </div>
                         <div className='hidden lg:block col-span-1 row-span-2'>
-                            <figure className='imgScroll h-full cursor-pointer'>
-                                <Image
-                                    src={"/publicidad/starwars.jpg"}
-                                    alt='Banner Publicitario star wars'
-                                    width={440}
-                                    height={782}
-                                    quality={60}
-                                    className='hover:opacity-100 hover:saturate-[1.2] transition-opacity duration-500 sm:opacity-40 h-full w-full object-left object-cover  rounded-lg'
-                                />
-                            </figure>
+                            <Link href='/media/181812-movie'>                            
+                                <figure className='imgScroll h-full cursor-pointer'>
+                                    <Image
+                                        src={"/publicidad/starwars.jpg"}
+                                        alt='Banner Publicitario star wars'
+                                        width={440}
+                                        height={782}
+                                        quality={60}
+                                        className='hover:opacity-100 hover:saturate-[1.2] transition-opacity duration-500 sm:opacity-40 h-full w-full object-left object-cover  rounded-lg'
+                                    />
+                                </figure>
+                            </Link>
                         </div>
                         <div className='imgScroll col-span-1 lg:row-span-1'>
-                            <figure className=' h-full cursor-pointer '>
-                                <Image
-                                    src={"/publicidad/harryPotter.jpeg"}
-                                    alt='Banner Publicitario harry potter'
-                                    width={600}
-                                    quality={90}
-                                    height={338}
-                                    className='hover:opacity-100 hover:saturate-[1.2] transition-opacity duration-500 sm:opacity-40 h-full w-full object-left object-cover rounded-lg '
-                                />
-                            </figure>
+                            <Link href='/search/movie?q=harry%20potter'>  
+                                <figure className=' h-full cursor-pointer '>
+                                    <Image
+                                        src={"/publicidad/harryPotter.jpeg"}
+                                        alt='Banner Publicitario harry potter'
+                                        width={600}
+                                        quality={90}
+                                        height={338}
+                                        className='hover:opacity-100 hover:saturate-[1.2] transition-opacity duration-500 sm:opacity-40 h-full w-full object-left object-cover rounded-lg '
+                                    />
+                                </figure>
+                            </Link>
                         </div>
                         <div className='col-span-[3/4] row-span-[4/1]'>
-                            <figure className='imgScroll h-full cursor-pointer overflow-hidden'>
-                                <Image
-                                    src={"/publicidad/theLastOfUs.jpeg"}
-                                    alt='Banner Publicitario the last of us'
-                                    width={600}
-                                    quality={90}
-                                    height={338}
-                                    className='hover:opacity-100 hover:saturate-[1.2] transition-opacity duration-500 sm:opacity-40 h-full w-full object-left object-cover rounded-lg '
-                                />
-                            </figure>
+                            <Link href='/media/100088-tv'>
+                                <figure className='imgScroll h-full cursor-pointer overflow-hidden'>
+                                    <Image
+                                        src={"/publicidad/theLastOfUs.jpeg"}
+                                        alt='Banner Publicitario the last of us'
+                                        width={600}
+                                        quality={90}
+                                        height={338}
+                                        className='hover:opacity-100 hover:saturate-[1.2] transition-opacity duration-500 sm:opacity-40 h-full w-full object-left object-cover rounded-lg '
+                                    />
+                                </figure>
+                            </Link>
                         </div>
                     </div>
                 </div>

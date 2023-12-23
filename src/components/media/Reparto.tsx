@@ -14,7 +14,7 @@ const Reparto = async ({ id, type }: { id: string, type: string }) => {
     if (start.cast.length === 0) return 
 
     return (
-        <section className='py-7 px-5 md:px-8 lg:px-12 2xl:px-16 sm:py-8 md:bg-[#EAEAEA]'>
+        <section className='py-7 px-5 md:px-8 lg:px-12 lg:py-12 2xl:px-16 sm:py-8 md:bg-[#EAEAEA]'>
             <div className='md:max-w-5xl md:mx-auto'>
                 <header className='flex justify-between items-center mb-4 sm:text-[#666] sm:mb-5'>
                     <h3 className='text-base sm:text-lg font-bold '>

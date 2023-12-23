@@ -13,7 +13,7 @@ export default function FilterPanel() {
 
 
     return (
-        <div className='flex gap-6 text-black'>
+        <div className='flex gap-4 lg:gap-6 text-black'>
             <SelectDesign 
                 options={optionsCategoria}
                 paramName='filter'

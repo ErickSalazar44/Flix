@@ -9,10 +9,10 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false); // estado global
 
     const menuContainerClasses = clsx(
-        "text-SemiTransparentWhite transition-all duration-300 z-50 fixed left-0 top-0 w-64 lg:w-96   min-h-screen bg-black md:bg-navbar px-5 md:px-8 lg:px-12 2xl:px-16",
+        "text-SemiTransparentWhite transition-all duration-300 z-50 fixed right-0 top-0 w-64 min-h-screen bg-black px-5",
         {
             "opacity-100": isMenuOpen,
-            "-translate-x-full opacity-0": !isMenuOpen,
+            "translate-x-full opacity-0": !isMenuOpen,
         }
     );
 
@@ -47,7 +47,7 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
             <MenuIcon/>
             </button>
             <aside className={menuContainerClasses}>
-                <div className='h-20 flex items-center'>
+                <div className='h-16 flex items-center justify-end'>
                     <button
                         className='w-6 h-6'
                         onClick={toggleMenu}
@@ -56,7 +56,7 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
                         <CloseIcon />
                     </button>
                 </div>
-                <ul className='flex flex-col gap-5 font-normal lg:gap-8 mb-3'>
+                <ul className='flex flex-col gap-5 font-normal mb-3'>
                     
                     {menuItems.map((item) => (
                         <li key={item}>
@@ -66,7 +66,7 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
                 </ul>
                 <div className='flex flex-col gap-4 mt-8'>
                     <span className='w-full h-[1px] bg-SemiTransparentWhite opacity-30' />
-                    <div className='flex justify-between lg:gap-8 items-center'>
+                    <div className='flex justify-between items-center'>
                         <MenuItem item='Géneros' />
                         <ArrowRight />
                     </div>

@@ -66,7 +66,7 @@ export const ArrowLeft = () => (
     </svg>
 );
 
-export const Search = ({clasName}: {clasName?: string}) => (
+export const Search = ({ clasName }: { clasName?: string }) => (
     <svg
         xmlns='http://www.w3.org/2000/svg'
         fill='none'
@@ -193,3 +193,19 @@ export const Hd = () => (
 export const Extender = () => (
     <svg height="100%" version="1.1" viewBox="0 0 24 24" width="100%"><g fill="none" fillRule="evenodd" stroke="none" strokeWidth="1"><g transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "><path d="M19,19 L5,19 L5,5 L12,5 L12,3 L5,3 C3.89,3 3,3.9 3,5 L3,19 C3,20.1 3.89,21 5,21 L19,21 C20.1,21 21,20.1 21,19 L21,12 L19,12 L19,19 Z M14,3 L14,5 L17.59,5 L7.76,14.83 L9.17,16.24 L19,6.41 L19,10 L21,10 L21,3 L14,3 Z" fill="#fff" fillRule="nonzero"></path></g></g></svg>
 )
+
+export const Logo = () => (
+
+    <svg width="35" height="35" xmlns="http://www.w3.org/2000/svg" fill="white">
+        
+        <circle cx="5" cy="8" r="3" />
+        <circle cx="15" cy="8" r="3" />
+
+        <circle cx="5" cy="18" r="3" />
+        <circle cx="15" cy="18" r="3" />
+        <circle cx="25" cy="18" r="3" />
+
+        <circle cx="5" cy="28" r="3" />
+        <circle cx="15" cy="28" r="3" />
+    </svg>
+);

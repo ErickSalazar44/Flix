@@ -95,7 +95,7 @@ const SwiperHome = ({
             <div className='swiper-button-next'>
                 <div
                     className={`${!swiperReady && "hidden"
-                        }  absolute -top-1 -right-8 md:-right-9 w-6 text-white opacity-80`}
+                        } sm:block hidden absolute -top-1 -right-8 md:-right-9 w-6 text-white opacity-80`}
                 >
                     <ArrowRight />
                 </div>
@@ -105,7 +105,7 @@ const SwiperHome = ({
             <div className='swiper-button-prev'>
                 <div
                     className={`${!swiperReady && "hidden"
-                        } absolute -top-1 -left-8 md:-right-9 w-6 text-white opacity-80`}
+                        }sm:block hidden  absolute -top-1 -left-8 md:-right-9 w-6 text-white opacity-80`}
                 >
                     <ArrowLeft />
                 </div>
