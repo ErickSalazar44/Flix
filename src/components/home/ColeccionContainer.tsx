@@ -25,7 +25,7 @@ const ColeccionContainer = async ({
                     alt={`Movie Collection ${details.name}`}
                     width={1920}
                     height={1080}
-                    className='hidden 2xl:block object-cover h-full'
+                    className='hidden 2xl:block object-cover h-full object-top'
                     style={{
                         width: "100%",
                         height: "100%",
@@ -36,7 +36,7 @@ const ColeccionContainer = async ({
                     alt={`Movie Collection ${details.name}`}
                     width={1280}
                     height={800}
-                    className='hidden md:block 2xl:hidden object-cover h-full'
+                    className='hidden md:block 2xl:hidden object-cover h-full object-top'
                     style={{
                         width: "100%",
                         height: "100%",
@@ -47,7 +47,7 @@ const ColeccionContainer = async ({
                     alt={`Movie Collection ${details.name}`}
                     width={780}
                     height={439}
-                    className='md:hidden object-cover '
+                    className='md:hidden object-cover  object-top'
                     style={{
                         width: "100%",
                         height: "100%",

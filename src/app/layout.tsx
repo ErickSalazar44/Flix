@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import '../styles/globals.css'
 import '../styles/viewTransitions.css'
-import '../styles/loading.css'
 import { DMSans } from '../fonts/fonts'
 import ShowTrailer from '@/components/media/ShowTrailer'
 

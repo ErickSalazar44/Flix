@@ -9,7 +9,7 @@ import { Galeria } from "@/types/types";
 import "../UI/scrollAnimate.css";
 import "../../styles/animate.css";
 
-import { useParams, usePathname } from "next/navigation";
+import { useParams } from "next/navigation";
 import { ImageInfo } from "@/types/types";
 
 

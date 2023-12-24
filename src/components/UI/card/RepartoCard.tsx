@@ -8,10 +8,9 @@ const RepartoCard = ({ actor, type }: { actor: Cast; type: string }) => {
     return (
         <Link
             href={`/actor/${actor.id}-${type}`}
-            className='relative w-full'
+            className='relative w-28 sm:w-40'
             scroll={false}
         >
-            <div className='h-full w-full'>
                 <figure className='w-28 sm:w-40 relative after:content-[""] after:absolute after:inset-0 after:bg-gradiantBottonCard'>
                     <Image
                         src={`https://image.tmdb.org/t/p/w342/${actor.profile_path}`}
@@ -34,7 +33,6 @@ const RepartoCard = ({ actor, type }: { actor: Cast; type: string }) => {
                         {actor.name}
                     </span>
                 </footer>
-            </div>
         </Link>
     );
 };

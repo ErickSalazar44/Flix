@@ -52,7 +52,7 @@ const SwiperHome = ({
                     el: ".swiper-paginacion",
                 }}
                 onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
-                slidesPerView={0}
+                slidesPerView={2}
                 breakpoints={breakpoints}
                 loop={true}
                 navigation={{
@@ -95,19 +95,19 @@ const SwiperHome = ({
             <div className='swiper-button-next'>
                 <div
                     className={`${!swiperReady && "hidden"
-                        } sm:block hidden absolute -top-1 -right-8 md:-right-9 w-6 text-white opacity-80`}
+                        } md:block hidden absolute -top-1 -right-9 w-6 lg:-right-11 lg:w-7 text-white opacity-80 lg:-top-2`}
                 >
-                    <ArrowRight />
+                    <ArrowRight/>
                 </div>
             </div>
 
             {/* Botón de retroceder */}
-            <div className='swiper-button-prev'>
+            <div className='swiper-button-prev '>
                 <div
                     className={`${!swiperReady && "hidden"
-                        }sm:block hidden  absolute -top-1 -left-8 md:-right-9 w-6 text-white opacity-80`}
+                        } md:block hidden  absolute -top-1 -left-9 w-6 lg:-left-11 lg:w-7 text-white opacity-80 lg:-top-5`}
                 >
-                    <ArrowLeft />
+                    <ArrowLeft/>
                 </div>
             </div>
 

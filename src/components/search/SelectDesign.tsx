@@ -24,7 +24,10 @@ const SelectDesign = ({
     };
 
     const handleSelectValue = (id: string | number) => {
-        router.push(`${pathname}?${paramName}=${id}`);
+        if (pathname.includes('search')) {
+            return router.push(`${pathname}?${paramName}=${id}`)
+        }
+        router.push(`/search/movie?${paramName}=${id}`)
     }
 
 

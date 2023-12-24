@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import FilterPanel from "./FilterPanel";
 import MenuFunction from "../shared/header/MenuFunction";
@@ -46,6 +45,13 @@ const NavSearch = ({
 
             <div className='hidden items-center gap-4 lg:gap-6 md:flex'>
                 <div className='flex gap-4 lg:gap-6'>
+                    <Link
+                        href='/'
+                        className={`hover:text-white transition-colors 
+                    ${type === "" ? "text-white" : "text-[#999]"}`}
+                    >
+                        Home
+                    </Link>
                     <Link
                         href='/search/movie'
                         className={`hover:text-white transition-colors 

@@ -25,7 +25,7 @@ export default async function PageMedia({
     return (
         <div>
             <header className="hidden md:block">
-                <NavSearch type={'movie'}>
+                <NavSearch type={type}>
                     <FormSearch 
                         defaultValue={searchParams.q || ""}
                         type={type} 

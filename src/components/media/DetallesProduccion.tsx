@@ -1,21 +1,19 @@
+'use client'
 import Galeria from "@/components/media/Galeria";
 import type {
     Media,
     ProductionCompany,
     ProductionCountry,
 } from "@/types/types";
+import { usePathname } from "next/navigation";
 
-const DetallesProduccion = ({
-    data,
-}: {
-    data: Media;
-}) => {
-
+const DetallesProduccion = ({ data }: { data: Media }) => {
     // Calcular ganancias
     const ganancias = data.revenue;
 
     // Calcular inversión
     const inversion = data.budget;
+    const pathName = usePathname()
 
     return (
         <article className='md:max-w-5xl md:mx-auto flex flex-col gap-10'>
@@ -39,21 +37,25 @@ const DetallesProduccion = ({
                     )}
                 </ul>
             </div>
-            {ganancias && inversion && (
-                <>                
-                    <div>
-                        <h4 className='mb-2 font-semibold'>Ingresos Generados</h4>
-                        <span className='text-xs'>{ganancias !== 0 ? `$${ganancias}` : 'No tenemos informacion por el momento'}</span>
-                    </div>
-                    <div>
-                        <h4 className='mb-2 font-semibold'>Inversion</h4>
-                        <span className='text-xs'>{inversion !== 0 ? `$${inversion
-                        }` : 'No tenemos informacion por el momento'}</span>
-                    </div>
-                    {/* SECCION DE IMAGENES */}
-                    <Galeria/>
-                </>
-            )}
+            <div>
+                <h4 className='mb-2 font-semibold'>Ingresos Generados</h4>
+                <span className='text-xs'>
+                    {ganancias
+                        ? `$${ganancias}`
+                        : "No tenemos informacion por el momento"}
+                </span>
+            </div>
+            <div>
+                <h4 className='mb-2 font-semibold'>Inversion</h4>
+                <span className='text-xs'>
+                    {inversion
+                        ? `$${inversion}`
+                        : "No tenemos informacion por el momento"}
+                </span>
+            </div>
+            {/* SECCION DE IMAGENES */}
+            {!pathName.includes('tv') && <Galeria />} 
+
         </article>
     );
 };

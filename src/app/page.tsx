@@ -15,7 +15,7 @@ export default async function Home({searchParams}: {searchParams: { q: string};}
     return (
         <main className='scrollMove'>
             {/* NAVBAR */}
-            <NavSearch type={'movie'} duration={200}>
+            <NavSearch type='' duration={200}>
                 <FormSearch 
                     defaultValue={searchParams.q || ""}
                     type={'movie'} 
@@ -35,7 +35,7 @@ export default async function Home({searchParams}: {searchParams: { q: string};}
                 subTitle='Rivalidades y Redenciones'
             />
             {/* SLIDER MOVIE 1 */}
-            <section className='px-5 md:px-8 lg:px-12 2xl:px-16 my-8 flex flex-col gap-12 lg:gap-4 text-[#e0e0e0]'>
+            <section className='px-5 md:px-8 lg:px-12 2xl:px-16 my-8 flex flex-col gap-12 lg:gap-4 2xl:gap-8 text-[#e0e0e0]'>
                 <SliderContainer
                     path='/trending/tv/week'
                     title='SERIES POPULARES'
@@ -66,7 +66,7 @@ export default async function Home({searchParams}: {searchParams: { q: string};}
             />
 
             {/* SLIDER MOVIE AND SERIE 2 */}
-            <section className='px-5 md:px-8 lg:px-12 2xl:px-16 my-8 flex flex-col gap-12 lg:gap-6 text-[#e0e0e0]'>
+            <section className='px-5 md:px-8 lg:px-12 2xl:px-16 my-8 flex flex-col gap-12 lg:gap-4 2xl:gap-8 text-[#e0e0e0]'>
                 <SliderContainer
                     path='/movie/now_playing'
                     title='SERIES POPULARES'

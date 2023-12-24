@@ -25,7 +25,7 @@ const Reparto = async ({ id, type }: { id: string, type: string }) => {
                         <span className='font-bold '>{director?.name}</span>
                     </span>
                 </header>
-                <div className='relative overflow-scroll carrusel'>
+                <div className={`relative ${actoresConImagenes.length > 2 ? 'overflow-scroll carrusel' : ''} `}>
                     <div className='flex gap-6 transition-transform ease-in-out duration-500 '>
                         {actoresConImagenes.map((actor) => (
                             <RepartoCard key={`Actor-${actor.credit_id}`} actor={actor} type={type}/>

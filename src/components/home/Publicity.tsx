@@ -7,16 +7,16 @@ const Publicity = () => {
         <div>
             <div className='px-5 md:px-8 lg:px-12 2xl:px-16 relative mx-auto pt-24 opacity-50'>
                 <h2 className='letterScroll font-medium text-4xl '>
-                    Explora a fondo.
+                    ¡Cine y Series:
                 </h2>
             </div>
             <div className='hidden md:block px-12 md:px-16 lg:px-20 2xl:px-0 letterScroll2 relative mx-auto pt-20 max-w-[1400px] opacity-90'>
                 <span className=' text-5xl lg:text-6xl font-semibold'>
-                    Películas.
+                    Tu Pantalla,
                 </span>
                 <br />
                 <span className='hidden md:inline-block text-5xl lg:text-6xl font-semibold'>
-                    Forjadas en la pantalla.
+                    Nuestro Escenario!
                 </span>
             </div>
             <div className='md:px-16 lg:px-20 2xl:px-0 h-full max-w-[1770px] mx-auto'>

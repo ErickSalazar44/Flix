@@ -1,11 +1,14 @@
 import { MoviesAndSeries } from "@/types/types";
 import { getPosterUrl } from "@/utils/getPosterUrl";
+import Image from "next/image";
 import Link from "next/link";
 
 const CarruselMovil = ({ data, type }: { data: MoviesAndSeries[], type: string }) => {
     const dataFilter = data.filter(
         (movie) => movie.poster_path !== null && movie.backdrop_path !== null
     );
+    
+    const title = dataFilter[0].original_name ?? dataFilter[0].original_title
 
     return (
         <section className='relative'>
@@ -14,18 +17,18 @@ const CarruselMovil = ({ data, type }: { data: MoviesAndSeries[], type: string }
                     {dataFilter?.map((movie, index) => (
                         <div key={index}>
                             <Link href={`/media/${movie.id}-${type}`}>
-                                <img
-                                    className={`w-auto h-auto object-cover aspect-[9/13] xl:aspect-[9/14]`}
+                                <Image 
                                     src={getPosterUrl(movie)}
-                                    alt={`Imagen ${index + 1}`}
-                                    loading='lazy'
-                                    decoding='async'
+                                    alt={`Imagen ${title}`}
+                                    width={342}
+                                    height={184}
+                                    className="aspect-[9/14] object-cover"
+                                    placeholder='empty'
+                                    
                                 />
                                 <div className='mt-2 text-center w-32 md:w-36 lg:w-44 px-2'>
                                     <h3 className='text-xs font-light line-clamp-1'>
-                                        {
-                                            movie.original_title ?? movie.original_name
-                                        }
+                                        {title}
                                     </h3>
                                 </div>
                             </Link>

@@ -20,7 +20,7 @@ export default async function SearchPage({
 }) {
     // esta buscando una pelicula o una serie
     const type = params.searchType;
-    const nameType = type === 'movie' ? 'Peliculas' : 'Series'
+    const nameType = type === 'movie' ? 'Películas' : 'Series'
 
     // lo que busca el usuario se vera reflejado en la query = q
     const moviesOrSeries = await fetchSearch(type, searchParams);
