@@ -19,9 +19,9 @@ const MovieCard = ({ result, animate}: { result: any, animate?: boolean}) => {
                 placeholder='empty'
             />
             <div className={`absolute ${animate ? 'scroll-parallax' : ''} bottom-0 pl-4 pb-1 z-10 group-hover:text-white transition-colors duration-300 hover:duration-300 hover:transition`}>
-                <h4 className='font-semibold text-sm line-clamp-1 uppercase leading-4'>
+                <h3 className='font-semibold text-sm line-clamp-1 uppercase leading-4'>
                     {title}
-                </h4>
+                </h3>
                 <span className='text-xs uppercase'>
                     {formatDate(time)}
                 </span>

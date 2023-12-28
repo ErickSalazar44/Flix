@@ -56,7 +56,7 @@ const ColeccionContainer = async ({
             </figure>
             <div className='relative z-10 p-6 md:p-10 lg:p-12 2xl:px-16 2xl:py-12 flex flex-col gap-4 flex-1'>
                 <div className="max-w-xl text-txtGray2">
-                    <h4>COLECCIÓN SEMANAL</h4>
+                    <strong>COLECCIÓN SEMANAL</strong>
                 </div>
                 <div className='text-3xl md:text-4xl lg:text-5xl font-semibold uppercase max-w-xl'>
                     <span>{subTitle}</span>

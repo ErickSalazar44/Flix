@@ -37,7 +37,7 @@ const InfoSection = ({
                     </ul>
                 </div>
 
-                <Link href={`/media/${movies?.[currentIndex].id}-movie`} className='sm:mt-4 w-[36px] h-[36px] lg:w-[45px] lg:h-[45px]'>
+                <Link aria-label={`Ver trailer de ${movies?.[currentIndex]?.title}`} href={`/media/${movies?.[currentIndex].id}-movie`} className='sm:mt-4 w-[36px] h-[36px] lg:w-[45px] lg:h-[45px]'>
                     <Play />
                 </Link>
             </div>
