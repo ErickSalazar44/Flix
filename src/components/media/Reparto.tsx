@@ -4,32 +4,51 @@ import { obtenerActoresConImagenes } from "@/utils/obtenerActoresConImagenes";
 import React from "react";
 import RepartoCard from "../UI/card/RepartoCard";
 
-const Reparto = async ({ id, type }: { id: string, type: string }) => {
-
+const Reparto = async ({ id, type }: { id: string; type: string }) => {
     const start: Reparto = await fetchRepartoMovie(type, id);
-    const director = start.crew.find((miembro) => miembro.job === "Director" || miembro.job === 'Series Director');
+    const director = start.crew.find(
+        (miembro) =>
+            miembro.job === "Director" || miembro.job === "Series Director"
+    );
     const actoresConImagenes = obtenerActoresConImagenes(start);
 
     // En el caso no haya actores no retornara nada
-    if (start.cast.length === 0) return 
+    if (start.cast.length === 0) return;
 
     return (
-        <section className='py-7 px-5 md:px-8 lg:px-12 lg:py-12 2xl:px-16 sm:py-8 md:bg-[#EAEAEA]'>
-            <div className='md:max-w-5xl md:mx-auto'>
-                <header className='flex justify-between items-center mb-4 sm:text-[#666] sm:mb-5'>
-                    <h3 className='text-base sm:text-lg font-bold '>
-                        Stars
-                    </h3>
-                    <span className='text-xs font-medium'>
-                        Dirigido Por{" "}
-                        <span className='font-bold '>{director?.name}</span>
-                    </span>
-                </header>
-                <div className={`relative ${actoresConImagenes.length > 2 ? 'overflow-scroll carrusel' : ''} `}>
-                    <div className='flex gap-6 transition-transform ease-in-out duration-500 '>
-                        {actoresConImagenes.map((actor) => (
-                            <RepartoCard key={`Actor-${actor.credit_id}`} actor={actor} type={type}/>
-                        ))}
+        <section className='md:px-8 lg:px-12 lg:py-12 md:bg-[#050505]'>
+            <div className='px-5 md:px-8 lg:px-12 2xl:px-16 max-w-[1570px]  relative mx-auto pt-16 md:pt-24'>
+                <h2 className='letterScroll font-medium text-2xl md:text-4xl text-txtWhite1'>
+                    Actores principales
+                </h2>
+            </div>
+            <div className='px-12 md:px-16 lg:px-20 2xl:px-0 letterScroll2 relative mx-auto pt-16 md:pt-20 max-w-[1200px] opacity-90'>
+                <span className='lg:text-4xl font-semibold text-txtGray1'>
+                    Dirigido por
+                </span>
+                <br />
+                <span className='lg:text-6xl font-semibold'>
+                    {director?.name}
+                </span>
+            </div>
+            <div className='md:px-16 lg:px-20 2xl:px-0 h-full max-w-[1770px] mx-auto'>
+                <div className='mx-auto mt-20 mb-20 md:mb-40 max-w-[1200px]'>
+                    <div
+                        className={`relative ${
+                            actoresConImagenes.length > 2
+                                ? "overflow-scroll carrusel"
+                                : ""
+                        } `}
+                    >
+                        <div className='flex gap-6 transition-transform ease-in-out duration-500 '>
+                            {actoresConImagenes.slice(0,10).map((actor) => (
+                                <RepartoCard
+                                    key={`Actor-${actor.credit_id}`}
+                                    actor={actor}
+                                    type={type}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -8,10 +8,10 @@ const RepartoCard = ({ actor, type }: { actor: Cast; type: string }) => {
     return (
         <Link
             href={`/actor/${actor.id}-${type}`}
-            className='relative w-28 sm:w-40'
+            className='relative'
             scroll={false}
         >
-                <figure className='w-28 sm:w-40 relative after:content-[""] after:absolute after:inset-0 after:bg-gradiantBottonCard'>
+                <figure className='w-40 lg:w-48 xl:w-[230px] relative after:content-[""] after:absolute after:inset-0 after:bg-gradiantBottonCard'>
                     <Image
                         src={`https://image.tmdb.org/t/p/w342/${actor.profile_path}`}
                         alt={`Actor ${actor.name}`}
@@ -22,10 +22,11 @@ const RepartoCard = ({ actor, type }: { actor: Cast; type: string }) => {
                             height: "auto",
                             viewTransitionName: `actor-${actor.id}`
                         }}
-                        className='rounded aspect-[9/13.5] opacity-90 w-auto h-auto'
+                        className='rounded-lg saturate-[1.2] w-auto h-auto'
+                        quality={100}
                     />
                 </figure>
-                <footer className='text-center absolute bottom-0 w-full py-2 sm:p-[13px] sm:text-left sm:text-[#fff] md:max-w-[160px] bg-transparent'>
+                <footer className='text-center absolute bottom-0 w-full py-2 sm:p-[13px] sm:text-left sm:text-[#fff] bg-transparent'>
                     <h4 className='text-sm line-clamp-1 sm:font-semibold sm:text-base'>
                         {actor.character}
                     </h4>

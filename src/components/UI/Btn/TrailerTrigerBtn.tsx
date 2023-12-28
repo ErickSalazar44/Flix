@@ -32,7 +32,7 @@ const TrailerTrigerBtn = ({ videos, children }: { videos: any, children: React.R
     }
 
     return (
-        <button onClick={handleTrailer} disabled={sinVideo}>
+        <button onClick={handleTrailer} disabled={sinVideo} aria-label='Desplegar Trailer'>
             {!sinVideo && children}
         </button>
     )

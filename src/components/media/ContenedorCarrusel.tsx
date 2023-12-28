@@ -25,7 +25,7 @@ const ContenedorCarrusel = async ({
     );
 
     return (
-        <section className='py-8 px-5 md:px-8 lg:px-12 2xl:px-16'>
+        <section className='py-8 px-5 md:px-8 lg:px-12 2xl:px-16 2xl:pb-20'>
             <h3 className='font-semibold mb-6 text-xl md:text-2xl'>
                 Recomendaciones
             </h3>

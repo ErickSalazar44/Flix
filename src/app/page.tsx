@@ -88,7 +88,6 @@ export default async function Home({searchParams}: {searchParams: { q: string};}
                 />
             </section>
 
-            <RevisaNuestroCatalogo />
             <Footer />
         </main>
     );
