@@ -6,8 +6,26 @@ import Reparto from "@/components/media/Reparto";
 import NavSearch from "@/components/search/NavSearch";
 import Footer from "@/components/shared/footer/Footer";
 import FormSearch from "@/components/shared/header/FormSearch";
-import { fetchDataNoStore } from "@/utils/fetchDataNoStore";
+import { fetchData } from "@/utils/fetchData";
 import { Suspense } from "react";
+
+export async function generateMetadata({ params }: { params: { mediaInfo: string } }) {
+    const [id, type ] = params.mediaInfo.split('-')
+    const data = await fetchData(`/${type}/${id}`);
+    const title = data.title ?? data.name;
+
+    return {
+        title: title,
+        description: data.overview,
+        openGraph: {
+            images: [
+                {
+                    url: `https://image.tmdb.org/t/p/w780${data.backdrop_path}`
+                }
+            ]
+        }
+    };
+}
 
 export default async function PageMedia({
     params,
@@ -20,7 +38,7 @@ export default async function PageMedia({
     const [id, type ] = params.mediaInfo.split('-')
     // traer los datos con su trailer
     const query = 'language=es-ES&append_to_response=videos'
-    const data = await fetchDataNoStore(`/${type}/${id}`,query);
+    const data = await fetchData(`/${type}/${id}`,query);
 
     return (
         <div>

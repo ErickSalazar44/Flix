@@ -55,7 +55,7 @@ const ColeccionContainer = async ({
                 />
             </figure>
             <div className='relative z-10 p-6 md:p-10 lg:p-12 2xl:px-16 2xl:py-12 flex flex-col gap-4 flex-1'>
-                <div className="max-w-xl">
+                <div className="max-w-xl text-txtGray2">
                     <h4>COLECCIÓN SEMANAL</h4>
                 </div>
                 <div className='text-3xl md:text-4xl lg:text-5xl font-semibold uppercase max-w-xl'>
@@ -71,7 +71,7 @@ const ColeccionContainer = async ({
                     {details.parts[1].overview}
                 </p>
             </div>
-            <div className='overflow-x-auto lg:mx-12 2xl:mx-16 my-7 carrusel'>
+            <div className='overflow-x-auto lg:mx-12 2xl:mx-16 my-7 carrusel text-txtGray2'>
                 <div
                     className={`flex gap-2 items-end`}
                     style={{

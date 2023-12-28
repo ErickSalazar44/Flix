@@ -1,7 +1,7 @@
 import { fetchRecomendacionMovie } from "@/lib/api";
 import React from "react";
 import { Media } from "@/types/types";
-import "../UI/scrollAnimate.css";
+import "@/styles/scrollAnimate.css";
 import MovieCard from "../UI/card/MovieCard";
 import MoviePreview from "./MoviePreview";
 import Link from "next/link";

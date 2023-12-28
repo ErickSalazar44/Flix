@@ -6,12 +6,10 @@ import Image from "next/image";
 // TYPES
 import { Galeria } from "@/types/types";
 // STYLES
-import "../UI/scrollAnimate.css";
-import "../../styles/animate.css";
+import "@/styles/scrollAnimate.css";
 
 import { useParams } from "next/navigation";
 import { ImageInfo } from "@/types/types";
-
 
 
 const Galeria = () => {

@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import { MoviesAndSeries } from "@/types/types";
+import { useSpring, animated } from 'react-spring';
 
 const BackgroundImage = ({
     movies,
@@ -39,18 +40,26 @@ const BackgroundImage = ({
         };
     }, [backdropImageUrl, posterImageUrl]);
 
+    const fadeAnimation = useSpring({
+        opacity: 1, // Opacidad final
+        from: { opacity: 0 }, // Opacidad inicial
+        reset: true, // Resetea la animación cuando cambia el currentIndex
+    });
+
     return (
         <section
-            className={`absolute flex after:content-[''] after:absolute after:inset-0 after:bg-gradiantLeft after:h-screen h-screen w-full before:content-[''] before:absolute before:inset-0 before:z-[1] before:bg-gradiantBotton before:h-screen `}
+            className={`absolute flex after:content-[''] after:absolute after:inset-0 after:bg-gradiantLeft after:h-screen h-screen w-full before:content-[''] before:absolute before:inset-0 before:z-[1] before:bg-gradiantBotton before:h-screen`}
         >
-            <div className={"w-full top-0 right-0 h-screen absolute"}>
+            <animated.div 
+                style={fadeAnimation}
+                className={"w-full top-0 right-0 h-screen absolute after:absolute after:inset-0 after:bg-gradiantTop2 after:h-screen"}>
                 {backgroundImage && movies?.[currentIndex] && (
                     <Image
                         src={backgroundImage}
                         alt={`poster ${movies?.[currentIndex].original_title}`}
                         fill
                         sizes='80vw'
-                        className={"saturate-[1.2] scrollMove"}
+                        className={"saturate-[1.2] scrollMove object-top"}
                         style={{
                             width: "100%",
                             height: "100%",
@@ -59,7 +68,7 @@ const BackgroundImage = ({
                         priority={true}
                     />
                 )}
-            </div>
+            </animated.div>
         </section>
     );
 };

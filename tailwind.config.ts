@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         gradiantLeft:
-          "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0) 70%)",
+          "linear-gradient(90deg, rgba(0,0,0,0.9002320185614849) 0%, rgba(0,0,0,0) 70%)",
         gradiantBotton:
         "linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0) 70%)",
         gradiantTop: 
@@ -18,20 +18,22 @@ const config: Config = {
         gradiantBottonCard:
         "linear-gradient(0deg, rgba(0,0,0,0.6951155462184874) 0%, rgba(0,0,0,0) 80%)",
         gradiantTop2: 
-        "linear-gradient(180deg, rgba(0,0,0,0.5914740896358543) 0%, rgba(0,0,0,0) 34%)"
+        "linear-gradient(180deg, rgba(0,0,0,0.5914740896358543) 0%, rgba(0,0,0,0) 34%)",
+        footerGradiant: 
+        'linear-gradient(180deg,#0000,#0890b23c)'
       },
       colors: {
         SemiTransparentWhite: "#ffffffb3",
+        txtGray1: '#999999',
+        txtGray2: '#E0E0E0',
+        txtWhite1: '#EEE',
+        txtWhite2: '#cbcbcb'
       },
       minHeight: {
         homeSpaceFondo: "calc(75vh - 280px + 90px)",
       },
       backgroundColor: {
-        navbar: "#0f0f0f",
-      },
-      height: {
-        'navbar': '4rem',
-        'navbar-md': '70px',
+        
       },
       fontSize: {
         titulo: "calc(.9em + 3vw)",
@@ -46,6 +48,19 @@ const config: Config = {
             transform: 'translateX(100%)',
           },
         },
+        fadeInUp: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(20px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        }
+      },
+      animation: {
+        'fadeInUp': 'fadeInUp 700ms ease-in-out forwards',
       },
     },
   },

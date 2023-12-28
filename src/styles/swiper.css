@@ -4,7 +4,8 @@
     background-color: #ffffff;
 }
 
-.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
     margin-left: 7px;
     margin-right: 7px;
 }
@@ -18,8 +19,8 @@
     width: 0;
 }
 
-.swiper-button-prev::after, 
+.swiper-button-prev::after,
 .swiper-button-next::after {
-    content: '';
+    content: "";
     display: none;
 }

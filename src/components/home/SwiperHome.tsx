@@ -1,10 +1,10 @@
 // Swiper
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import '@/styles/swiper.css'
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "@/styles/swiper.css";
 
 import { MoviesAndSeries } from "@/types/types";
 import { useMemo, useState } from "react";
@@ -14,7 +14,6 @@ import { getPosterUrl } from "@/utils/getPosterUrl";
 import Image from "next/image";
 import { CarruselSkeleton } from "../UI/skeletons";
 import Link from "next/link";
-
 
 const SwiperHome = ({
     movies,
@@ -28,6 +27,7 @@ const SwiperHome = ({
     const windowSize = useWindowSize();
 
     const showMovies = useMemo(() => {
+        if (windowSize.width >= 1800) return 20;
         if (windowSize.width >= 1400) return 16;
         if (windowSize.width >= 1024) return 12;
         if (windowSize.width >= 700) return 10;
@@ -60,54 +60,61 @@ const SwiperHome = ({
                     prevEl: ".swiper-button-prev",
                 }}
                 modules={[Pagination, Navigation, Autoplay]}
+                className='mySwiper'
+                autoplay={{ delay: 6000 }}
                 onSwiper={() => setSwiperReady(true)}
-                className='mySwiper-Home'
             >
                 {swiperReady ?
-                    movies?.slice(0, showMovies).map((movie) => (
-                        <SwiperSlide
-                            key={`movie-${movie.id}`}
-                            className='cursor-grab object-cover'
+                movies?.slice(0, showMovies).map((movie) => (
+                    <SwiperSlide
+                        key={movie.id}
+                        className='cursor-grab object-cover'
+                    >
+                        <Link
+                            href={`/media/${movie.id}-movie`}
+                            as={`/media/${movie.id}-movie`}
+                            className="aspect-[9/14] w-auto h-auto"
                         >
-                            <Link href={`/media/${movie.id}-movie`} as={`/media/${movie.id}-movie`}>
-                                <Image
-                                    src={getPosterUrl(movie)}
-                                    alt={`poster_path ${movie.title}`}
-                                    width={206}
-                                    height={300}
-                                    className={`rounded object-cover aspect-[9/14]`}
-                                    quality={80}
-                                    style={{
-                                        width: "auto",
-                                        height: "auto",
-                                        aspectRatio: '9/14'
-                                    }}
-                                    priority={true}
-                                />
-                            </Link>
-                        </SwiperSlide>
-                    )) :
-                    <CarruselSkeleton />
-                }
+                            <Image
+                                src={getPosterUrl(movie)}
+                                alt={`poster_path ${movie.title}`}
+                                width={206}
+                                height={300}
+                                className={`mix-blend-normal rounded object-cover aspect-[9/14]`}
+                                quality={80}
+                                style={{
+                                    width: "auto",
+                                    height: "auto",
+                                    aspectRatio: "9/14",
+                                }}
+                                priority={true}
+                                placeholder='empty'
+                            />
+                        </Link>
+                    </SwiperSlide>
+                )) :
+                <CarruselSkeleton/>}
             </Swiper>
 
             {/* Botón de avanzar */}
             <div className='swiper-button-next'>
                 <div
-                    className={`${!swiperReady && "hidden"
-                        } md:block hidden absolute -top-1 -right-9 w-6 lg:-right-11 lg:w-7 text-white opacity-80 lg:-top-2`}
+                    className={
+                        "md:block hidden absolute -top-1 -right-9 w-6 lg:-right-11 lg:w-7 text-white opacity-80 lg:-top-2"
+                    }
                 >
-                    <ArrowRight/>
+                    <ArrowRight />
                 </div>
             </div>
 
             {/* Botón de retroceder */}
             <div className='swiper-button-prev '>
                 <div
-                    className={`${!swiperReady && "hidden"
-                        } md:block hidden  absolute -top-1 -left-9 w-6 lg:-left-11 lg:w-7 text-white opacity-80 lg:-top-5`}
+                    className={
+                        "md:block hidden  absolute -top-1 -left-9 w-6 lg:-left-11 lg:w-7 text-white opacity-80 lg:-top-5"
+                    }
                 >
-                    <ArrowLeft/>
+                    <ArrowLeft />
                 </div>
             </div>
 
@@ -118,3 +125,4 @@ const SwiperHome = ({
 };
 
 export default SwiperHome;
+

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "../UI/scrollAnimate.css";
+import "@/styles/scrollAnimate.css";
 import Link from "next/link";
 
 const Publicity = () => {

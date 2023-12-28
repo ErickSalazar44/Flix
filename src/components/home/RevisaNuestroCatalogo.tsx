@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import '../UI/scrollAnimate.css'
+import "@/styles/scrollAnimate.css";
 
 const RevisaNuestroCatalogo = () => {
     return (

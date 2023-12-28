@@ -20,10 +20,9 @@ export default async function SliderContainer({
     return (
         <section>
             <header className='mb-2'>
-                <h3 className='font-medium text-sm mb-1'>{title}</h3>
-                <p className='text-xs font-light text-SemiTransparentWhite sm:text-sm'>
-                    {subtitle}
-                </p>
+                <h3 className='font-medium text-sm mb-1 text-[#9c9c9c] '>
+                    {title}
+                </h3>
             </header>
             <Carrusel data={data} type={type}/>
         </section>

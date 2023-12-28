@@ -17,11 +17,11 @@ const Header = ({ data }: { data: Media }) => {
     return (
         <header className='lg:flex lg:justify-between lg:items-center'>
             <div className='mb-2 sm:mb-4 flex flex-col gap-1 sm:gap-4 items-start 2xl:flex-1'>
-                <h1 className='font-bold text-2xl line-clamp-2 sm:text-3xl lg:font-semibold uppercase max-w-sm'>
+                <h2 className='font-bold text-2xl line-clamp-2 sm:text-3xl lg:font-semibold uppercase max-w-sm'>
                     {title}
-                </h1>
+                </h2>
                 <div className='hidden lg:flex lg:flex-col gap-2 text-sm'>
-                    <ul className='flex gap-2 opacity-80'>
+                    <ul className='flex gap-2 opacity-80 text-txtGray2'>
                         {data.genres.map((genre) => (
                             <li key={genre.id}>{genre.name}</li>
                         ))}
@@ -56,7 +56,7 @@ const Header = ({ data }: { data: Media }) => {
             </div>
 
             <div className='flex flex-col lg:min-h-[192px]'>
-                <div className='text-[#b3b3b3] flex justify-between items-center mb-4 text-xs sm:text-sm lg:hidden'>
+                <div className='text-txtGray2 flex justify-between items-center mb-4 text-xs sm:text-sm lg:hidden'>
                     <ul className='flex gap-2'>
                         {data.genres.slice(0, 2).map((genre) => (
                             <li key={genre.id}>{genre.name}</li>
@@ -84,10 +84,10 @@ const Header = ({ data }: { data: Media }) => {
                             data.overview === "" ? "hidden" : "block"
                         }`}
                     >
-                        <h3 className='mb-2 sm:font-semibold sm:text-lg lg: text-xl uppercase'>
+                        <h3 className='mb-2 sm:font-semibold sm:text-lg lg: text-xl uppercase text-txtGray1'>
                             {data.tagline ? data.tagline : "Synopsis"}
                         </h3>
-                        <p className='leading-8 text-sm sm:leading-9 text-[#f7f7f7] font-light [text-wrap:balance] sm:[text-wrap:wrap] sm:text-base lg:leading-7 lg:line-clamp-5'>
+                        <p className='leading-8 text-sm sm:leading-9 text-txtGray2 font-light [text-wrap:balance] sm:[text-wrap:wrap] sm:text-base lg:leading-7 lg:line-clamp-5'>
                             {data.overview}
                         </p>
                     </header>

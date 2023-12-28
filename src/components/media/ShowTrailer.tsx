@@ -1,35 +1,36 @@
 "use client";
-
-import { CSSTransition } from 'react-transition-group';
 import TrailerPlayer from "./TrailerPlayer";
 import ModalTrailer from "../UI/modal/ModalTrailer";
 import useTrailer from "@/store/useTrailer";
-import '@/styles/animate.css'
+import { useTransition, animated } from "react-spring";
 
 const ShowTrailer = () => {
+    const { modalIsOpen, selectedVideoId } = useTrailer((state) => state);
 
-    const {modalIsOpen, selectedVideoId} = useTrailer((state) => state)
+    const transitions = useTransition(modalIsOpen, {
+        from: { opacity: 0, },
+        enter: { opacity: 1,},
+        leave: { opacity: 0,  },
+        config: { duration: 500 },
+    });
 
     return (
-        <div>
-            <CSSTransition
-                in={modalIsOpen}
-                timeout={500}
-                unmountOnExit
-                classNames='fade'
-            >
-                <ModalTrailer>
-                    <CSSTransition
-                        in={modalIsOpen}
-                        timeout={1000}
-                        unmountOnExit
-                        classNames='modal'
-                    >
-                        <TrailerPlayer videoId={selectedVideoId}/>
-                    </CSSTransition>
-                </ModalTrailer>
-            </CSSTransition>
-        </div>
+        <>
+            {transitions(
+                (style, item) =>
+                    item && (
+                        <animated.div
+                        style={{
+                            opacity: style.opacity,
+                        }}
+                        >
+                            <ModalTrailer>
+                                <TrailerPlayer videoId={selectedVideoId} />
+                            </ModalTrailer>
+                        </animated.div>
+                    )
+            )}
+        </>
     );
 };
 
