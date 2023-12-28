@@ -1,7 +1,7 @@
 "use client";
 import { useParams } from 'next/navigation'
 import { useSearchParams } from 'next/navigation'
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Media } from '../../types/types';
 import Link from 'next/link';
 import MovieCard from '../UI/card/MovieCard';
@@ -25,7 +25,7 @@ export default function ScrollInfinity({ totalPages }: { totalPages: number }) {
     const filter = searchParams.get('filter') || DEFAULT_FILTER
     const genre = searchParams.get('genre') 
 
-    const fetchApiData = async (url: string) => {
+    const fetchApiData = useCallback(async (url: string) => {
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`Error en la petición: ${response.statusText}`);
@@ -34,13 +34,12 @@ export default function ScrollInfinity({ totalPages }: { totalPages: number }) {
         const results = data.results;
         setMediaMovieorSeries((prevData) => [...prevData, ...results]);
         setPage((prevPage) => prevPage + 1);
-    };
+    }, [setMediaMovieorSeries, setPage]);
     
 
     // peticion para loadMore
-    const fetchDataPage = async () => {
-
-        if (page >= totalPages) return 
+    const fetchDataPage = useCallback(async () => {
+        if (page >= totalPages) return;
 
         const url = search
             ? `/api/search?q=${search}&type=${searchType}&page=${page}`
@@ -53,7 +52,7 @@ export default function ScrollInfinity({ totalPages }: { totalPages: number }) {
         } catch (error) {
             console.error('Error en fetchDataPage:', error);
         }
-    };
+    }, [page, search, searchType, genre, filter, totalPages, fetchApiData]);
 
 
     useEffect(() => {

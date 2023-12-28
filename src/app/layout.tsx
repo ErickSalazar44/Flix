@@ -26,8 +26,17 @@ export const metadata: Metadata = {
 		"Descubre qué Ver",
 		"Trailers de películas",
 	],
-	twitter: {
-		card: 'summary_large_image'
+	openGraph: {
+		title: 'Flix',
+		description: 'Descubre y Disfruta de los Últimos Estrenos y Clásicos del Cine en una Plataforma de Películas Todo en Uno',
+		images: [
+			{
+				url: '/opengraph-image.png',
+				width: 1200,
+				height: 636
+			}
+		],
+		type: 'video.movie',
 	}
 }
 
