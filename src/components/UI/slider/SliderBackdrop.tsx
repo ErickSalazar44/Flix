@@ -1,6 +1,6 @@
+'use client'
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 
 import { MoviesAndSeries } from "@/types/types";
 import { SwiperSlide, Swiper } from "swiper/react";
@@ -9,8 +9,9 @@ import { SliderSkeleton } from "../skeletons";
 import Link from "next/link";
 import MovieCard from "../card/MovieCard";
 import "@/styles/scrollAnimate.css";
+import { Autoplay } from "swiper/modules";
 
-const CarruselDesktop = ({
+const SliderBackdrop = ({
     data,
     type,
 }: {
@@ -49,7 +50,7 @@ const CarruselDesktop = ({
     }, [carruselRef]);
 
     const breakpoints = {
-        770: { slidesPerView: 2 },
+        500: { slidesPerView: 2 },
         1024: { slidesPerView: 3 },
         1240: { slidesPerView: 4 },
         1600: { slidesPerView: 5 },
@@ -59,19 +60,21 @@ const CarruselDesktop = ({
         <div ref={carruselRef}>
             {swiperReady ? (
                 <Swiper
-                    slidesPerView={5}
+                    slidesPerView={1}
                     spaceBetween={5}
                     breakpoints={breakpoints}
-                    loop={false}
+                    modules={[ Autoplay ]}
+                    loop={true}
                     className='mySwiper cursor-grab select-none'
                     onSwiper={() => setSwiperReady(true)}
+                    autoplay={{ delay: 4000 }}
                 >
-                    {data.map((movie: MoviesAndSeries) => (
+                    {data.map((media: MoviesAndSeries) => (
                         <SwiperSlide
-                            key={movie.id}
+                            key={media.id}
                         >
-                            <Link href={`/media/${movie.id}-${type}`} as={`/media/${movie.id}-${type}`}>
-                                <MovieCard result={movie} />
+                            <Link href={`/media/${media.id}-${type}`} as={`/media/${media.id}-${type}`}>
+                                <MovieCard result={media} />
                             </Link>
                         </SwiperSlide>
                     ))}
@@ -83,4 +86,4 @@ const CarruselDesktop = ({
     );
 };
 
-export default CarruselDesktop;
+export default SliderBackdrop;

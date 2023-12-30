@@ -23,7 +23,7 @@ const DetallesProduccion = ({ data }: { data: Media }) => {
 
     useEffect(() => {
         const options = {
-            threshold: 0.5, 
+            threshold: 0, 
         };
 
         const handleIntersection = (entries: IntersectionObserverEntry[]) => {
@@ -85,7 +85,7 @@ const DetallesProduccion = ({ data }: { data: Media }) => {
                     <span className='text-sm text-txtWhite1'>
                         {ganancias
                             ? `$${ganancias}`
-                            : "No tenemos informacion por el momento"}
+                            : "Sin informacion por el momento"}
                     </span>
                 </div>
                 <div className={isArticleVisible ? "animate-fadeInUp" : ""}>
@@ -96,7 +96,7 @@ const DetallesProduccion = ({ data }: { data: Media }) => {
                     <span className='text-sm text-txtWhite1'>
                         {inversion
                             ? `$${inversion}`
-                            : "No tenemos informacion por el momento"}
+                            : "Sin informacion por el momento"}
                     </span>
                 </div>
                 {/* SECCION DE IMAGENES */}

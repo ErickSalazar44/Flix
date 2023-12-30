@@ -4,7 +4,7 @@ const shimmer =
 
 export function CarruselSkeleton() {
     return (
-        <ul className='relative grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-10 2xl:grid-cols-7 3xl:grid-cols-8 md:h-auto w-full *:aspect-[9/14] *:bg-zinc-800 *:relative *:overflow-hidden'>
+        <ul className='relative grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-10 2xl:grid-cols-7 3xl:grid-cols-8 md:h-auto w-full *:aspect-[9/14] *:bg-zinc-800 *:relative *:overflow-hidden *:rounded'>
             <li>
                 <span className={`${shimmer}`}></span>
             </li>

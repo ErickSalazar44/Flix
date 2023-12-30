@@ -8,8 +8,8 @@ const Reparto = async ({ id, type }: { id: string; type: string }) => {
     const start: Reparto = await fetchRepartoMovie(type, id);
     const director = start.crew.find(
         (miembro) =>
-            miembro.job === "Director" || miembro.job === "Series Director"
-    );
+            miembro.job === "Director" || miembro.job === "Series Director" || miembro.job === "Executive Producer"
+    ) ?? start.crew[0];
     const actoresConImagenes = obtenerActoresConImagenes(start);
 
     // En el caso no haya actores no retornara nada
@@ -24,12 +24,12 @@ const Reparto = async ({ id, type }: { id: string; type: string }) => {
             </div>
             <div className='px-12 md:px-16 lg:px-20 2xl:px-0 letterScroll2 relative mx-auto pt-16 md:pt-20 max-w-[1200px] opacity-90'>
                 <span className='lg:text-4xl font-semibold text-txtGray1'>
-                    Dirigido por
+                    {director?.known_for_department}
                 </span>
                 <br />
-                <span className='lg:text-6xl font-semibold'>
+                <h3 className='lg:text-6xl font-semibold mt-3'>
                     {director?.name}
-                </span>
+                </h3>
             </div>
             <div className='md:px-16 lg:px-20 2xl:px-0 h-full max-w-[1770px] mx-auto'>
                 <div className='mx-auto mt-20 mb-20 md:mb-40 max-w-[1200px]'>

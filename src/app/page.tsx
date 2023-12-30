@@ -2,7 +2,6 @@ import Publicity from "@/components/home/Publicity";
 import HomeHeader from "@/components/home/HomeHeader";
 import SliderContainer from "@/components/home/SliderContainer";
 import { movieGenresList, trendingMoviesWeekly } from "@/lib/api";
-import RevisaNuestroCatalogo from "@/components/home/RevisaNuestroCatalogo";
 import ColeccionContainer from "@/components/home/ColeccionContainer";
 import Footer from "@/components/shared/footer/Footer";
 import NavSearch from "@/components/search/NavSearch";
@@ -39,6 +38,7 @@ export default async function Home({searchParams}: {searchParams: { q: string};}
                 <SliderContainer
                     path='/trending/tv/week'
                     title='SERIES POPULARES'
+                    backdrop={true}
                 />
                 <SliderContainer
                     path='/movie/popular'
@@ -70,6 +70,7 @@ export default async function Home({searchParams}: {searchParams: { q: string};}
                 <SliderContainer
                     path='/movie/now_playing'
                     title='SERIES POPULARES'
+                    backdrop={true}
                 />
                 <SliderContainer
                     path='/trending/movie/week'

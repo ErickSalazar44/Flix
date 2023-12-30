@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import { MoviesAndSeries } from "@/types/types";
-import { useSpring, animated } from 'react-spring';
+
 
 const BackgroundImage = ({
     movies,
@@ -40,18 +40,11 @@ const BackgroundImage = ({
         };
     }, [backdropImageUrl, posterImageUrl]);
 
-    const fadeAnimation = useSpring({
-        opacity: 1, // Opacidad final
-        from: { opacity: 0 }, // Opacidad inicial
-        reset: true, // Resetea la animación cuando cambia el currentIndex
-    });
-
     return (
         <section
             className={`absolute flex after:content-[''] after:absolute after:inset-0 after:bg-gradiantLeft after:h-screen h-screen w-full before:content-[''] before:absolute before:inset-0 before:z-[1] before:bg-gradiantBotton before:h-screen`}
         >
-            <animated.div 
-                style={fadeAnimation}
+            <div 
                 className={"w-full top-0 right-0 h-screen absolute after:absolute after:inset-0 after:bg-gradiantTop2 after:h-screen"}>
                 {backgroundImage && movies?.[currentIndex] && (
                     <Image
@@ -68,7 +61,7 @@ const BackgroundImage = ({
                         priority={true}
                     />
                 )}
-            </animated.div>
+            </div>
         </section>
     );
 };

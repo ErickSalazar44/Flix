@@ -29,9 +29,6 @@ const config: Config = {
         txtWhite1: '#EEE',
         txtWhite2: '#cbcbcb'
       },
-      minHeight: {
-        homeSpaceFondo: "calc(75vh - 280px + 90px)",
-      },
       backgroundColor: {
         
       },

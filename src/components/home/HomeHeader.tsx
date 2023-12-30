@@ -22,12 +22,13 @@ const HomeHeader = ({
                 currentIndex={currentIndex}
                 movies={moviesTrends}
             />
-            <InfoSection
-                currentIndex={currentIndex}
-                movies={moviesTrends}
-                genresMovies={genresMovies}
-            />
-                <div className='px-5 md:px-8 lg:px-12 2xl:px-16 relative z-30'>
+            <div className="min-h-screen flex flex-col justify-end">
+                <InfoSection
+                    currentIndex={currentIndex}
+                    movies={moviesTrends}
+                    genresMovies={genresMovies}
+                />
+                <div className='px-5 md:px-8 lg:px-12 2xl:px-16 relative z-30 mb-2 sm:mb-4'>
                     <h2 className='text-white z-20 relative font-medium mb-3 uppercase'>
                         Últimas películas
                     </h2>
@@ -36,6 +37,7 @@ const HomeHeader = ({
                             setCurrentIndex={setCurrentIndex}
                         />
                 </div>
+            </div>
         </div>
     );
 };

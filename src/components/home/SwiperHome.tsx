@@ -108,7 +108,7 @@ const SwiperHome = ({
             </div>
 
             {/* Botón de retroceder */}
-            <div className='swiper-button-prev '>
+            <div className='swiper-button-prev'>
                 <div
                     className={
                         "md:block hidden  absolute -top-1 -left-9 w-6 lg:-left-11 lg:w-7 text-white opacity-80 lg:-top-5"
@@ -119,7 +119,7 @@ const SwiperHome = ({
             </div>
 
             {/* Paginacion */}
-            <div className='relative z-10 swiper-paginacion w-full text-center' />
+            <div className='min-h-6 relative z-10 swiper-paginacion w-full text-center' />
         </div>
     );
 };

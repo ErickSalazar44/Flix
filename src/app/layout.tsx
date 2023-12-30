@@ -29,18 +29,12 @@ export const metadata: Metadata = {
         "Trailers de películas",
     ],
     openGraph: {
-        title: "Flix",
-        description:
-            "Descubre y Disfruta de los Últimos Estrenos y Clásicos del Cine en una Plataforma de Películas Todo en Uno",
-        images: [
-            {
-                url: "/opengraph-image.png",
-                width: 1200,
-                height: 636,
-            },
-        ],
-        type: "video.movie",
+        images: '/opengraph-image.png'
     },
+    referrer: 'origin-when-cross-origin',
+    creator: 'Erick Salazar',
+    publisher: 'Erick Salazar',
+    metadataBase: new URL('https://acme.com'),
 };
 
 export default function RootLayout(props: {
@@ -57,10 +51,7 @@ export default function RootLayout(props: {
                     type='image/<generated>'
                     sizes='<generated>'
                 />
-                <meta property='og:image' content='<generated>' />
-                <meta property='og:image:type' content='<generated>' />
-                <meta property='og:image:width' content='<generated>' />
-                <meta property='og:image:height' content='<generated>' />
+                <meta property="og:url" content="Canonical link preview URL"></meta>
             </head>
             <body
                 className={`select-none max-w-[1920px] mx-auto ${DMSans.className}`}
