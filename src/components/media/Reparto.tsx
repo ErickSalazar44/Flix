@@ -16,18 +16,18 @@ const Reparto = async ({ id, type }: { id: string; type: string }) => {
     if (start.cast.length === 0) return;
 
     return (
-        <section className='md:px-8 lg:px-12 lg:py-12 md:bg-[#050505]'>
-            <div className='px-5 md:px-8 lg:px-12 2xl:px-16 max-w-[1570px]  relative mx-auto pt-16 md:pt-24'>
+        <section className='px-5 md:px-8 lg:px-12 lg:py-12 md:bg-[#050505]'>
+            <div className='md:px-8 lg:px-12 2xl:px-16 max-w-[1570px]  relative mx-auto pt-16 md:pt-24'>
                 <h2 className='letterScroll font-medium text-2xl md:text-4xl text-txtWhite1'>
                     Actores principales
                 </h2>
             </div>
             <div className='px-12 md:px-16 lg:px-20 2xl:px-0 letterScroll2 relative mx-auto pt-16 md:pt-20 max-w-[1200px] opacity-90'>
-                <span className='lg:text-4xl font-semibold text-txtGray1'>
+                <span className='lg:text-4xl font-semibold text-txtGray1 text-3xl'>
                     {director?.known_for_department}
                 </span>
                 <br />
-                <h3 className='lg:text-6xl font-semibold mt-3'>
+                <h3 className='lg:text-6xl font-semibold mt-3 text-3xl'>
                     {director?.name}
                 </h3>
             </div>
@@ -36,7 +36,7 @@ const Reparto = async ({ id, type }: { id: string; type: string }) => {
                     <div
                         className={`relative ${
                             actoresConImagenes.length > 2
-                                ? "overflow-scroll carrusel"
+                                ? "overflow-scroll carrusel snap-x snap-mandatory"
                                 : ""
                         } `}
                     >

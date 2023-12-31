@@ -7,11 +7,13 @@ export default async function SliderContainer({
     title,
     page,
     backdrop,
+    autoPlay = false,
 }: {
     path: string;
     title: string;
     page?: string;
     backdrop?: boolean;
+    autoPlay?: boolean
 }) {
     const type = path.includes("movie") ? "movie" : "tv";
     const query = page ? `language=es-ES&page=${page}` : "";
@@ -23,7 +25,7 @@ export default async function SliderContainer({
                 <h3 className='font-medium text-sm text-txtGray1 '>{title}</h3>
             </header>
             {backdrop ? (
-                <SliderBackdrop data={data} type={type} />
+                <SliderBackdrop data={data} type={type} autoPlay={autoPlay}/>
             ) : (
                 <SliderPoster data={data} type={type} />
             )}

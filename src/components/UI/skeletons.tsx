@@ -36,12 +36,12 @@ export function CarruselSkeleton() {
 
 export function SliderSkeleton() {
     return (
-        <ul className="relative grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 w-full h-auto *:w-[390px] *:h-[219px] gap-[5px] *:overflow-hidden *:relative lg:*:w-[332px] lg:*:h-[187px]">
+        <ul className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 w-full h-auto *:w-full *:sm:w-[390px] *:h-[219px] gap-[5px] *:overflow-hidden *:relative lg:*:w-[332px] lg:*:h-[187px]">
             <li>
                 <span className={`${shimmer}`}></span>
             </li>
             <li>
-                <span className={`${shimmer}`}></span>
+                <span className={`hidden sm:block ${shimmer}`}></span>
             </li>
             <li className="hidden lg:block">
                 <span className={`${shimmer}`}></span>

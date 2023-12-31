@@ -17,12 +17,12 @@ const HomeHeader = ({
     const [currentIndex, setCurrentIndex] = useState(0);
 
     return (
-        <div className='relative h-screen'>
+        <div className='relative mt-nav sm:mt-0 h-screenMovil sm:h-screen'>
             <BackgroundImage
                 currentIndex={currentIndex}
                 movies={moviesTrends}
             />
-            <div className="min-h-screen flex flex-col justify-end">
+            <div className="h-screenMovil sm:h-screen flex flex-col justify-end ">
                 <InfoSection
                     currentIndex={currentIndex}
                     movies={moviesTrends}

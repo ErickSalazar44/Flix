@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import MenuItem from "./MenuItem"; // componentes
 import { CloseIcon, ArrowRight, MenuIcon } from "@/icons/Icons"; // icons
 import { menuItems } from "@/lib/data"; // data
+import Link from "next/link";
+
 
 const MenuFunction = ({ children }: { children: React.ReactNode }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false); // estado global
@@ -59,17 +61,19 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
                 <ul className='flex flex-col gap-5 font-normal mb-3'>
                     
                     {menuItems.map((item) => (
-                        <li key={item}>
-                            <MenuItem item={item} />
+                        <li key={item.name}>
+                            <Link href={item.ruta}>
+                                <MenuItem item={item.name} />
+                            </Link>
                         </li>
                     ))}
                 </ul>
                 <div className='flex flex-col gap-4 mt-8'>
                     <span className='w-full h-[1px] bg-SemiTransparentWhite opacity-30' />
-                    <div className='flex justify-between items-center'>
-                        <MenuItem item='Géneros' />
+                    <Link href='/search/movie?filter=upcoming' className='flex justify-between items-center'>
+                        <MenuItem item='Próximos estrenos' />
                         <ArrowRight />
-                    </div>
+                    </Link>
                     <span className='w-full h-[1px] bg-SemiTransparentWhite opacity-30' />
                     <div className="my-4">
                         {children}

@@ -42,10 +42,10 @@ const BackgroundImage = ({
 
     return (
         <section
-            className={`absolute flex after:content-[''] after:absolute after:inset-0 after:bg-gradiantLeft after:h-screen h-screen w-full before:content-[''] before:absolute before:inset-0 before:z-[1] before:bg-gradiantBotton before:h-screen`}
+            className={`absolute flex after:content-[''] after:absolute after:inset-0 after:bg-gradiantLeft after:h-screenMovil after:sm:h-screen  h-screenMovil sm:h-screen w-full before:content-[''] before:absolute before:inset-0 before:z-[1] before:bg-gradiantBotton before:h-screenMovil before:sm:h-screen`}
         >
             <div 
-                className={"w-full top-0 right-0 h-screen absolute after:absolute after:inset-0 after:bg-gradiantTop2 after:h-screen"}>
+                className={"w-full top-0 right-0 h-screenMovil sm:h-screen absolute after:absolute after:inset-0 after:bg-gradiantTop2 after:sm:h-screen after:h-screenMovil"}>
                 {backgroundImage && movies?.[currentIndex] && (
                     <Image
                         src={backgroundImage}
@@ -59,6 +59,7 @@ const BackgroundImage = ({
                             objectFit: "cover",
                         }}
                         priority={true}
+                        quality={100}
                     />
                 )}
             </div>

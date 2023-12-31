@@ -14,9 +14,11 @@ import { Autoplay } from "swiper/modules";
 const SliderBackdrop = ({
     data,
     type,
+    autoPlay
 }: {
     data: MoviesAndSeries[];
     type: string;
+    autoPlay: boolean
 }) => {
     const [swiperReady, setSwiperReady] = useState(false);
     const carruselRef = useRef(null);
@@ -50,7 +52,7 @@ const SliderBackdrop = ({
     }, [carruselRef]);
 
     const breakpoints = {
-        500: { slidesPerView: 2 },
+        640: { slidesPerView: 2 },
         1024: { slidesPerView: 3 },
         1240: { slidesPerView: 4 },
         1600: { slidesPerView: 5 },
@@ -63,11 +65,11 @@ const SliderBackdrop = ({
                     slidesPerView={1}
                     spaceBetween={5}
                     breakpoints={breakpoints}
-                    modules={[ Autoplay ]}
+                    modules={[ Autoplay  ]}
                     loop={true}
                     className='mySwiper cursor-grab select-none'
                     onSwiper={() => setSwiperReady(true)}
-                    autoplay={{ delay: 4000 }}
+                    autoplay={autoPlay ? { delay: 4000 } : undefined}
                 >
                     {data.map((media: MoviesAndSeries) => (
                         <SwiperSlide

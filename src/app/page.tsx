@@ -39,20 +39,24 @@ export default async function Home({searchParams}: {searchParams: { q: string};}
                     path='/trending/tv/week'
                     title='SERIES POPULARES'
                     backdrop={true}
+                    autoPlay={true}
                 />
                 <SliderContainer
                     path='/movie/popular'
                     title='OBRAS MAESTRAS MODERNAS'
+                    backdrop={true}
                 />
                 <SliderContainer
                     path='/trending/tv/week'
                     page='2'
                     title='FAVORITAS DE FESTIVALES DE CINE'
+                    backdrop={true}
                 />
 
                 <SliderContainer
                     path='/movie/top_rated'
-                    title='DESTACADOS DE ALURA'
+                    title='DESTACADOS DE FLIX'
+                    backdrop={true}
                 />
             </section>
             {/* ANUNCIO */}
@@ -71,21 +75,25 @@ export default async function Home({searchParams}: {searchParams: { q: string};}
                     path='/movie/now_playing'
                     title='SERIES POPULARES'
                     backdrop={true}
+                    autoPlay={true}
                 />
                 <SliderContainer
                     path='/trending/movie/week'
                     page='2'
-                    title='OBRAS MAESTRAS MODERNAS'
+                    title='PELÍCULAS EN TENDENCIA'
+                    backdrop={true}
                 />
                 <SliderContainer
                     path='/movie/upcoming'
                     page='2'
-                    title='FAVORITAS DE FESTIVALES DE CINE'
+                    title='PRÓXIMOS ESTRENOS DE PELÍCULAS'
+                    backdrop={true}
                 />
                 <SliderContainer
                     path='/trending/tv/week'
                     page='3'
-                    title='FAVORITAS DE FESTIVALES DE CINE'
+                    title='SERIES EN TENDENCIA'
+                    backdrop={true}
                 />
             </section>
 

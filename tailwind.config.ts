@@ -11,6 +11,8 @@ const config: Config = {
       backgroundImage: {
         gradiantLeft:
           "linear-gradient(90deg, rgba(0,0,0,0.9002320185614849) 0%, rgba(0,0,0,0) 70%)",
+        gradiantLeft2: 
+        "linear-gradient(164deg, rgba(0,0,0,0.742734593837535) 0%, rgba(0,0,0,0.7455357142857143) 10%, rgba(0,0,0,0.26094187675070024) 40%, rgba(0,0,0,0) 80%)",
         gradiantBotton:
         "linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0) 70%)",
         gradiantTop: 
@@ -29,8 +31,12 @@ const config: Config = {
         txtWhite1: '#EEE',
         txtWhite2: '#cbcbcb'
       },
-      backgroundColor: {
-        
+      margin: {
+        nav: '65px'
+      },
+      height: {
+        nav: '65px',
+        screenMovil: 'calc(100vh - 65px)'
       },
       fontSize: {
         titulo: "calc(.9em + 3vw)",

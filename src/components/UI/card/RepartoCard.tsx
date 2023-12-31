@@ -8,7 +8,7 @@ const RepartoCard = ({ actor, type }: { actor: Cast; type: string }) => {
     return (
         <Link
             href={`/actor/${actor.id}-${type}`}
-            className='relative'
+            className='relative snap-start'
             scroll={false}
         >
                 <figure className='w-40 lg:w-48 xl:w-[230px] relative after:content-[""] after:absolute after:inset-0 after:bg-gradiantBottonCard'>

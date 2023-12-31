@@ -19,7 +19,7 @@ const ColeccionContainer = async ({
 
     return (
         <section className='my-10 sm:my-16 relative h-full min-h-[700px] sm:h-[800px] lg:h-[96vh] xl:h-[100vh] flex flex-col'>
-            <figure className='absolute -z-10 opacity-40 sm:opacity-50 w-full h-full bottom-0'>
+            <figure className='absolute -z-10 before:w-full before:h-full before:absolute before:inset-0 before:bg-gradiantLeft2 sm:opacity-50 w-full h-full bottom-0'>
                 <Image
                     src={`https://image.tmdb.org/t/p/original${details.parts[1].backdrop_path}`}
                     alt={`Movie Collection ${details.name}`}
@@ -32,7 +32,7 @@ const ColeccionContainer = async ({
                     }}
                 />
                 <Image
-                    src={`https://image.tmdb.org/t/p/w1280${details.backdrop_path}`}
+                    src={`https://image.tmdb.org/t/p/w1280${details.parts[1].backdrop_path}`}
                     alt={`Movie Collection ${details.name}`}
                     width={1280}
                     height={800}
@@ -43,10 +43,11 @@ const ColeccionContainer = async ({
                     }}
                 />
                 <Image
-                    src={`https://image.tmdb.org/t/p/w780${details.backdrop_path}`}
+                    src={`https://image.tmdb.org/t/p/w780${details.parts[1].poster_path}`}
                     alt={`Movie Collection ${details.name}`}
                     width={780}
                     height={439}
+                    quality={100}
                     className='md:hidden object-cover  object-top'
                     style={{
                         width: "100%",
@@ -71,7 +72,7 @@ const ColeccionContainer = async ({
                     {details.parts[1].overview}
                 </p>
             </div>
-            <div className='overflow-x-auto lg:mx-12 2xl:mx-16 my-7 carrusel text-txtGray2'>
+            <div className='snap-mandatory snap-x overflow-x-auto lg:mx-12 2xl:mx-16 my-7 carrusel text-txtGray2'>
                 <div
                     className={`flex gap-2 items-end`}
                     style={{
@@ -83,6 +84,7 @@ const ColeccionContainer = async ({
                             key={part.id}
                             href={`/media/${part.id}-movie`}
                             as={`/media/${part.id}-movie`}
+                            className="snap-center"
                         >
                             <MovieCard animate={false} result={part} />
                         </Link>

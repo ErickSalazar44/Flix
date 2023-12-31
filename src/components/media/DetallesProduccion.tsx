@@ -50,14 +50,13 @@ const DetallesProduccion = ({ data }: { data: Media }) => {
 
     return (
         <article
-            ref={articleRef}
             className='md:px-16 lg:px-20 2xl:px-0 h-full max-w-[1770px] mx-auto'>
-            <div className='mx-auto max-w-[1200px] my-10 flex flex-col lg:flex-row lg:justify-between gap-10'>
+            <div ref={articleRef} className='mx-auto max-w-[1200px] my-10 flex flex-col md:flex-row md:flex-wrap lg:justify-between gap-10'>
                 <div className={isArticleVisible ? "animate-fadeInUp" : ""}>
                     <TitleProducction>
                         Compañías de Producción
                     </TitleProducction>
-                    <ul className='text-sm flex flex-col gap-1 text-txtWhite1'>
+                    <ul className='text-xs lg:text-sm flex flex-col gap-1 text-txtWhite1'>
                         {data.production_companies.map(
                             (company: ProductionCompany) => (
                                 <li key={company.id}>{company.name}</li>

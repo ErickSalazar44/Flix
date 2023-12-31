@@ -10,6 +10,8 @@ import { Navigation } from "swiper/modules";
 import { MoviesAndSeries } from "@/types/types";
 import MediaCardPoster from "../card/MediaCardPoster";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { CarruselSkeleton } from "../skeletons";
 
 const SliderPoster = ({
     data,
@@ -42,28 +44,64 @@ const SliderPoster = ({
             slidesPerView: 8,
         },
     };
+    const [swiperReady, setSwiperReady] = useState(false);
+    const carruselRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setSwiperReady(true);
+                    observer.disconnect();
+                }
+            },
+            {
+                root: null,
+                rootMargin: "300px",
+                threshold: 0,
+            }
+        );
+
+        const carruselRefCurrent = carruselRef.current;
+
+        if (carruselRefCurrent) {
+            observer.observe(carruselRefCurrent);
+        }
+
+        return () => {
+            if (carruselRefCurrent) {
+                observer.unobserve(carruselRefCurrent);
+            }
+        };
+    }, [carruselRef]);
 
     // const windowWidth = window.innerWidth;
 
     return (
-        <Swiper
-            modules={[Navigation]}
-            breakpoints={breakpoints}
-            spaceBetween={10}
-            className='mySwiper'
-            // navigation={{
-            //     nextEl: nextEl.current,
-            //     prevEl: prevEl.current,
-            // }}
-        >
-            {data.map((media) => (
-                <SwiperSlide key={media.id}>
-                    <Link href={`/media/${media.id}-${type}`} as={`/media/${media.id}-${type}`}>
-                        <MediaCardPoster data={media}/>
-                    </Link>
-                </SwiperSlide>
-            ))}
-        </Swiper>
+        <div ref={carruselRef}>
+            {swiperReady ?
+                <Swiper
+                    modules={[Navigation]}
+                    breakpoints={breakpoints}
+                    spaceBetween={10}
+                    className='mySwiper'
+                // navigation={{
+                //     nextEl: nextEl.current,
+                //     prevEl: prevEl.current,
+                // }}
+                >
+                    {data.map((media) => (
+                        <SwiperSlide key={media.id}>
+                            <Link href={`/media/${media.id}-${type}`} as={`/media/${media.id}-${type}`}>
+                                <MediaCardPoster data={media} />
+                            </Link>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+                :
+                <CarruselSkeleton />
+            }
+        </div>
     );
 };
 

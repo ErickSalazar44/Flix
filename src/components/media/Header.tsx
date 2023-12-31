@@ -84,7 +84,7 @@ const Header = ({ data }: { data: Media }) => {
                             data.overview === "" ? "hidden" : "block"
                         }`}
                     >
-                        <h3 className='mb-2 sm:font-semibold sm:text-lg lg: text-xl uppercase text-txtGray1'>
+                        <h3 className='mb-2 sm:font-semibold sm:text-lg uppercase text-txtGray2'>
                             {data.tagline ? data.tagline : "Synopsis"}
                         </h3>
                         <p className='leading-8 text-sm sm:leading-9 text-txtGray2 font-light [text-wrap:balance] sm:[text-wrap:wrap] sm:text-base lg:leading-7 lg:line-clamp-5'>

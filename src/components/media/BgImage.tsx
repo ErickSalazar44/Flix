@@ -42,7 +42,7 @@ const BgImage = ({ data }: { data: Media }) => {
             />
             <section className='relative z-50 w-full h-full'>
                 <div className='absolute right-5 top-4 lg:hidden'>
-                    <Link href={"/"} aria-label='Volver al inicio'>
+                    <Link href='/' aria-label='Volver al inicio'>
                         <CloseIcon />
                     </Link>
                 </div>

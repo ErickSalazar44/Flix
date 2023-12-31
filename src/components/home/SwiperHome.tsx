@@ -30,8 +30,7 @@ const SwiperHome = ({
         if (windowSize.width >= 1800) return 20;
         if (windowSize.width >= 1400) return 16;
         if (windowSize.width >= 1024) return 12;
-        if (windowSize.width >= 700) return 10;
-        return 6;
+        return 10;
     }, [windowSize.width]);
 
     const breakpoints = {

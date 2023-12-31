@@ -1,10 +1,28 @@
 export const menuItems = [
-    "Inicio",
-    "Series",
-    "Películas",
-    "Originales",
-    "Tendencias",
-    "Ver más",
+    {
+        name: 'Inicio',
+        ruta: '/'
+    },
+    {
+        name: 'Series',
+        ruta: '/search/tv'
+    },
+    {
+        name: 'Películas',
+        ruta: '/search/movie'
+    },
+    {
+        name: 'Originales',
+        ruta: '/search/movie?filter=popular'
+    },
+    {
+        name: 'Tendencias',
+        ruta: '/search/tv?filter=top_rated'
+    },
+    {
+        name: 'Ver más',
+        ruta: '/search/movie?filter=upcoming'
+    },
 ];
 
 
