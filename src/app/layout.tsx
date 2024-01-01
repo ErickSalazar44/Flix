@@ -51,7 +51,6 @@ export default function RootLayout(props: {
                     type='image/<generated>'
                     sizes='<generated>'
                 />
-                <meta property="og:url" content="Canonical link preview URL"></meta>
             </head>
             <body
                 className={`select-none max-w-[1920px] mx-auto ${DMSans.className}`}
