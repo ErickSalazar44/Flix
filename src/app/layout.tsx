@@ -29,7 +29,9 @@ export const metadata: Metadata = {
         "Trailers de películas",
     ],
     openGraph: {
-        images: '/opengraph-image.png'
+        title: 'Flix: Explora, Descubre, Disfruta.',
+        images: '/opengraph-image.png',
+        description: '"Sumérgete en el fascinante universo del cine con Flix. Descubre los últimos estrenos, obtén reseñas y recomendaciones, y encuentra la mejor manera de disfrutar de tus películas favoritas. ¡Explora el cine como nunca antes con Flix!"'
     },
     referrer: 'origin-when-cross-origin',
     creator: 'Erick Salazar',
