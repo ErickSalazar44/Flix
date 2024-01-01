@@ -39,11 +39,3 @@ body.disable-scroll {
 .carrusel::-webkit-scrollbar {
   display: none;
 }
-
-@media (min-width: 500px) {
-  .carrusel::-webkit-scrollbar {
-    display: block;
-    height: 6px;
-  }
-}
-

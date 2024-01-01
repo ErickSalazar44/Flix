@@ -2,14 +2,16 @@ import { fetchRepartoMovie } from "@/lib/api";
 import { Reparto } from "@/types/types";
 import { obtenerActoresConImagenes } from "@/utils/obtenerActoresConImagenes";
 import React from "react";
-import RepartoCard from "../UI/card/RepartoCard";
+import CarruselReparto from "../UI/slider/CarruselReparto";
 
-const Reparto = async ({ id, type }: { id: string; type: string }) => {
+
+const Reparto = async ({ id, type }: { id: string; type: 'movie' | 'tv' }) => {
     const start: Reparto = await fetchRepartoMovie(type, id);
     const director = start.crew.find(
         (miembro) =>
             miembro.job === "Director" || miembro.job === "Series Director" || miembro.job === "Executive Producer"
     ) ?? start.crew[0];
+
     const actoresConImagenes = obtenerActoresConImagenes(start);
 
     // En el caso no haya actores no retornara nada
@@ -32,25 +34,10 @@ const Reparto = async ({ id, type }: { id: string; type: string }) => {
                 </h3>
             </div>
             <div className='md:px-16 lg:px-20 2xl:px-0 h-full max-w-[1770px] mx-auto'>
-                <div className='mx-auto mt-20 mb-20 md:mb-40 max-w-[1200px]'>
-                    <div
-                        className={`relative ${
-                            actoresConImagenes.length > 2
-                                ? "overflow-scroll carrusel snap-x snap-mandatory"
-                                : ""
-                        } `}
-                    >
-                        <div className='flex gap-6 transition-transform ease-in-out duration-500 '>
-                            {actoresConImagenes.slice(0,10).map((actor) => (
-                                <RepartoCard
-                                    key={`Actor-${actor.credit_id}`}
-                                    actor={actor}
-                                    type={type}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                </div>
+                <CarruselReparto 
+                    actores={actoresConImagenes}
+                    type={type}
+                />
             </div>
         </section>
     );

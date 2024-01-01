@@ -56,7 +56,7 @@ export const ArrowLeft = ({ clasName }: { clasName?: string }) => (
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className={`${clasName ? clasName : "w-6 h-6"}`}
+        className={`${clasName ? clasName : "size-6"}`}
     >
         <path
             strokeLinecap='round'
@@ -73,7 +73,7 @@ export const Search = ({ clasName }: { clasName?: string }) => (
         viewBox='0 0 24 24'
         strokeWidth={1.5}
         stroke='currentColor'
-        className={`${clasName ? clasName : "w-6 h-6"}`}
+        className={`${clasName ? clasName : "size-6"}`}
     >
         <path
             strokeLinecap='round'
