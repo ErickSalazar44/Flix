@@ -5,7 +5,7 @@ import React from "react";
 import CarruselReparto from "../UI/slider/CarruselReparto";
 
 
-const Reparto = async ({ id, type }: { id: string; type: 'movie' | 'tv' }) => {
+const Reparto = async ({ id, type }: { id: string; type: string }) => {
     const start: Reparto = await fetchRepartoMovie(type, id);
     const director = start.crew.find(
         (miembro) =>

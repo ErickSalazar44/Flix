@@ -8,8 +8,8 @@ export default function CarruselReparto({
     actores,
     type,
 }: {
-    actores: Cast[];
-    type: "movie" | "tv";
+    actores: Cast[]
+    type: string
 }) {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const [isAtBeginning, setIsAtBeginning] = useState<boolean>(true);
