@@ -4,6 +4,7 @@ import MovieCard from "../UI/card/MovieCard";
 import Link from "next/link";
 import { MoviesAndSeries } from "@/types/types";
 import GetstartRatingUI2 from "../UI/puntuacion/GetstartRatingUI2";
+import SliderMedia from "../UI/slider/SliderMedia";
 
 const ColeccionContainer = async ({
     id,
@@ -19,7 +20,7 @@ const ColeccionContainer = async ({
 
     return (
         <section className='my-10 sm:my-16 relative h-full min-h-[700px] sm:h-[800px] lg:h-[96vh] xl:h-[100vh] flex flex-col'>
-            <figure className='absolute -z-10 before:w-full before:h-full before:absolute before:inset-0 before:bg-gradiantLeft2 sm:opacity-50 w-full h-full bottom-0'>
+            <figure className='absolute -z-10 before:w-full before:h-full before:absolute before:inset-0 before:bg-gradiantLeft2 before:lg:bg-gradiantTop2 sm:opacity-50 w-full h-full bottom-0'>
                 <Image
                     src={`https://image.tmdb.org/t/p/original${details.parts[1].backdrop_path}`}
                     alt={`Movie Collection ${details.name}`}
@@ -72,25 +73,10 @@ const ColeccionContainer = async ({
                     {details.parts[1].overview}
                 </p>
             </div>
-            <div className='snap-mandatory snap-x overflow-x-auto lg:mx-12 2xl:mx-16 my-7 carrusel text-txtGray2'>
-                <div
-                    className={`flex gap-2 items-end`}
-                    style={{
-                        width: `${width}px`,
-                    }}
-                >
-                    {details.parts.map((part: MoviesAndSeries) => (
-                        <Link
-                            key={part.id}
-                            href={`/media/${part.id}-movie`}
-                            as={`/media/${part.id}-movie`}
-                            className="snap-center"
-                        >
-                            <MovieCard animate={false} result={part} />
-                        </Link>
-                    ))}
-                </div>
+            <div className="my-7 carrusel text-txtGray2">
+                <SliderMedia type={'movie'} data={details.parts}/>
             </div>
+
             <div className="absolute top-12 hidden 2xl:block right-16">
                 <GetstartRatingUI2 data={details.parts[0]} />
             </div>
