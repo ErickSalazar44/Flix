@@ -58,8 +58,6 @@ export default function SliderMedia({
 
     return (
         <div className='relative'>
-            <div className='w-full' />
-
             {isScrollNeeded && (
                 <div className='absolute z-40 h-full left-0 size-10 grid place-content-center'>
                     <button
@@ -76,7 +74,6 @@ export default function SliderMedia({
                 ref={containerRef}
                 className='flex gap-6 overflow-scroll carrusel snap-x snap-mandatory scroll-smooth'
             >
-                <div className='lg:w-12 2xl:w-16 snap-start'></div>
                 {data.slice(0, 10).map((media) => (
                     <Link
                         href={`/media/${media.id}-${type}`}
