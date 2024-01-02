@@ -54,7 +54,7 @@ export default function SliderMedia({
         return () => {
             window.removeEventListener("resize", handleResize);
         };
-    }, []);
+    }, [containerRef]);
 
     return (
         <div className='relative'>

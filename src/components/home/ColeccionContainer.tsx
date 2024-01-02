@@ -1,8 +1,5 @@
 import { fetchData } from "@/utils/fetchData";
 import Image from "next/image";
-import MovieCard from "../UI/card/MovieCard";
-import Link from "next/link";
-import { MoviesAndSeries } from "@/types/types";
 import GetstartRatingUI2 from "../UI/puntuacion/GetstartRatingUI2";
 import SliderMedia from "../UI/slider/SliderMedia";
 
@@ -73,7 +70,7 @@ const ColeccionContainer = async ({
                     {details.parts[1].overview}
                 </p>
             </div>
-            <div className="my-7 carrusel text-txtGray2">
+            <div className="lg:px-12 2xl:px-16 my-7 carrusel text-txtGray2">
                 <SliderMedia type={'movie'} data={details.parts}/>
             </div>
 
