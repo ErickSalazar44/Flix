@@ -1,11 +1,13 @@
 import Publicity from "@/components/home/Publicity";
 import HomeHeader from "@/components/home/HomeHeader";
-import SliderContainer from "@/components/home/SliderContainer";
 import { movieGenresList, trendingMoviesWeekly } from "@/lib/api";
-import ColeccionContainer from "@/components/home/ColeccionContainer";
 import Footer from "@/components/shared/footer/Footer";
 import NavSearch from "@/components/search/NavSearch";
 import FormSearch from "@/components/shared/header/FormSearch";
+import dynamic from "next/dynamic";
+const DynamicSliderContainer = dynamic(() => import("@/components/home/SliderContainer"));
+const DynamicColeccionContainer = dynamic(() => import("@/components/home/ColeccionContainer"));
+
 
 export default async function Home({searchParams}: {searchParams: { q: string};}) {
     const { results: moviesTrends } = await trendingMoviesWeekly();
@@ -28,42 +30,38 @@ export default async function Home({searchParams}: {searchParams: { q: string};}
             />
 
             {/* COLECCION */}
-            <ColeccionContainer
+            <DynamicColeccionContainer
                 id='131296'
                 textColor='#12c8ff'
                 subTitle='Rivalidades y Redenciones'
             />
+
             {/* SLIDER MOVIE 1 */}
             <section className='px-5 md:px-8 lg:px-12 2xl:px-16 my-8 flex flex-col gap-12 lg:gap-4 2xl:gap-8 text-txtGray2'>
-                <SliderContainer
+                <DynamicSliderContainer
                     path='/trending/tv/week'
                     title='SERIES POPULARES'
-                    backdrop={true}
-                    autoPlay={true}
                 />
-                <SliderContainer
+                <DynamicSliderContainer
                     path='/movie/popular'
                     title='OBRAS MAESTRAS MODERNAS'
-                    backdrop={true}
                 />
-                <SliderContainer
+                <DynamicSliderContainer
                     path='/trending/tv/week'
                     page='2'
                     title='FAVORITAS DE FESTIVALES DE CINE'
-                    backdrop={true}
                 />
 
-                <SliderContainer
+                <DynamicSliderContainer
                     path='/movie/top_rated'
                     title='DESTACADOS DE FLIX'
-                    backdrop={true}
                 />
             </section>
             {/* ANUNCIO */}
             <Publicity />
 
             {/* COLECCION 2 */}
-            <ColeccionContainer
+            <DynamicColeccionContainer
                 id='228446'
                 textColor='#de4444'
                 subTitle='Terror en cinta de video'
@@ -71,29 +69,24 @@ export default async function Home({searchParams}: {searchParams: { q: string};}
 
             {/* SLIDER MOVIE AND SERIE 2 */}
             <section className='px-5 md:px-8 lg:px-12 2xl:px-16 my-8 flex flex-col gap-12 lg:gap-4 2xl:gap-8 text-txtGray2'>
-                <SliderContainer
+                <DynamicSliderContainer
                     path='/movie/now_playing'
                     title='SERIES POPULARES'
-                    backdrop={true}
-                    autoPlay={true}
                 />
-                <SliderContainer
+                <DynamicSliderContainer
                     path='/trending/movie/week'
                     page='2'
                     title='PELÍCULAS EN TENDENCIA'
-                    backdrop={true}
                 />
-                <SliderContainer
+                <DynamicSliderContainer
                     path='/movie/upcoming'
                     page='2'
                     title='PRÓXIMOS ESTRENOS DE PELÍCULAS'
-                    backdrop={true}
                 />
-                <SliderContainer
+                <DynamicSliderContainer
                     path='/trending/tv/week'
                     page='3'
                     title='SERIES EN TENDENCIA'
-                    backdrop={true}
                 />
             </section>
 

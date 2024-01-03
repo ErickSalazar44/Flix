@@ -1,18 +1,15 @@
 import { useState, useMemo, useEffect } from "react";
-import Image from "next/image";
 import { MoviesAndSeries } from "@/types/types";
+import Image from "next/image";
 
-
-const BackgroundImage = ({
+export default function BackgroundImage ({
     movies,
     currentIndex,
 }: {
     movies: MoviesAndSeries[] | undefined;
     currentIndex: number;
-}) => {
+}) {
     const [backgroundImage, setBackgroundImage] = useState("");
-
-
     const { poster_path, backdrop_path } = movies?.[currentIndex] || {};
 
     const posterImageUrl = useMemo(
@@ -65,6 +62,4 @@ const BackgroundImage = ({
             </div>
         </section>
     );
-};
-
-export default BackgroundImage;
+}

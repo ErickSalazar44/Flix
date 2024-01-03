@@ -9,13 +9,13 @@ const MovieCard = ({ result, animate}: { result: any, animate?: boolean}) => {
     const time = result.release_date ?? result.first_air_date
 
     return (
-        <div className={`relative before:content-[''] before:top-0 before:w-full before:h-full before:bg-gradiantBottonCard before:absolute group before:z-10`}>
+        <div className={`relative before:content-[''] before:top-0 before:w-full before:h-full before:bg-gradiantBottonCard before:absolute group before:z-10 h-full`}>
             <Image
                 src={`https://image.tmdb.org/t/p/w780${result.backdrop_path}`}
                 alt={`Poster ${title}`}
                 width={500}
                 height={300}
-                className="w-full saturate-[1.1] rounded-lg"
+                className="w-full saturate-[1.1] rounded-lg h-full"
                 placeholder='empty'
             />
             <div className={`absolute ${animate ? 'scroll-parallax' : ''} bottom-0 pl-4 pb-1 z-10 group-hover:text-white transition-colors duration-300 hover:duration-300 hover:transition`}>

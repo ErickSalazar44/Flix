@@ -16,7 +16,7 @@ body {
   scrollbar-gutter: stable;
 }
 
-@media (min-height: 900px) {
+@media (max-width: 768px) and (min-height: 900px) {
   /* Espacio del scroll */
   .scrollMove {
     width: calc(100vw - (8px));
@@ -34,6 +34,11 @@ body.disable-scroll {
 ::-webkit-scrollbar-thumb {
   background-color: #4c4c4c;
   border-radius: 3px;
+}
+
+.carrusel {
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
 }
 
 .carrusel::-webkit-scrollbar {

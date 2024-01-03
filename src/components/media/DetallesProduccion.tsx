@@ -46,7 +46,7 @@ const DetallesProduccion = ({ data }: { data: Media }) => {
         return () => {
             observer.disconnect();
         };
-    }, [articleRef.current]);
+    }, []);
 
     return (
         <article

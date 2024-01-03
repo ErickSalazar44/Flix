@@ -31,7 +31,7 @@ const NavSearch = ({
 
     return (
         <nav
-            className={`transition-all duration-300 ease-in fixed text-xs lg:text-sm w-full z-50 top-0 px-5 md:px-8 lg:px-12 2xl:px-16 h-nav sm:h-[60px] flex justify-between items-center text-txtGray1 scrollMove ${lastScrollTop < duration
+            className={`transition duration-300 ease-in fixed text-xs lg:text-sm w-full z-50 top-0 px-5 md:px-8 lg:px-12 2xl:px-16 h-nav sm:h-[60px] flex justify-between items-center text-txtGray1 scrollMove ${lastScrollTop < duration
                     ? "bg-black sm:bg-transparent border-b border-white/0"
                     : "bg-black sm:bg-[rgba(22,22,23,0.8)] sm:[backdrop-filter:blur(20px)_saturate(180%)] border-b border-white/40"
                 }`}
