@@ -36,7 +36,6 @@ export const metadata: Metadata = {
     referrer: 'origin-when-cross-origin',
     creator: 'Erick Salazar',
     publisher: 'Erick Salazar',
-    metadataBase: new URL('https://acme.com'),
 };
 
 export default function RootLayout(props: {
