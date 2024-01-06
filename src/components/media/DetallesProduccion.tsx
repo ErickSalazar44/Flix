@@ -1,11 +1,9 @@
 "use client";
-import Galeria from "@/components/media/Galeria";
 import type {
     Media,
     ProductionCompany,
     ProductionCountry,
 } from "@/types/types";
-import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import TitleProducction from "./TitleProducction";
 
@@ -15,7 +13,6 @@ const DetallesProduccion = ({ data }: { data: Media }) => {
 
     // Calcular inversión
     const inversion = data.budget;
-    const pathName = usePathname();
 
     const articleRef = useRef(null);
     const [isArticleVisible, setArticleVisible] = useState(false);
@@ -98,8 +95,6 @@ const DetallesProduccion = ({ data }: { data: Media }) => {
                             : "Sin informacion por el momento"}
                     </span>
                 </div>
-                {/* SECCION DE IMAGENES */}
-                {/* {!pathName.includes('tv') && <Galeria />}  */}
             </div>
         </article>
     );
