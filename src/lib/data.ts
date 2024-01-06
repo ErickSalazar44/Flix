@@ -103,6 +103,6 @@ export const categoriaPanel = {
             { id: 'trending', name: 'Tendencias' },
             { id: 'top_rated', name: 'Mejor Calificado' },
             { id: 'popular', name: 'Popular' },
-        ] 
+        ]
     }
 }

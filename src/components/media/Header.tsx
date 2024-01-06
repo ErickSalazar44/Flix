@@ -1,18 +1,18 @@
-import Image from "next/image"; // NEXT
-import GetStartRating from "../UI/puntuacion/GetStartRating"; // componentes
-import { Play, Time } from "../icons/Icons"; // Icons
-import type { Media } from "@/types/types"; // types
-import { monthNames } from "@/lib/data"; // meses
-import TrailerTrigerBtn from "../UI/Btn/TrailerTrigerBtn";
+import Image from 'next/image' // NEXT
+import GetStartRating from '../UI/puntuacion/GetStartRating' // componentes
+import { Play, Time } from '../icons/Icons' // Icons
+import type { Media } from '@/types/types' // types
+import { monthNames } from '@/lib/data' // meses
+import TrailerTrigerBtn from '../UI/Btn/TrailerTrigerBtn'
 
 const Header = ({ data }: { data: Media }) => {
-    const releaseDate = data.release_date || data.last_air_date;
-    const parsedDate = new Date(releaseDate);
+    const releaseDate = data.release_date || data.last_air_date
+    const parsedDate = new Date(releaseDate)
 
-    const releaseMonth = monthNames[parsedDate.getMonth()];
-    const releaseYear = parsedDate.getFullYear();
+    const releaseMonth = monthNames[parsedDate.getMonth()]
+    const releaseYear = parsedDate.getFullYear()
 
-    const title = data.title ?? data.name;
+    const title = data.title ?? data.name
 
     return (
         <header className='lg:flex lg:justify-between lg:items-center'>
@@ -81,11 +81,11 @@ const Header = ({ data }: { data: Media }) => {
                 <section className='mb-7 flex justify-between gap-6'>
                     <header
                         className={`max-w-xl ${
-                            data.overview === "" ? "hidden" : "block"
+                            data.overview === '' ? 'hidden' : 'block'
                         }`}
                     >
                         <h3 className='mb-2 sm:font-semibold sm:text-lg uppercase text-txtGray2'>
-                            {data.tagline ? data.tagline : "Synopsis"}
+                            {data.tagline ? data.tagline : 'Synopsis'}
                         </h3>
                         <p className='leading-8 text-sm sm:leading-9 text-txtGray2 font-light [text-wrap:balance] sm:[text-wrap:wrap] sm:text-base lg:leading-7 lg:line-clamp-5'>
                             {data.overview}
@@ -106,7 +106,7 @@ const Header = ({ data }: { data: Media }) => {
 
             <div className='border-t border-t-[#616161] lg:hidden' />
         </header>
-    );
-};
+    )
+}
 
-export default Header;
+export default Header

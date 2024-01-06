@@ -1,43 +1,45 @@
-"use client";
-import Link from "next/link";
-import FilterPanel from "./FilterPanel";
-import MenuFunction from "../shared/header/MenuFunction";
-import { useEffect, useState } from "react";
-import { Logo } from "../icons/Icons";
-import EspaciadoLayout from "../layout/EspaciadoLayout";
+'use client'
+import Link from 'next/link'
+import FilterPanel from './FilterPanel'
+import MenuFunction from '../shared/header/MenuFunction'
+import { useEffect, useState } from 'react'
+import { Logo } from '../icons/Icons'
+import EspaciadoLayout from '../layout/EspaciadoLayout'
 
 const NavSearch = ({
     type,
     children,
     duration = 0,
 }: {
-    type: string;
-    children: React.ReactNode;
-    duration?: number;
+    type: string
+    children: React.ReactNode
+    duration?: number
 }) => {
-    const [lastScrollTop, setLastScrollTop] = useState(0);
+    const [lastScrollTop, setLastScrollTop] = useState(0)
 
     useEffect(() => {
         const handleScroll = () => {
-            const currentPosition = window.scrollY;
-            setLastScrollTop(currentPosition);
-        };
+            const currentPosition = window.scrollY
+            setLastScrollTop(currentPosition)
+        }
 
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener('scroll', handleScroll)
 
         return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, [lastScrollTop]);
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [lastScrollTop])
 
     return (
         <EspaciadoLayout
             component='nav'
             className={`transition duration-300 ease-in fixed text-xs lg:text-sm w-full z-50 top-0  h-nav sm:h-[60px] flex justify-between items-center text-txtGray1 scrollMove 
-            ${lastScrollTop < duration
-            ? 'bg-black sm:bg-transparent border-b border-white/0'
-            : 'bg-black sm:bg-[rgba(22,22,23,0.8)] sm:[backdrop-filter:blur(20px)_saturate(180%)] border-b border-white/40'
-        }`}>
+            ${
+                lastScrollTop < duration
+                    ? 'bg-black sm:bg-transparent border-b border-white/0'
+                    : 'bg-black sm:bg-[rgba(22,22,23,0.8)] sm:[backdrop-filter:blur(20px)_saturate(180%)] border-b border-white/40'
+            }`}
+        >
             <div className='flex-1 text-white '>
                 <Link href='/' className='flex items-center gap-2 w-20'>
                     <strong>
@@ -59,15 +61,16 @@ const NavSearch = ({
                     <Link
                         href='/search/movie'
                         className={`hover:text-white transition-colors 
-                    ${type === "movie" ? "text-white" : "text-txtGray1"}`}
+                    ${type === 'movie' ? 'text-white' : 'text-txtGray1'}`}
                     >
                         Películas
                     </Link>
 
                     <Link
                         href='/search/tv'
-                        className={`hover:text-white transition-colors ${type === 'tv' ? 'text-white' : 'text-txtGray1'
-                            }`}
+                        className={`hover:text-white transition-colors ${
+                            type === 'tv' ? 'text-white' : 'text-txtGray1'
+                        }`}
                     >
                         Series
                     </Link>
@@ -82,7 +85,7 @@ const NavSearch = ({
                 <MenuFunction>{children}</MenuFunction>
             </div>
         </EspaciadoLayout>
-    );
-};
+    )
+}
 
-export default NavSearch;
+export default NavSearch

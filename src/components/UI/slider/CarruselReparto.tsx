@@ -1,8 +1,8 @@
-"use client";
-import { Cast } from "@/types/types";
-import RepartoCard from "../card/RepartoCard";
-import { useRef } from "react";
-import { ArrowLeft, ArrowRight } from "@/components/icons/Icons";
+'use client'
+import { Cast } from '@/types/types'
+import RepartoCard from '../card/RepartoCard'
+import { useRef } from 'react'
+import { ArrowLeft, ArrowRight } from '@/components/icons/Icons'
 
 export default function CarruselReparto({
     actores,
@@ -11,53 +11,54 @@ export default function CarruselReparto({
     actores: Cast[]
     type: string
 }) {
-    const containerRef = useRef<HTMLDivElement | null>(null);
+    const containerRef = useRef<HTMLDivElement | null>(null)
 
-    const handleScroll = (direction: "prev" | "next") => {
-        const container = containerRef.current;
+    const handleScroll = (direction: 'prev' | 'next') => {
+        const container = containerRef.current
 
         if (container) {
             const cardWidth =
-                container.querySelector("#contenedorImageReparto")
-                    ?.clientWidth || 0; // Ancho de una tarjeta
+                container.querySelector('#contenedorImageReparto')
+                    ?.clientWidth || 0 // Ancho de una tarjeta
             // const visibleCards = Math.floor(container.clientWidth / cardWidth); // Número de tarjetas visibles
 
-            if (direction === "prev") {
-                container.scrollLeft -= cardWidth;
-            } else if (direction === "next") {
-                container.scrollLeft += cardWidth;
+            if (direction === 'prev') {
+                container.scrollLeft -= cardWidth
+            } else if (direction === 'next') {
+                container.scrollLeft += cardWidth
             }
         }
-    };
+    }
 
     return (
         <div className='mx-auto mt-16 mb-20 md:mb-40 max-w-[1200px]'>
-            <div className={`flex w-full justify-end gap-2 mb-4 
-                ${actores.length < 2 && 'hidden' }
-                ${actores.length < 3 && 'sm:hidden' }`
-            }
+            <div
+                className={`flex w-full justify-end gap-2 mb-4 
+                ${actores.length < 2 && 'hidden'}
+                ${actores.length < 3 && 'sm:hidden'}`}
             >
                 <button
                     className={`bg-[oklch(25.63%_0_0)] hover:bg-white md:border md:border-[oklch(25.63%_0_0)]  size-10 flex justify-center items-center rounded-full group hover:text-[oklch(25.63%_0_0)] transition-all duration-300`}
                     aria-label='Mover el carrusel hacia atrás'
-                    onClick={() => handleScroll("prev")}
+                    onClick={() => handleScroll('prev')}
                 >
-                    <ArrowLeft clasName="size-5" />
+                    <ArrowLeft clasName='size-5' />
                 </button>
                 <button
                     className='bg-[oklch(25.63%_0_0)] hover:bg-white md:border md:border-[oklch(25.63%_0_0)]  size-10 flex justify-center items-center rounded-full group hover:text-[oklch(25.63%_0_0)] transition-all duration-300'
                     aria-label='Mover el carrusel hacia adelante'
-                    onClick={() => handleScroll("next")}
+                    onClick={() => handleScroll('next')}
                 >
-                    <ArrowRight clasName="size-5" />
+                    <ArrowRight clasName='size-5' />
                 </button>
             </div>
             <div
                 ref={containerRef}
-                className={`relative ${actores.length > 2
-                    ? "overflow-scroll carrusel snap-x snap-mandatory scroll-smooth"
-                    : ""
-                    } `}
+                className={`relative ${
+                    actores.length > 2
+                        ? 'overflow-scroll carrusel snap-x snap-mandatory scroll-smooth'
+                        : ''
+                } `}
             >
                 <div className='flex gap-6 transition-transform ease-in-out duration-500'>
                     {actores.slice(0, 10).map((actor) => (
@@ -70,5 +71,5 @@ export default function CarruselReparto({
                 </div>
             </div>
         </div>
-    );
+    )
 }

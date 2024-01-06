@@ -1,21 +1,23 @@
-import { fetchRepartoMovie } from "@/lib/api";
-import { Reparto } from "@/types/types";
-import { obtenerActoresConImagenes } from "@/utils/obtenerActoresConImagenes";
-import React from "react";
-import CarruselReparto from "../UI/slider/CarruselReparto";
-
+import { fetchRepartoMovie } from '@/lib/api'
+import { Reparto } from '@/types/types'
+import { obtenerActoresConImagenes } from '@/utils/obtenerActoresConImagenes'
+import React from 'react'
+import CarruselReparto from '../UI/slider/CarruselReparto'
 
 const Reparto = async ({ id, type }: { id: string; type: string }) => {
-    const start: Reparto = await fetchRepartoMovie(type, id);
-    const director = start.crew.find(
-        (miembro) =>
-            miembro.job === "Director" || miembro.job === "Series Director" || miembro.job === "Executive Producer"
-    ) ?? start.crew[0];
+    const start: Reparto = await fetchRepartoMovie(type, id)
+    const director =
+        start.crew.find(
+            (miembro) =>
+                miembro.job === 'Director' ||
+                miembro.job === 'Series Director' ||
+                miembro.job === 'Executive Producer'
+        ) ?? start.crew[0]
 
-    const actoresConImagenes = obtenerActoresConImagenes(start);
+    const actoresConImagenes = obtenerActoresConImagenes(start)
 
     // En el caso no haya actores no retornara nada
-    if (start.cast.length === 0) return;
+    if (start.cast.length === 0) return
 
     return (
         <section className='px-5 md:px-8 lg:px-12 lg:py-12 md:bg-[#050505]'>
@@ -34,13 +36,10 @@ const Reparto = async ({ id, type }: { id: string; type: string }) => {
                 </h3>
             </div>
             <div className='md:px-16 lg:px-20 2xl:px-0 h-full max-w-[1770px] mx-auto'>
-                <CarruselReparto 
-                    actores={actoresConImagenes}
-                    type={type}
-                />
+                <CarruselReparto actores={actoresConImagenes} type={type} />
             </div>
         </section>
-    );
-};
+    )
+}
 
-export default Reparto;
+export default Reparto

@@ -2,8 +2,8 @@ const TitleProducction = ({
     children,
     className,
 }: {
-    children: React.ReactNode;
-    className?: string;
+    children: React.ReactNode
+    className?: string
 }) => {
     return (
         <h4
@@ -11,7 +11,7 @@ const TitleProducction = ({
         >
             {children}
         </h4>
-    );
-};
+    )
+}
 
-export default TitleProducction;
+export default TitleProducction

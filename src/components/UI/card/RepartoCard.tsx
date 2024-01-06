@@ -1,30 +1,32 @@
-import { Cast } from "@/types/types";
-import Image from "next/image";
-import Link from "next/link";
+import { Cast } from '@/types/types'
+import Image from 'next/image'
+import Link from 'next/link'
 
 interface RepartoCardProps {
-    actor: Cast;
-    type: string;
+    actor: Cast
+    type: string
 }
 
 const RepartoCard = ({ actor, type }: RepartoCardProps) => {
-
     return (
         <Link
             href={`/actor/${actor.id}-${type}`}
             className='relative snap-start'
             scroll={false}
         >
-            <figure id="contenedorImageReparto" className='w-40 lg:w-48 xl:w-[230px] relative after:content-[""] after:absolute after:inset-0 after:bg-gradiantBottonCard'>
+            <figure
+                id='contenedorImageReparto'
+                className='w-40 lg:w-48 xl:w-[230px] relative after:content-[""] after:absolute after:inset-0 after:bg-gradiantBottonCard'
+            >
                 <Image
                     src={`https://image.tmdb.org/t/p/w342/${actor.profile_path}`}
                     alt={`Actor ${actor.name}`}
                     width={342}
                     height={513}
                     style={{
-                        width: "auto",
-                        height: "auto",
-                        viewTransitionName: `actor-${actor.id}`
+                        width: 'auto',
+                        height: 'auto',
+                        viewTransitionName: `actor-${actor.id}`,
                     }}
                     className='rounded-lg saturate-[1.2] w-auto h-auto'
                     quality={100}
@@ -39,7 +41,7 @@ const RepartoCard = ({ actor, type }: RepartoCardProps) => {
                 </span>
             </footer>
         </Link>
-    );
-};
+    )
+}
 
-export default RepartoCard;
+export default RepartoCard

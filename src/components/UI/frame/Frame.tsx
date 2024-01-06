@@ -2,14 +2,12 @@ import { fetchActorForId } from '@/lib/api'
 import { Actor } from '@/types/types'
 import Image from 'next/image'
 
-
 export default async function Frame({ path }: { path: any }) {
-
-    const [id,] = path.id.split('-')
+    const [id] = path.id.split('-')
     const actor: Actor = await fetchActorForId(id)
 
     return (
-        <div className="h-full w-full relative z-50">
+        <div className='h-full w-full relative z-50'>
             <figure className='relative after:content-[""] after:absolute after:inset-0 after:bg-gradiantBottonCard'>
                 <Image
                     src={`https://image.tmdb.org/t/p/w780/${actor.profile_path}`}
@@ -19,7 +17,7 @@ export default async function Frame({ path }: { path: any }) {
                     style={{
                         width: 'auto',
                         height: 'auto',
-                        viewTransitionName: `actores-${actor.id}`
+                        viewTransitionName: `actores-${actor.id}`,
                     }}
                     className='rounded aspect-[9/13.5] w-auto h-auto '
                 />

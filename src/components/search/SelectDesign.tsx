@@ -1,27 +1,26 @@
-"use cliente";
+'use cliente'
 
-import { useState } from "react";
-import { OrganizarPorItem } from "../../types/types";
-import { usePathname, useRouter } from "next/navigation";
+import { useState } from 'react'
+import { OrganizarPorItem } from '../../types/types'
+import { usePathname, useRouter } from 'next/navigation'
 
 const SelectDesign = ({
     options,
     paramName,
     title,
 }: {
-    options: OrganizarPorItem[];
+    options: OrganizarPorItem[]
     paramName: string
-    title: string,
+    title: string
 }) => {
+    const router = useRouter()
+    const pathname = usePathname()
 
-    const router = useRouter();
-    const pathname = usePathname();
-
-    const [activeSelect, setActiveSelect] = useState(false);
+    const [activeSelect, setActiveSelect] = useState(false)
 
     const handleActiveSelect = () => {
-        setActiveSelect(!activeSelect);
-    };
+        setActiveSelect(!activeSelect)
+    }
 
     const handleSelectValue = (id: string | number) => {
         if (pathname.includes('search')) {
@@ -29,7 +28,6 @@ const SelectDesign = ({
         }
         router.push(`/search/movie?${paramName}=${id}`)
     }
-
 
     return (
         <div className='relative text-[#999]'>
@@ -57,7 +55,7 @@ const SelectDesign = ({
                 </ul>
             )}
         </div>
-    );
-};
+    )
+}
 
-export default SelectDesign;
+export default SelectDesign

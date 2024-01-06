@@ -1,18 +1,18 @@
-"use client";
-import TrailerPlayer from "./TrailerPlayer";
-import ModalTrailer from "../UI/modal/ModalTrailer";
-import useTrailer from "@/store/useTrailer";
-import { useTransition, animated } from "react-spring";
+'use client'
+import TrailerPlayer from './TrailerPlayer'
+import ModalTrailer from '../UI/modal/ModalTrailer'
+import useTrailer from '@/store/useTrailer'
+import { useTransition, animated } from 'react-spring'
 
 const ShowTrailer = () => {
-    const { modalIsOpen, selectedVideoId } = useTrailer((state) => state);
+    const { modalIsOpen, selectedVideoId } = useTrailer((state) => state)
 
     const transitions = useTransition(modalIsOpen, {
-        from: { opacity: 0, },
-        enter: { opacity: 1,},
-        leave: { opacity: 0,  },
+        from: { opacity: 0 },
+        enter: { opacity: 1 },
+        leave: { opacity: 0 },
         config: { duration: 500 },
-    });
+    })
 
     return (
         <>
@@ -20,9 +20,9 @@ const ShowTrailer = () => {
                 (style, item) =>
                     item && (
                         <animated.div
-                        style={{
-                            opacity: style.opacity,
-                        }}
+                            style={{
+                                opacity: style.opacity,
+                            }}
                         >
                             <ModalTrailer>
                                 <TrailerPlayer videoId={selectedVideoId} />
@@ -31,7 +31,7 @@ const ShowTrailer = () => {
                     )
             )}
         </>
-    );
-};
+    )
+}
 
-export default ShowTrailer;
+export default ShowTrailer

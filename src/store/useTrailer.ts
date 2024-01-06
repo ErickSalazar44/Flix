@@ -17,7 +17,7 @@ const useTrailer = create<useTrailer>((set) => ({
     selectedVideoId: null,
     setSelectedVideoId: (videoId) => set({ selectedVideoId: videoId }),
     miniReproductor: false,
-    setMiniReproductor: (active) => set({miniReproductor: active})
+    setMiniReproductor: (active) => set({ miniReproductor: active })
 }));
 
 export default useTrailer

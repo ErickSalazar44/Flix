@@ -1,33 +1,33 @@
-import Publicity from "@/components/home/Publicity";
-import HomeHeader from "@/components/home/HomeHeader";
-import { movieGenresList, trendingMoviesWeekly } from "@/lib/api";
-import Footer from "@/components/shared/footer/Footer";
-import NavSearch from "@/components/search/NavSearch";
-import FormSearch from "@/components/shared/header/FormSearch";
-import dynamic from "next/dynamic";
-import EspaciadoLayout from "@/components/layout/EspaciadoLayout";
+import Publicity from '@/components/home/Publicity'
+import HomeHeader from '@/components/home/HomeHeader'
+import { movieGenresList, trendingMoviesWeekly } from '@/lib/api'
+import Footer from '@/components/shared/footer/Footer'
+import NavSearch from '@/components/search/NavSearch'
+import FormSearch from '@/components/shared/header/FormSearch'
+import dynamic from 'next/dynamic'
+import EspaciadoLayout from '@/components/layout/EspaciadoLayout'
 const DynamicSliderContainer = dynamic(
-    () => import("@/components/home/SliderContainer")
-);
+    () => import('@/components/home/SliderContainer')
+)
 const DynamicColeccionContainer = dynamic(
-    () => import("@/components/home/ColeccionContainer")
-);
+    () => import('@/components/home/ColeccionContainer')
+)
 
 export default async function Home({
     searchParams,
 }: {
-    searchParams: { q: string };
+    searchParams: { q: string }
 }) {
-    const { results: moviesTrends } = await trendingMoviesWeekly();
-    const generos = await movieGenresList();
+    const { results: moviesTrends } = await trendingMoviesWeekly()
+    const generos = await movieGenresList()
 
     return (
         <main className='scrollMove'>
             {/* NAVBAR */}
             <NavSearch type='' duration={100}>
                 <FormSearch
-                    defaultValue={searchParams.q || ""}
-                    type={"movie"}
+                    defaultValue={searchParams.q || ''}
+                    type={'movie'}
                 />
             </NavSearch>
 
@@ -101,5 +101,5 @@ export default async function Home({
             </EspaciadoLayout>
             <Footer />
         </main>
-    );
+    )
 }

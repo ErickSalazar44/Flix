@@ -1,23 +1,24 @@
-import EspaciadoLayout from "@/components/layout/EspaciadoLayout";
-import BgImage from "@/components/media/BgImage";
-import ContenedorCarrusel from "@/components/media/ContenedorCarrusel";
-import DetallesProduccion from "@/components/media/DetallesProduccion";
-import Header from "@/components/media/Header";
-import Reparto from "@/components/media/Reparto";
-import NavSearch from "@/components/search/NavSearch";
-import Footer from "@/components/shared/footer/Footer";
-import FormSearch from "@/components/shared/header/FormSearch";
-import { fetchData } from "@/utils/fetchData";
-import { Suspense } from "react";
+import EspaciadoLayout from '@/components/layout/EspaciadoLayout'
+import BgImage from '@/components/media/BgImage'
+import ContenedorCarrusel from '@/components/media/ContenedorCarrusel'
+import DetallesProduccion from '@/components/media/DetallesProduccion'
+import Galeria from '@/components/media/Galeria'
+import Header from '@/components/media/Header'
+import Reparto from '@/components/media/Reparto'
+import NavSearch from '@/components/search/NavSearch'
+import Footer from '@/components/shared/footer/Footer'
+import FormSearch from '@/components/shared/header/FormSearch'
+import { fetchData } from '@/utils/fetchData'
+import { Suspense } from 'react'
 
 export async function generateMetadata({
     params,
 }: {
-    params: { mediaInfo: string };
+    params: { mediaInfo: string }
 }) {
-    const [id, type] = params.mediaInfo.split("-");
-    const data = await fetchData(`/${type}/${id}`);
-    const title = data.title ?? data.name;
+    const [id, type] = params.mediaInfo.split('-')
+    const data = await fetchData(`/${type}/${id}`)
+    const title = data.title ?? data.name
 
     return {
         title: title,
@@ -29,27 +30,27 @@ export async function generateMetadata({
                 },
             ],
         },
-    };
+    }
 }
 
 export default async function PageMedia({
     params,
     searchParams,
 }: {
-    params: { mediaInfo: string };
-    searchParams: { q: string };
+    params: { mediaInfo: string }
+    searchParams: { q: string }
 }) {
-    const [id, type] = params.mediaInfo.split("-");
+    const [id, type] = params.mediaInfo.split('-')
     // traer los datos con su trailer
-    const query = "language=es-ES&append_to_response=videos";
-    const data = await fetchData(`/${type}/${id}`, query);
+    const query = 'language=es-ES&append_to_response=videos'
+    const data = await fetchData(`/${type}/${id}`, query)
 
     return (
         <div>
             <header className='hidden md:block'>
                 <NavSearch type={type}>
                     <FormSearch
-                        defaultValue={searchParams.q || ""}
+                        defaultValue={searchParams.q || ''}
                         type={type}
                     />
                 </NavSearch>
@@ -65,24 +66,29 @@ export default async function PageMedia({
                         <Header data={data} />
                     </EspaciadoLayout>
 
-                    <div className='flex flex-col'>
-                        {/* SECCION RECOMENDADOS */}
-                        <Suspense fallback={<span>CARGANDO ...</span>}>
-                            <ContenedorCarrusel type={type} id={id} />
-                        </Suspense>
-                        {/* SECCION ACTORES */}
-                        <Suspense fallback={<span>CARGANDO ...</span>}>
-                            <Reparto type={type} id={id} />
-                        </Suspense>
-                    </div>
+                    {/* SECCION RECOMENDADOS */}
+                    <Suspense fallback={<span>CARGANDO ...</span>}>
+                        <ContenedorCarrusel type={type} id={id} />
+                    </Suspense>
+                    {/* SECCION ACTORES */}
+                    <Suspense fallback={<span>CARGANDO ...</span>}>
+                        <Reparto type={type} id={id} />
+                    </Suspense>
 
                     {/* INFORMACION DE LA PELICULA */}
-                    <EspaciadoLayout className="bg-black text-[#666666] py-8 pt-8 lg:py-20">
+                    <EspaciadoLayout className='bg-black text-[#666666] py-8 pt-8 lg:py-20'>
                         <DetallesProduccion data={data} />
                     </EspaciadoLayout>
+
+                    {/* SECCION DE IMAGENES */}
+                    {type === 'movie' && (
+                        <section className='py-8 pt-8 lg:py-20'>
+                            <Galeria />
+                        </section>
+                    )}
                 </main>
                 <Footer />
             </div>
         </div>
-    );
+    )
 }

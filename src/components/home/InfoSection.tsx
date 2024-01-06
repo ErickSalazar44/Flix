@@ -1,22 +1,22 @@
-import { Play } from "@/icons/Icons";
-import type { GenreTv, MoviesAndSeries } from "@/types/types";
-import { getGenreNamesByIds } from "@/utils/getGenreNamesByIds";
-import Link from "next/link";
-import EspaciadoLayout from "../layout/EspaciadoLayout";
+import { Play } from '@/icons/Icons'
+import type { GenreTv, MoviesAndSeries } from '@/types/types'
+import { getGenreNamesByIds } from '@/utils/getGenreNamesByIds'
+import Link from 'next/link'
+import EspaciadoLayout from '../layout/EspaciadoLayout'
 
 const InfoSection = ({
     movies,
     currentIndex,
     genresMovies,
 }: {
-    movies: MoviesAndSeries[];
-    currentIndex: number;
-    genresMovies: GenreTv;
+    movies: MoviesAndSeries[]
+    currentIndex: number
+    genresMovies: GenreTv
 }) => {
     const genreNamesByIds = getGenreNamesByIds(
         genresMovies.genres,
         movies[currentIndex]?.genre_ids
-    );
+    )
 
     return (
         <EspaciadoLayout className='relative pb-10 z-10 transition-all'>
@@ -44,7 +44,7 @@ const InfoSection = ({
                 </Link>
             </div>
         </EspaciadoLayout>
-    );
-};
+    )
+}
 
-export default InfoSection;
+export default InfoSection

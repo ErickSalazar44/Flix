@@ -1,34 +1,33 @@
-'use client';
+'use client'
 
-import { useState } from 'react'; // REACT
-import { Galeria } from "@/types/types"; // TYPES
-import "@/styles/scrollAnimate.css"; // STYLES
-import { useParams } from "next/navigation";
-import { ImageInfo } from "@/types/types";
-
+import { useState } from 'react' // REACT
+import { Galeria } from '@/types/types' // TYPES
+import '@/styles/scrollAnimate.css' // STYLES
+import { useParams } from 'next/navigation'
+import { ImageInfo } from '@/types/types'
 
 const Galeria = () => {
     const [galeria, setGaleria] = useState<Galeria | null>(null)
-    const [showImages, setShowImages] = useState(false);
+    const [showImages, setShowImages] = useState(false)
     const params = useParams()
 
-    const id = String(params.mediaInfo).split('-')[0];
+    const id = String(params.mediaInfo).split('-')[0]
 
     const fetchGaleriaMovie = () => {
         fetch(`/api/galeria?id=${id}`)
-        .then(res => res.json())
-        .then(data => setGaleria(data))
-        .catch(err => setShowImages(false))
+            .then((res) => res.json())
+            .then((data) => setGaleria(data))
+            .catch((err) => setShowImages(false))
     }
 
     const handleClick = () => {
         // Toggle the state to show/hide images
         if (galeria) {
-            setShowImages(!showImages);
+            setShowImages(!showImages)
         }
         fetchGaleriaMovie()
-        setShowImages(!showImages);
-    };
+        setShowImages(!showImages)
+    }
 
     return (
         <div>
@@ -55,14 +54,14 @@ const Galeria = () => {
                             }`}
                             style={{
                                 width: 'auto',
-                                height: 'auto'
+                                height: 'auto',
                             }}
                         />
                     ))}
                 </picture>
             )}
         </div>
-    );
-};
+    )
+}
 
-export default Galeria;
+export default Galeria

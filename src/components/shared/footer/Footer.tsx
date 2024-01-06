@@ -1,56 +1,72 @@
 'use client'
-import RevisaNuestroCatalogo from "@/components/home/RevisaNuestroCatalogo";
+import RevisaNuestroCatalogo from '@/components/home/RevisaNuestroCatalogo'
 import {
     GitHub,
     Instagram,
     Linkedin,
     Portafolio,
-} from "@/components/icons/Icons";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+} from '@/components/icons/Icons'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 const Footer = () => {
-
-    const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+    const [currentYear, setCurrentYear] = useState(new Date().getFullYear())
 
     useEffect(() => {
-        setCurrentYear(new Date().getFullYear());
-    }, []);
+        setCurrentYear(new Date().getFullYear())
+    }, [])
 
     return (
-        <div className="bg-black">
-            <RevisaNuestroCatalogo/>        
+        <div className='bg-black'>
+            <RevisaNuestroCatalogo />
             <footer className='scrollMove lg:mt-20 w-full relative bg-footerGradiant pt-8 md:pt-20'>
                 <div className='max-w-6xl mx-auto mb-8 '>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+                    <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4'>
                         <div className='px-6 md:px-10 lg:px-12'>
-                            <h4 className='text-sm mb-4 uppercase'>Navegación</h4>
+                            <h4 className='text-sm mb-4 uppercase'>
+                                Navegación
+                            </h4>
                             <ul className='text-txtGray1 text-xs flex flex-col gap-4'>
                                 <li>
-                                    <Link href={"/search/movie"}>Explora lo más popular</Link>
+                                    <Link href={'/search/movie'}>
+                                        Explora lo más popular
+                                    </Link>
                                 </li>
 
                                 <li>
-                                    <Link href={"/search/tv"}>Explorar series populares</Link>
+                                    <Link href={'/search/tv'}>
+                                        Explorar series populares
+                                    </Link>
                                 </li>
 
                                 <li>
-                                    <Link href={"/search/movie?genre=27"}>Explorar generos</Link>
+                                    <Link href={'/search/movie?genre=27'}>
+                                        Explorar generos
+                                    </Link>
                                 </li>
 
                                 <li>
-                                    <a href='https://aluraflix-ericksalazar.netlify.app/#/' target="_blank" rel="noopener noreferrer">Visitar version anterior</a>
+                                    <a
+                                        href='https://aluraflix-ericksalazar.netlify.app/#/'
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                    >
+                                        Visitar version anterior
+                                    </a>
                                 </li>
                             </ul>
                         </div>
                         <div className='px-6 md:px-10 lg:px-12'>
-                            <h4 className='text-sm mb-4 uppercase'>Contactame</h4>
+                            <h4 className='text-sm mb-4 uppercase'>
+                                Contactame
+                            </h4>
                             <ul className='text-txtGray1 text-xs flex flex-col gap-2'>
                                 <li>
                                     <a
                                         className='flex items-center gap-2'
                                         href='https://github.com/ErickSalazar44/Flix'
-                                        target="_blank" rel="noopener noreferrer"
+                                        target='_blank'
+                                        rel='noopener noreferrer'
                                     >
                                         <span>
                                             <GitHub />
@@ -63,7 +79,8 @@ const Footer = () => {
                                     <a
                                         className='flex items-center gap-2'
                                         href='https://newportafolio-one.vercel.app/'
-                                        target="_blank" rel="noopener noreferrer"
+                                        target='_blank'
+                                        rel='noopener noreferrer'
                                     >
                                         <span>
                                             <Portafolio />
@@ -76,7 +93,8 @@ const Footer = () => {
                                     <a
                                         className='flex items-center gap-2'
                                         href='https://www.linkedin.com/in/erick-josep-salazar-8b8b6024b/'
-                                        target="_blank" rel="noopener noreferrer"
+                                        target='_blank'
+                                        rel='noopener noreferrer'
                                     >
                                         <span>
                                             <Linkedin />
@@ -89,7 +107,8 @@ const Footer = () => {
                                     <a
                                         className='flex items-center gap-2'
                                         href='https://www.instagram.com/erickcsalazar22/'
-                                        target="_blank" rel="noopener noreferrer"
+                                        target='_blank'
+                                        rel='noopener noreferrer'
                                     >
                                         <span>
                                             <Instagram />
@@ -130,7 +149,9 @@ const Footer = () => {
                                 <br />
                                 derechos de autor contáctanos
                                 <br />
-                                <span className="select-text">erickjosepsalazar2@gmail.com</span>
+                                <span className='select-text'>
+                                    erickjosepsalazar2@gmail.com
+                                </span>
                                 <br />
                                 ¡Disfruta de la experiencia Flix!
                             </p>
@@ -139,14 +160,17 @@ const Footer = () => {
                 </div>
 
                 <div className='max-w-6xl mx-auto px-6 md:px-10 lg:px-12'>
-                    <div className="text-txtGray1 py-8 border-t-[1px] border-t-gray-700 flex justify-between">
-                        <h5 className="text-xs">Hecho con 💙<span className="text-xs"> © {currentYear}</span></h5>
-                        <h6 className="text-xs">Erick Salazar</h6>
+                    <div className='text-txtGray1 py-8 border-t-[1px] border-t-gray-700 flex justify-between'>
+                        <h5 className='text-xs'>
+                            Hecho con 💙
+                            <span className='text-xs'> © {currentYear}</span>
+                        </h5>
+                        <h6 className='text-xs'>Erick Salazar</h6>
                     </div>
                 </div>
             </footer>
         </div>
-    );
-};
+    )
+}
 
-export default Footer;
+export default Footer

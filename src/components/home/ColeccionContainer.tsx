@@ -1,18 +1,18 @@
-import { fetchData } from "@/utils/fetchData";
-import Image from "next/image";
-import GetstartRatingUI2 from "@/UI/puntuacion/GetstartRatingUI2";
-import SliderMedia from "@/UI/slider/SliderMedia";
+import { fetchData } from '@/utils/fetchData'
+import Image from 'next/image'
+import GetstartRatingUI2 from '@/UI/puntuacion/GetstartRatingUI2'
+import SliderMedia from '@/UI/slider/SliderMedia'
 
 const ColeccionContainer = async ({
     id,
     textColor,
     subTitle,
 }: {
-    id: string;
-    textColor: string;
-    subTitle: string;
+    id: string
+    textColor: string
+    subTitle: string
 }) => {
-    const details = await fetchData(`/collection/${id}`);
+    const details = await fetchData(`/collection/${id}`)
 
     return (
         <section className='my-10 sm:my-16 relative h-full min-h-[700px] sm:h-[800px] lg:h-[96vh] xl:h-[100vh] flex flex-col'>
@@ -24,8 +24,8 @@ const ColeccionContainer = async ({
                     height={1080}
                     className='hidden 2xl:block object-cover h-full object-top'
                     style={{
-                        width: "100%",
-                        height: "100%",
+                        width: '100%',
+                        height: '100%',
                     }}
                 />
                 <Image
@@ -35,8 +35,8 @@ const ColeccionContainer = async ({
                     height={800}
                     className='hidden md:block 2xl:hidden object-cover h-auto w-auto object-top'
                     style={{
-                        width: "100%",
-                        height: "100%",
+                        width: '100%',
+                        height: '100%',
                     }}
                 />
                 <Image
@@ -47,8 +47,8 @@ const ColeccionContainer = async ({
                     quality={100}
                     className='md:hidden object-cover object-top'
                     style={{
-                        width: "100%",
-                        height: "100%",
+                        width: '100%',
+                        height: '100%',
                     }}
                 />
             </figure>
@@ -62,7 +62,7 @@ const ColeccionContainer = async ({
                         style={{ color: textColor }}
                         className={`[text-wrap:wrap]`}
                     >
-                        {details.name.split("-")[0]}
+                        {details.name.split('-')[0]}
                     </h2>
                 </div>
                 <p className='max-w-xs sm:max-w-md line-clamp-6'>
@@ -71,7 +71,7 @@ const ColeccionContainer = async ({
             </div>
             <div className='sm:px-5 md:px-8 lg:px-12 2xl:px-16 my-7 carrusel text-txtGray2'>
                 <SliderMedia
-                    type={"movie"}
+                    type={'movie'}
                     data={details.parts}
                     className='w-[calc(100vw-2.5rem)] sm:w-[calc(50vw-2.5rem)] lg:w-[calc(33.33vw-3rem)] 2xl:w-[calc(25vw-3rem)] 3xl:w-[439px]'
                 />
@@ -81,7 +81,7 @@ const ColeccionContainer = async ({
                 <GetstartRatingUI2 data={details.parts[0]} />
             </div>
         </section>
-    );
-};
+    )
+}
 
-export default ColeccionContainer;
+export default ColeccionContainer

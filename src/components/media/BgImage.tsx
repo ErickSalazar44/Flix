@@ -1,15 +1,15 @@
-import { Media } from "@/types/types"; // TYPES
-import Image from "next/image"; // NEXT
-import { CloseIcon, Play } from "../icons/Icons"; // ICONS
-import Link from "next/link";
-import GetstartRatingUI2 from "../UI/puntuacion/GetstartRatingUI2";
-import TrailerTrigerBtn from "../UI/Btn/TrailerTrigerBtn";
+import { Media } from '@/types/types' // TYPES
+import Image from 'next/image' // NEXT
+import { CloseIcon, Play } from '../icons/Icons' // ICONS
+import Link from 'next/link'
+import GetstartRatingUI2 from '../UI/puntuacion/GetstartRatingUI2'
+import TrailerTrigerBtn from '../UI/Btn/TrailerTrigerBtn'
 
 const BgImage = ({ data }: { data: Media }) => {
-    const { poster_path, backdrop_path } = data;
+    const { poster_path, backdrop_path } = data
 
     //title
-    const title = data.title ?? data.name;
+    const title = data.title ?? data.name
 
     return (
         <div className='fixed -z-10 top-0 h-[60vh] w-full before:bg-gradiantBotton before:absolute before:w-full before:h-full before:top-0 before:content-[""] before:z-20 after:bg-gradiantTop2 after:absolute after:w-full after:h-full after:top-0 after:content-[""] after:z-20 lg:h-screen lg:absolute scrollMove'>
@@ -20,10 +20,10 @@ const BgImage = ({ data }: { data: Media }) => {
                 sizes='(min-width: 640px) 640px, 450px'
                 className='block sm:hidden object-cover object-top aspect-[9/14] saturate-[1.2]'
                 style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    aspectRatio: "9/14",
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    aspectRatio: '9/14',
                 }}
                 priority={true}
             />
@@ -34,9 +34,9 @@ const BgImage = ({ data }: { data: Media }) => {
                 sizes='(min-width: 641px) and (max-width: 1024px) 50vw, (min-width: 1025px) and (max-width: 1400px) 60vw, (min-width: 1401px) and (max-width: 1980px) 100vw'
                 className='hidden sm:block object-cover object-top saturate-[1.2]'
                 style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
                 }}
                 priority={true}
             />
@@ -58,7 +58,7 @@ const BgImage = ({ data }: { data: Media }) => {
                 </div>
             </section>
         </div>
-    );
-};
+    )
+}
 
-export default BgImage;
+export default BgImage
