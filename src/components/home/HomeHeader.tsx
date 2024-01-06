@@ -4,6 +4,7 @@ import { useState } from "react";
 import BackgroundImage from "./BackgroundImage";
 import InfoSection from "./InfoSection";
 import SwiperHome from './SwiperHome';
+import EspaciadoLayout from "../layout/EspaciadoLayout";
 
 
 const HomeHeader = ({
@@ -28,15 +29,17 @@ const HomeHeader = ({
                     movies={moviesTrends}
                     genresMovies={genresMovies}
                 />
-                <div className='px-5 md:px-8 lg:px-12 2xl:px-16 relative z-30 mb-2 sm:mb-4'>
+                <EspaciadoLayout
+                    className='relative z-30 mb-2 sm:mb-4'
+                >
                     <h2 className='text-white z-20 relative font-medium mb-3 uppercase'>
                         Últimas películas
                     </h2>
-                        <SwiperHome
-                            movies={moviesTrends}
-                            setCurrentIndex={setCurrentIndex}
-                        />
-                </div>
+                    <SwiperHome
+                        movies={moviesTrends}
+                        setCurrentIndex={setCurrentIndex}
+                    />
+                </EspaciadoLayout>
             </div>
         </div>
     );

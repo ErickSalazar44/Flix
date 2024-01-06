@@ -5,11 +5,19 @@ import Footer from "@/components/shared/footer/Footer";
 import NavSearch from "@/components/search/NavSearch";
 import FormSearch from "@/components/shared/header/FormSearch";
 import dynamic from "next/dynamic";
-const DynamicSliderContainer = dynamic(() => import("@/components/home/SliderContainer"));
-const DynamicColeccionContainer = dynamic(() => import("@/components/home/ColeccionContainer"));
+import EspaciadoLayout from "@/components/layout/EspaciadoLayout";
+const DynamicSliderContainer = dynamic(
+    () => import("@/components/home/SliderContainer")
+);
+const DynamicColeccionContainer = dynamic(
+    () => import("@/components/home/ColeccionContainer")
+);
 
-
-export default async function Home({searchParams}: {searchParams: { q: string};}) {
+export default async function Home({
+    searchParams,
+}: {
+    searchParams: { q: string };
+}) {
     const { results: moviesTrends } = await trendingMoviesWeekly();
     const generos = await movieGenresList();
 
@@ -17,17 +25,14 @@ export default async function Home({searchParams}: {searchParams: { q: string};}
         <main className='scrollMove'>
             {/* NAVBAR */}
             <NavSearch type='' duration={100}>
-                <FormSearch 
+                <FormSearch
                     defaultValue={searchParams.q || ""}
-                    type={'movie'} 
+                    type={"movie"}
                 />
             </NavSearch>
 
             {/* HOME HEADER  */}
-            <HomeHeader 
-                moviesTrends={moviesTrends} 
-                genresMovies={generos} 
-            />
+            <HomeHeader moviesTrends={moviesTrends} genresMovies={generos} />
 
             {/* COLECCION */}
             <DynamicColeccionContainer
@@ -37,7 +42,10 @@ export default async function Home({searchParams}: {searchParams: { q: string};}
             />
 
             {/* SLIDER MOVIE 1 */}
-            <section className='px-5 md:px-8 lg:px-12 2xl:px-16 my-8 flex flex-col gap-12 lg:gap-4 2xl:gap-8 text-txtGray2'>
+            <EspaciadoLayout
+                component='section'
+                className='my-8 flex flex-col gap-12 lg:gap-4 2xl:gap-8 text-txtGray2'
+            >
                 <DynamicSliderContainer
                     path='/trending/tv/week'
                     title='SERIES POPULARES'
@@ -51,12 +59,11 @@ export default async function Home({searchParams}: {searchParams: { q: string};}
                     page='2'
                     title='FAVORITAS DE FESTIVALES DE CINE'
                 />
-
                 <DynamicSliderContainer
                     path='/movie/top_rated'
                     title='DESTACADOS DE FLIX'
                 />
-            </section>
+            </EspaciadoLayout>
             {/* ANUNCIO */}
             <Publicity />
 
@@ -68,7 +75,10 @@ export default async function Home({searchParams}: {searchParams: { q: string};}
             />
 
             {/* SLIDER MOVIE AND SERIE 2 */}
-            <section className='px-5 md:px-8 lg:px-12 2xl:px-16 my-8 flex flex-col gap-12 lg:gap-4 2xl:gap-8 text-txtGray2'>
+            <EspaciadoLayout
+                component='section'
+                className='my-8 flex flex-col gap-12 lg:gap-4 2xl:gap-8 text-txtGray2'
+            >
                 <DynamicSliderContainer
                     path='/movie/now_playing'
                     title='SERIES POPULARES'
@@ -88,8 +98,7 @@ export default async function Home({searchParams}: {searchParams: { q: string};}
                     page='3'
                     title='SERIES EN TENDENCIA'
                 />
-            </section>
-
+            </EspaciadoLayout>
             <Footer />
         </main>
     );

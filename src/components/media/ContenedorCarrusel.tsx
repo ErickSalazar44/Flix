@@ -5,6 +5,7 @@ import "@/styles/scrollAnimate.css";
 import MovieCard from "../UI/card/MovieCard";
 import MoviePreview from "./MoviePreview";
 import Link from "next/link";
+import EspaciadoLayout from "../layout/EspaciadoLayout";
 
 const ContenedorCarrusel = async ({
     id,
@@ -25,10 +26,11 @@ const ContenedorCarrusel = async ({
     );
 
     return (
-        <section className='py-8 px-5 md:px-8 lg:px-12 2xl:px-16 2xl:pb-20'>
-            <h3 className='font-semibold mb-6 text-xl md:text-2xl'>
-                Recomendaciones
-            </h3>
+        <EspaciadoLayout
+            component='section'
+            className='py-8 2xl:pb-20'
+        >
+            <h3 className='font-semibold mb-6 text-xl md:text-2xl'>Recomendaciones</h3>
             <div className='flex flex-col gap-10 md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4'>
                 {dataFilter.map((result: Media, index: number) =>
                     index === 0 ? (
@@ -43,7 +45,7 @@ const ContenedorCarrusel = async ({
                     )
                 )}
             </div>
-        </section>
+        </EspaciadoLayout>
     );
 };
 

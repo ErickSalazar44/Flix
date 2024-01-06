@@ -5,6 +5,7 @@ import { fetchSearch } from "@/lib/api";
 import { Media, OrganizadoPorMovie, OrganizadoPorTv } from "@/types/types";
 import Link from "next/link";
 import FormSearch from "@/components/shared/header/FormSearch";
+import EspaciadoLayout from "@/components/layout/EspaciadoLayout";
 
 export async function generateStaticParams() {
     return [{searchType: 'movie'}, {searchType: 'tv'}]
@@ -36,7 +37,10 @@ export default async function SearchPage({
                     type={type} 
                 />
             </NavSearch>
-            <header className='px-5 md:px-8 lg:px-12 2xl:px-16 text-center mb-10 mt-[60px] pt-8'>
+            <EspaciadoLayout 
+                component='header'
+                className='text-center mb-10 mt-[60px] pt-8'
+            >
                 <h2 className='uppercase text-3xl font-semibold text-txtWhite1'>
                     Explorar
                 </h2>
@@ -44,8 +48,11 @@ export default async function SearchPage({
                     Explora genéros. O directores. O títulos multipremiados.
                     Encuentra películas que no sabías que estabas buscando.
                 </p>
-            </header>
-            <main className='px-5 md:px-8 lg:px-12 2xl:px-16 min-h-screen bg-[#0a0a0a] pb-20'>
+            </EspaciadoLayout>
+            <EspaciadoLayout
+                component='main'
+                className='min-h-screen bg-[#0a0a0a] pb-20'
+            >
                 <header className='text-center py-10 text-txtWhite2'>
                     <h3 className='uppercase text-lg'>
                         Todas las {nameType} disponibles actualmente en aluraflix
@@ -64,7 +71,7 @@ export default async function SearchPage({
                         <ScrollInfinity totalPages={totalPages} />
                     )}
                 </section>
-            </main>
+            </EspaciadoLayout>
         </div>
     );
 }

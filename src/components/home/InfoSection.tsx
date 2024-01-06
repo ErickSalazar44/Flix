@@ -2,28 +2,26 @@ import { Play } from "@/icons/Icons";
 import type { GenreTv, MoviesAndSeries } from "@/types/types";
 import { getGenreNamesByIds } from "@/utils/getGenreNamesByIds";
 import Link from "next/link";
+import EspaciadoLayout from "../layout/EspaciadoLayout";
 
 const InfoSection = ({
     movies,
     currentIndex,
     genresMovies,
 }: {
-    movies: MoviesAndSeries[] ;
+    movies: MoviesAndSeries[];
     currentIndex: number;
     genresMovies: GenreTv;
 }) => {
-
-    const genreNamesByIds =  getGenreNamesByIds(
+    const genreNamesByIds = getGenreNamesByIds(
         genresMovies.genres,
         movies[currentIndex]?.genre_ids
     );
 
     return (
-        <div className='relative px-5 md:px-8 lg:px-12 2xl:px-16 pb-10 z-10 transition-all'>
-            <div
-                className={`flex flex-col gap-4 justify-end sm:max-w-lg `}
-            >
-                <div className="animate-fadeInUp flex flex-col justify-end gap-4 min-h-[100px]">
+        <EspaciadoLayout className='relative pb-10 z-10 transition-all'>
+            <div className={`flex flex-col gap-4 justify-end sm:max-w-lg `}>
+                <div className='animate-fadeInUp flex flex-col justify-end gap-4 min-h-[100px]'>
                     <h2
                         className={`text-white line-clamp-2 text-xl mv:text-2xl md:text-[1.9rem] font-medium lg:text-4xlb uppercase`}
                     >
@@ -37,11 +35,15 @@ const InfoSection = ({
                     </ul>
                 </div>
 
-                <Link aria-label={`Ver trailer de ${movies?.[currentIndex]?.title}`} href={`/media/${movies?.[currentIndex].id}-movie`} className='sm:mt-4 w-[36px] h-[36px] lg:w-[45px] lg:h-[45px]'>
+                <Link
+                    aria-label={`Ver trailer de ${movies?.[currentIndex]?.title}`}
+                    href={`/media/${movies?.[currentIndex].id}-movie`}
+                    className='sm:mt-4 w-[36px] h-[36px] lg:w-[45px] lg:h-[45px]'
+                >
                     <Play />
                 </Link>
             </div>
-        </div>
+        </EspaciadoLayout>
     );
 };
 

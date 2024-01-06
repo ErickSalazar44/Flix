@@ -1,4 +1,4 @@
-import RevisaNuestroCatalogo from "@/components/home/RevisaNuestroCatalogo";
+import EspaciadoLayout from "@/components/layout/EspaciadoLayout";
 import BgImage from "@/components/media/BgImage";
 import ContenedorCarrusel from "@/components/media/ContenedorCarrusel";
 import DetallesProduccion from "@/components/media/DetallesProduccion";
@@ -61,9 +61,9 @@ export default async function PageMedia({
                 {/* SECCION PRINCIPAL */}
                 <main className='relative w-full carrusel pb-0 mt-[60vh] bg-gradiantTop backdrop-blur-3xl lg:backdrop-blur-none lg:bg-none lg:mt-0 lg:pt-[70vh] xl:pt-[65vh]'>
                     {/* INFO MOVIE */}
-                    <div className='pt-8 px-5 md:px-8 lg:px-12 2xl:px-16 2xl:pb-10'>
+                    <EspaciadoLayout className='pt-8 2xl:pb-10'>
                         <Header data={data} />
-                    </div>
+                    </EspaciadoLayout>
 
                     <div className='flex flex-col'>
                         {/* SECCION RECOMENDADOS */}
@@ -77,9 +77,9 @@ export default async function PageMedia({
                     </div>
 
                     {/* INFORMACION DE LA PELICULA */}
-                    <div className='bg-[#000000] text-[#666666] py-8 pt-8 px-5 md:px-8 lg:px-12 2xl:px-16 lg:py-20'>
+                    <EspaciadoLayout className="bg-black text-[#666666] py-8 pt-8 lg:py-20">
                         <DetallesProduccion data={data} />
-                    </div>
+                    </EspaciadoLayout>
                 </main>
                 <Footer />
             </div>
