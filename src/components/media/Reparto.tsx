@@ -20,7 +20,7 @@ const Reparto = async ({ id, type }: { id: string; type: string }) => {
     if (start.cast.length === 0) return
 
     return (
-        <section className='px-5 md:px-8 lg:px-12 lg:py-12 md:bg-[#050505]'>
+        <section className='px-5 md:px-8 lg:px-12 lg:py-12 lg:bg-[#050505]'>
             <div className='md:px-8 lg:px-12 2xl:px-16 max-w-[1570px]  relative mx-auto pt-16 md:pt-24'>
                 <h2 className='letterScroll font-medium text-2xl md:text-4xl text-txtWhite1'>
                     Actores principales

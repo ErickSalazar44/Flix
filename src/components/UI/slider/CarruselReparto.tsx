@@ -20,7 +20,6 @@ export default function CarruselReparto({
             const cardWidth =
                 container.querySelector('#contenedorImageReparto')
                     ?.clientWidth || 0 // Ancho de una tarjeta
-            // const visibleCards = Math.floor(container.clientWidth / cardWidth); // Número de tarjetas visibles
 
             if (direction === 'prev') {
                 container.scrollLeft -= cardWidth
@@ -54,14 +53,10 @@ export default function CarruselReparto({
             </div>
             <div
                 ref={containerRef}
-                className={`relative ${
-                    actores.length > 2
-                        ? 'overflow-scroll carrusel snap-x snap-mandatory scroll-smooth'
-                        : ''
-                } `}
+                className='relative overflow-x-scroll carrusel snap-x snap-mandatory scroll-smooth'
             >
                 <div className='flex gap-6 transition-transform ease-in-out duration-500'>
-                    {actores.slice(0, 10).map((actor) => (
+                    {actores.map((actor) => (
                         <RepartoCard
                             key={`Actor-${actor.credit_id}`}
                             actor={actor}

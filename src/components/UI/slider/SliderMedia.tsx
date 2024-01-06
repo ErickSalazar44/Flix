@@ -90,7 +90,7 @@ export default function SliderMedia({
 
             <div
                 ref={containerRef}
-                className='flex gap-2 overflow-x-scroll carrusel snap-x snap-mandatory transition-all duration-300 scroll-smooth'
+                className='flex gap-2 overflow-x-scroll carrusel snap-x snap-mandatory scroll-smooth'
             >
                 {data.map((media) => (
                     <Link

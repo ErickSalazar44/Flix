@@ -82,7 +82,7 @@ export default async function PageMedia({
 
                     {/* SECCION DE IMAGENES */}
                     {type === 'movie' && (
-                        <section className='py-8 pt-8 lg:py-20'>
+                        <section className='py-8 pt-8 lg:py-20 bg-black'>
                             <Galeria />
                         </section>
                     )}

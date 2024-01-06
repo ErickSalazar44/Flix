@@ -41,7 +41,7 @@ const DetallesProduccion = ({ data }: { data: Media }) => {
     }, [])
 
     return (
-        <article className='md:px-16 lg:px-20 2xl:px-0 h-full max-w-[1770px] mx-auto'>
+        <article className='md:px-16 lg:px-0 h-full max-w-[1770px] mx-auto'>
             <div
                 ref={articleRef}
                 className='mx-auto max-w-[1200px] my-10 flex flex-col md:flex-row md:flex-wrap lg:justify-between gap-10'
