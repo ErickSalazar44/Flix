@@ -4,6 +4,7 @@ import { DMSans } from '../fonts/fonts'
 import ShowTrailer from '@/components/media/ShowTrailer'
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://flix-zeta.vercel.app/'),
     title: {
         default:
             'Flix: Descubre y Disfruta de los Últimos Estrenos y Clásicos del Cine en una Plataforma de Películas Todo en Uno',
@@ -44,7 +45,7 @@ export default function RootLayout(props: {
     modal: React.ReactNode
 }) {
     return (
-        <html lang='en'>
+        <html lang='es'>
             <head>
                 <link rel='icon' href='/favicon.ico' sizes='any' />
                 <link
