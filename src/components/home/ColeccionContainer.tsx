@@ -16,7 +16,7 @@ const ColeccionContainer = async ({
 
     return (
         <section className='my-10 sm:my-16 relative h-full min-h-[700px] sm:h-[800px] lg:h-[96vh] xl:h-[100vh] flex flex-col'>
-            <figure className='absolute -z-10 before:w-full before:h-full before:absolute before:inset-0 before:bg-gradiantLeft sm:opacity-50 w-full h-full bottom-0'>
+            <figure className='absolute -z-10 before:w-full before:h-full before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:from-10% before:to-black/70 sm:before:bg-gradient-to-tl sm:before:to-black/80 sm:before:from-0% w-full h-full bottom-0'>
                 <Image
                     src={`https://image.tmdb.org/t/p/original${details.parts[1].backdrop_path}`}
                     alt={`Movie Collection ${details.name}`}

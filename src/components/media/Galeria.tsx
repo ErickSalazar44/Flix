@@ -40,7 +40,7 @@ const Galeria = () => {
             <div className='flex gap-4 sticky top-[5vh] z-50 sm:top-[10vh] justify-center items-center'>
                 <button
                     onClick={handleClick}
-                    className='text-SemiTransparentWhite bg-black/70 uppercase border rounded-xl px-4 py-2 text-xs font-bold hover:text-white transition-colors duration-300'
+                    className='text-white/30 bg-black/70 uppercase border rounded-xl px-4 py-2 text-xs font-bold hover:text-white transition-colors duration-300'
                 >
                     {showImages ? 'Ocultar Galeria' : 'Desplegar Galeria'}
                 </button>

@@ -10,7 +10,7 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false) // estado global
 
     const menuContainerClasses = clsx(
-        'text-SemiTransparentWhite transition-all duration-300 z-50 fixed right-0 top-0 w-64 min-h-screen bg-black px-5',
+        'text-white/30 transition-all duration-300 z-50 fixed right-0 top-0 w-64 min-h-screen bg-black px-5',
         {
             'opacity-100': isMenuOpen,
             'translate-x-full opacity-0': !isMenuOpen,
@@ -67,7 +67,7 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
                     ))}
                 </ul>
                 <div className='flex flex-col gap-4 mt-8'>
-                    <span className='w-full h-[1px] bg-SemiTransparentWhite opacity-30' />
+                    <span className='w-full h-[1px] bg-white/30' />
                     <Link
                         href='/search/movie?filter=upcoming'
                         className='flex justify-between items-center'
@@ -75,7 +75,7 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
                         <MenuItem item='Próximos estrenos' />
                         <ArrowRight />
                     </Link>
-                    <span className='w-full h-[1px] bg-SemiTransparentWhite opacity-30' />
+                    <span className='w-full h-[1px] bg-white/30' />
                     <div className='my-4'>{children}</div>
                 </div>
             </aside>

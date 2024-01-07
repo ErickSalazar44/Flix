@@ -28,7 +28,7 @@ const InfoSection = ({
                         {movies?.[currentIndex]?.title}
                     </h2>
 
-                    <ul className='flex text-xs gap-4 text-white lg:text-sm lg:gap-6'>
+                    <ul className='flex text-xs gap-4 text-txtGray2 lg:text-sm lg:gap-6'>
                         {genreNamesByIds?.slice(0, 3).map((genre) => (
                             <li key={genre}>{genre}</li>
                         ))}

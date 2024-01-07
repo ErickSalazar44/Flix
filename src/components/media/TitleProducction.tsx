@@ -7,7 +7,7 @@ const TitleProducction = ({
 }) => {
     return (
         <h4
-            className={`mb-2 font-semibold text-txtWhite2  lg:text-2xl ${className}`}
+            className={`mb-2 font-semibold text-txtGray1  lg:text-2xl ${className}`}
         >
             {children}
         </h4>

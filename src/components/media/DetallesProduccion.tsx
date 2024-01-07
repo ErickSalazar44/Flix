@@ -48,7 +48,7 @@ const DetallesProduccion = ({ data }: { data: Media }) => {
             >
                 <div className={isArticleVisible ? 'animate-fadeInUp' : ''}>
                     <TitleProducction>Compañías de Producción</TitleProducction>
-                    <ul className='text-xs lg:text-sm flex flex-col gap-1 text-txtWhite1'>
+                    <ul className='text-xs lg:text-sm flex flex-col gap-1 text-txtGray2'>
                         {data.production_companies.map(
                             (company: ProductionCompany) => (
                                 <li key={company.id}>{company.name}</li>
@@ -58,7 +58,7 @@ const DetallesProduccion = ({ data }: { data: Media }) => {
                 </div>
                 <div className={isArticleVisible ? 'animate-fadeInUp' : ''}>
                     <TitleProducction>Países de Producción</TitleProducction>
-                    <ul className='text-sm flex flex-col gap-1 text-txtWhite1'>
+                    <ul className='text-sm flex flex-col gap-1 text-txtGray2'>
                         {data.production_countries.map(
                             (country: ProductionCountry) => (
                                 <li key={country.iso_3166_1}>{country.name}</li>
@@ -69,7 +69,7 @@ const DetallesProduccion = ({ data }: { data: Media }) => {
                 <div className={isArticleVisible ? 'animate-fadeInUp' : ''}>
                     <TitleProducction>Ingresos Generados</TitleProducction>
 
-                    <span className='text-sm text-txtWhite1'>
+                    <span className='text-sm text-txtGray2'>
                         {ganancias
                             ? `$${ganancias}`
                             : 'Sin informacion por el momento'}
@@ -78,7 +78,7 @@ const DetallesProduccion = ({ data }: { data: Media }) => {
                 <div className={isArticleVisible ? 'animate-fadeInUp' : ''}>
                     <TitleProducction>Inversion</TitleProducction>
 
-                    <span className='text-sm text-txtWhite1'>
+                    <span className='text-sm text-txtGray2'>
                         {inversion
                             ? `$${inversion}`
                             : 'Sin informacion por el momento'}

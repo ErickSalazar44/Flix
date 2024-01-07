@@ -42,7 +42,7 @@ export default async function SearchPage({
                 component='header'
                 className='text-center mb-10 mt-[60px] pt-8'
             >
-                <h2 className='uppercase text-3xl font-semibold text-txtWhite1'>
+                <h2 className='uppercase text-3xl font-semibold text-txtGray2'>
                     Explorar
                 </h2>
                 <p className='text-sm text-txtGray1'>
@@ -54,7 +54,7 @@ export default async function SearchPage({
                 component='main'
                 className='min-h-screen bg-[#0a0a0a] pb-20'
             >
-                <header className='text-center py-10 text-txtWhite2'>
+                <header className='text-center py-10 text-txtGray1'>
                     <h3 className='uppercase text-lg'>
                         Todas las {nameType} disponibles actualmente en
                         aluraflix
