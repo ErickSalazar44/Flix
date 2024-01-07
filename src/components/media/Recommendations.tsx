@@ -6,14 +6,9 @@ import MovieCard from '../UI/card/MovieCard'
 import MoviePreview from './MoviePreview'
 import Link from 'next/link'
 import EspaciadoLayout from '../layout/EspaciadoLayout'
+import ImagesGridLayout from '../layout/ImagesGridLayout'
 
-const ContenedorCarrusel = async ({
-    id,
-    type,
-}: {
-    id: string
-    type: string
-}) => {
+const Recommendations = async ({ id, type }: { id: string; type: string }) => {
     const recomendacion = await fetchRecomendacionMovie(type, id)
 
     if (recomendacion.total_results === 0) return
@@ -30,7 +25,7 @@ const ContenedorCarrusel = async ({
             <h3 className='font-semibold mb-6 text-xl md:text-2xl'>
                 Recomendaciones
             </h3>
-            <div className='flex flex-col gap-10 md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4'>
+            <ImagesGridLayout>
                 {dataFilter.map((result: Media, index: number) =>
                     index === 0 ? (
                         <Link
@@ -49,9 +44,9 @@ const ContenedorCarrusel = async ({
                         </Link>
                     )
                 )}
-            </div>
+            </ImagesGridLayout>
         </EspaciadoLayout>
     )
 }
 
-export default ContenedorCarrusel
+export default Recommendations

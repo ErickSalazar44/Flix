@@ -1,6 +1,6 @@
 import EspaciadoLayout from '@/components/layout/EspaciadoLayout'
 import BgImage from '@/components/media/BgImage'
-import ContenedorCarrusel from '@/components/media/ContenedorCarrusel'
+import Recommendations from '@/components/media/Recommendations'
 import DetallesProduccion from '@/components/media/DetallesProduccion'
 import Galeria from '@/components/media/Galeria'
 import Header from '@/components/media/Header'
@@ -68,7 +68,7 @@ export default async function PageMedia({
 
                     {/* SECCION RECOMENDADOS */}
                     <Suspense fallback={<span>CARGANDO ...</span>}>
-                        <ContenedorCarrusel type={type} id={id} />
+                        <Recommendations type={type} id={id} />
                     </Suspense>
                     {/* SECCION ACTORES */}
                     <Suspense fallback={<span>CARGANDO ...</span>}>

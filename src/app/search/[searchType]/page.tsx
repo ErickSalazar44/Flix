@@ -6,6 +6,7 @@ import { Media, OrganizadoPorMovie, OrganizadoPorTv } from '@/types/types'
 import Link from 'next/link'
 import FormSearch from '@/components/shared/header/FormSearch'
 import EspaciadoLayout from '@/components/layout/EspaciadoLayout'
+import ImagesGridLayout from '@/components/layout/ImagesGridLayout'
 
 export async function generateStaticParams() {
     return [{ searchType: 'movie' }, { searchType: 'tv' }]
@@ -59,7 +60,7 @@ export default async function SearchPage({
                         aluraflix
                     </h3>
                 </header>
-                <section className='flex flex-col gap-10 md:grid md:gap-x-2 md:gap-y-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-y-9 lg:gap-x-4 xl:grid-cols-4 text-txtGray2'>
+                <ImagesGridLayout component='section'>
                     {resultadoDeBusqueda.map((result: Media) => (
                         <Link
                             href={`/media/${result.id}-${type}`}
@@ -71,7 +72,7 @@ export default async function SearchPage({
                     {totalPages >= 2 && (
                         <ScrollInfinity totalPages={totalPages} />
                     )}
-                </section>
+                </ImagesGridLayout>
             </EspaciadoLayout>
         </div>
     )

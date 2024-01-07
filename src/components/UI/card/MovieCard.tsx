@@ -15,7 +15,7 @@ const MovieCard = ({ result, animate }: { result: any; animate?: boolean }) => {
                 src={`https://image.tmdb.org/t/p/w780${result.backdrop_path}`}
                 alt={`Poster ${title}`}
                 width={500}
-                height={300}
+                height={282}
                 className='w-full saturate-[1.1] rounded-lg h-full'
                 placeholder='empty'
             />

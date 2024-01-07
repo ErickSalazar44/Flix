@@ -64,6 +64,7 @@ const Galeria = () => {
                                 width: 'auto',
                                 height: 'auto',
                             }}
+                            loading='lazy'
                         />
                     ))}
                 </picture>
