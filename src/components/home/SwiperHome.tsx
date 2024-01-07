@@ -60,7 +60,7 @@ const SwiperHome = ({
                 }}
                 modules={[Pagination, Navigation, Autoplay]}
                 className='mySwiper'
-                autoplay={{ delay: 6000 }}
+                autoplay={{ delay: 10000 }}
                 onSwiper={() => setSwiperReady(true)}
             >
                 {swiperReady ? (

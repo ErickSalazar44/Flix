@@ -10,7 +10,7 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false) // estado global
 
     const menuContainerClasses = clsx(
-        'text-white/30 transition-all duration-300 z-50 fixed right-0 top-0 w-64 min-h-screen bg-black px-5',
+        'text-white/60 transition-all duration-300 z-50 fixed right-0 top-0 w-64 min-h-screen bg-black px-5',
         {
             'opacity-100': isMenuOpen,
             'translate-x-full opacity-0': !isMenuOpen,

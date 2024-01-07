@@ -4,8 +4,9 @@ import { Play, Time } from '../icons/Icons' // Icons
 import type { Media } from '@/types/types' // types
 import { monthNames } from '@/lib/data' // meses
 import TrailerTrigerBtn from '../UI/Btn/TrailerTrigerBtn'
+import Link from 'next/link'
 
-const Header = ({ data }: { data: Media }) => {
+const Header = ({ data, type }: { data: Media; type: string }) => {
     const releaseDate = data.release_date || data.last_air_date
     const parsedDate = new Date(releaseDate)
 
@@ -21,9 +22,16 @@ const Header = ({ data }: { data: Media }) => {
                     {title}
                 </h2>
                 <div className='hidden lg:flex lg:flex-col gap-2 text-sm'>
-                    <ul className='flex gap-2 opacity-80 text-txtGray2'>
-                        {data.genres.map((genre) => (
-                            <li key={genre.id}>{genre.name}</li>
+                    <ul className='flex gap-2'>
+                        {data.genres.map(({ id, name }) => (
+                            <li
+                                key={id}
+                                className='text-txtGray1 hover:text-white'
+                            >
+                                <Link href={`/search/${type}?genre=${id}`}>
+                                    {name}
+                                </Link>
+                            </li>
                         ))}
                     </ul>
                     <div className='flex gap-2'>
@@ -58,8 +66,12 @@ const Header = ({ data }: { data: Media }) => {
             <div className='flex flex-col lg:min-h-[192px]'>
                 <div className='text-txtGray2 flex justify-between items-center mb-4 text-xs sm:text-sm lg:hidden'>
                     <ul className='flex gap-2'>
-                        {data.genres.slice(0, 2).map((genre) => (
-                            <li key={genre.id}>{genre.name}</li>
+                        {data.genres.slice(0, 2).map(({ name, id }) => (
+                            <li key={id}>
+                                <Link href={`/search/${type}?genre=${id}`}>
+                                    {name}
+                                </Link>
+                            </li>
                         ))}
                     </ul>
                     <div className='flex gap-2'>

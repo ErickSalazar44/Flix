@@ -13,7 +13,6 @@ const HomeHeader = ({
     moviesTrends: MoviesAndSeries[]
     genresMovies: GenreTv
 }) => {
-    // estado para manejar la imagen de fondo que se va mostrar
     const [currentIndex, setCurrentIndex] = useState(0)
 
     return (

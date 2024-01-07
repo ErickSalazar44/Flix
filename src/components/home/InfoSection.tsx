@@ -18,6 +18,7 @@ const InfoSection = ({
         movies[currentIndex]?.genre_ids
     )
 
+    const currentMovie = movies?.[currentIndex]
     return (
         <EspaciadoLayout className='relative pb-10 z-10 transition-all'>
             <div className={`flex flex-col gap-4 justify-end sm:max-w-lg `}>
@@ -25,20 +26,27 @@ const InfoSection = ({
                     <h2
                         className={`text-white line-clamp-2 text-xl mv:text-2xl md:text-[1.9rem] font-medium lg:text-4xlb uppercase`}
                     >
-                        {movies?.[currentIndex]?.title}
+                        {currentMovie.title}
                     </h2>
 
-                    <ul className='flex text-xs gap-4 text-txtGray2 lg:text-sm lg:gap-6'>
+                    <ul className='flex text-xs gap-4  lg:text-sm lg:gap-6'>
                         {genreNamesByIds?.slice(0, 3).map((genre) => (
-                            <li key={genre}>{genre}</li>
+                            <li
+                                key={genre?.id}
+                                className='text-txtGray2 hover:text-white'
+                            >
+                                <Link href={`/search/movie?genre=${genre?.id}`}>
+                                    {genre?.name}
+                                </Link>
+                            </li>
                         ))}
                     </ul>
                 </div>
 
                 <Link
-                    aria-label={`Ver trailer de ${movies?.[currentIndex]?.title}`}
-                    href={`/media/${movies?.[currentIndex].id}-movie`}
-                    className='sm:mt-4 w-[36px] h-[36px] lg:w-[45px] lg:h-[45px]'
+                    aria-label={`Ver trailer de ${currentMovie.title}`}
+                    href={`/media/${currentMovie.id}-movie`}
+                    className='sm:mt-4 w-[36px] h-[36px] lg:w-[45px] lg:h-[45px] hover:scale-125 transition duration-300'
                 >
                     <Play />
                 </Link>

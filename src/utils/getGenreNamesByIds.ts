@@ -4,6 +4,6 @@ import { Genre } from '@/types/types'
 export const getGenreNamesByIds = (state: Genre[], idArray: number[]) => {
     return idArray.map((id) => {
         const genre = state.find((genre) => genre.id === id)
-        return genre ? genre.name : `Acción${id}`
+        return genre
     })
 }

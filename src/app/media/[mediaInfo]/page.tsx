@@ -63,7 +63,7 @@ export default async function PageMedia({
                 <main className='relative w-full carrusel pb-0 mt-[60vh] bg-gradiantTop backdrop-blur-3xl lg:backdrop-blur-none lg:bg-none lg:mt-0 lg:pt-[70vh] xl:pt-[65vh]'>
                     {/* INFO MOVIE */}
                     <EspaciadoLayout className='pt-8 2xl:pb-10'>
-                        <Header data={data} />
+                        <Header data={data} type={type} />
                     </EspaciadoLayout>
 
                     {/* SECCION RECOMENDADOS */}
