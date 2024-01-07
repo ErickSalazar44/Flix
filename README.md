@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Flix
 
-## Getting Started
+**Flix** es una aplicación web construida con Next.js 14 app router que proporciona información sobre películas utilizando The Movie Database (TMDb) API. La aplicación presenta un diseño excepcional y ofrece detalles necesarios sobre diversas películas. Está desplegada en Vercel.
 
-First, run the development server:
+## Resumen
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Flix** está diseñada para brindar a los usuarios una experiencia única al explorar información sobre películas. Utiliza la API de TMDb para obtener datos y los presenta en una interfaz de usuario intuitiva y atractiva. La aplicación se centra en proporcionar información relevante sin comprometer el diseño.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Características
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Exploración Intuitiva:** La aplicación ofrece una interfaz fácil de navegar, permitiendo a los usuarios encontrar rápidamente detalles esenciales sobre películas.
+- **Diseño Excepcional:** La aplicación cuenta con un diseño excepcional que resalta la información de manera efectiva.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Requisitos
 
-## Learn More
+- Node.js 20 (Asegúrate de usar Node.js 20)
+- npm (npm install -g npm)
 
-To learn more about Next.js, take a look at the following resources:
+### Instalación
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clona el repositorio.
+2. Ejecuta los siguientes comandos en la raíz del repositorio:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   npm install
+   npm run dev
+   
+Siéntete libre de explorar **Flix** en [flix.app](https://flix-zeta.vercel.app/). Para cualquier pregunta o problema, puedes comunicarte en [LinkedIn](https://www.linkedin.com/in/erick-josep-salazar-8b8b6024b/) o visitar el [sitio web](https://flix-zeta.vercel.app/). ¡Disfruta de explorar películas! 🎬🍿
