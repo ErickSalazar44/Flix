@@ -3,7 +3,7 @@ import Image from 'next/image'
 import GetstartRatingUI2 from '@/UI/puntuacion/GetstartRatingUI2'
 import SliderMedia from '@/UI/slider/SliderMedia'
 
-const ColeccionContainer = async ({
+export default async function ColeccionContainer({
     id,
     textColor,
     subTitle,
@@ -11,7 +11,7 @@ const ColeccionContainer = async ({
     id: string
     textColor: string
     subTitle: string
-}) => {
+}) {
     const details = await fetchData(`/collection/${id}`)
 
     return (
@@ -83,5 +83,3 @@ const ColeccionContainer = async ({
         </section>
     )
 }
-
-export default ColeccionContainer

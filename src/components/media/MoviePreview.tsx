@@ -1,10 +1,9 @@
-// Next
-import Image from 'next/image'
+import Image from 'next/image' // Next
 import { Media } from '@/types/types' // Type
 import { Hd, Play } from '../icons/Icons' // Icons
 import { formatDate } from '@/utils/formatDate' // utils
 
-const MoviePreview = ({ result }: { result: Media }) => {
+export default function MoviePreview({ result }: { result: Media }) {
     const title = result.title ?? result.name
     const time = result.release_date ?? result.first_air_date
     return (
@@ -45,5 +44,3 @@ const MoviePreview = ({ result }: { result: Media }) => {
         </article>
     )
 }
-
-export default MoviePreview

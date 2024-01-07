@@ -5,10 +5,8 @@ import Link from 'next/link'
 import GetstartRatingUI2 from '../UI/puntuacion/GetstartRatingUI2'
 import TrailerTrigerBtn from '../UI/Btn/TrailerTrigerBtn'
 
-const BgImage = ({ data }: { data: Media }) => {
+export default function BgImage({ data }: { data: Media }) {
     const { poster_path, backdrop_path } = data
-
-    //title
     const title = data.title ?? data.name
 
     return (
@@ -60,5 +58,3 @@ const BgImage = ({ data }: { data: Media }) => {
         </div>
     )
 }
-
-export default BgImage

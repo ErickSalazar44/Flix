@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import ReactPlayer from 'react-player'
 import { Extender, CloseIcon } from '../icons/Icons'
 
-const TrailerPlayer = ({ videoId }: { videoId: string | null }) => {
+export default function TrailerPlayer({ videoId }: { videoId: string | null }) {
     const playerRef = useRef(null)
     const { miniReproductor, setMiniReproductor, setModalIsOpen } = useTrailer(
         (state) => state
@@ -61,5 +61,3 @@ const TrailerPlayer = ({ videoId }: { videoId: string | null }) => {
         </section>
     )
 }
-
-export default TrailerPlayer

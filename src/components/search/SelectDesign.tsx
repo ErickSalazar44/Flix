@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { OrganizarPorItem } from '../../types/types'
 import { usePathname, useRouter } from 'next/navigation'
 
-const SelectDesign = ({
+export default function SelectDesign({
     options,
     paramName,
     title,
@@ -12,7 +12,7 @@ const SelectDesign = ({
     options: OrganizarPorItem[]
     paramName: string
     title: string
-}) => {
+}) {
     const router = useRouter()
     const pathname = usePathname()
 
@@ -57,5 +57,3 @@ const SelectDesign = ({
         </div>
     )
 }
-
-export default SelectDesign

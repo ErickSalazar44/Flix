@@ -3,7 +3,7 @@ import '@/styles/scrollAnimate.css'
 import Link from 'next/link'
 import EspaciadoLayout from '../layout/EspaciadoLayout'
 
-const Publicity = () => {
+export default function Publicity() {
     return (
         <div>
             <EspaciadoLayout className='relative mx-auto pt-24 opacity-50'>
@@ -84,5 +84,3 @@ const Publicity = () => {
         </div>
     )
 }
-
-export default Publicity

@@ -4,7 +4,13 @@ import { obtenerActoresConImagenes } from '@/utils/obtenerActoresConImagenes'
 import React from 'react'
 import CarruselReparto from '../UI/slider/CarruselReparto'
 
-const Reparto = async ({ id, type }: { id: string; type: string }) => {
+export default async function Reparto({
+    id,
+    type,
+}: {
+    id: string
+    type: string
+}) {
     const start: Reparto = await fetchRepartoMovie(type, id)
     const director =
         start.crew.find(
@@ -41,5 +47,3 @@ const Reparto = async ({ id, type }: { id: string; type: string }) => {
         </section>
     )
 }
-
-export default Reparto

@@ -1,13 +1,13 @@
 'use client'
 import useTrailer from '@/store/useTrailer'
 
-const TrailerTrigerBtn = ({
+export default function TrailerTrigerBtn({
     videos,
     children,
 }: {
     videos: any
     children: React.ReactNode
-}) => {
+}) {
     const {
         setModalIsOpen,
         setSelectedVideoId,
@@ -52,5 +52,3 @@ const TrailerTrigerBtn = ({
         </button>
     )
 }
-
-export default TrailerTrigerBtn

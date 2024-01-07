@@ -9,7 +9,7 @@ import {
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-const Footer = () => {
+export default function Footer() {
     const [currentYear, setCurrentYear] = useState(new Date().getFullYear())
 
     useEffect(() => {
@@ -172,5 +172,3 @@ const Footer = () => {
         </div>
     )
 }
-
-export default Footer

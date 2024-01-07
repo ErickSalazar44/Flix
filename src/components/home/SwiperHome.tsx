@@ -15,15 +15,14 @@ import Image from 'next/image'
 import { CarruselSkeleton } from '../UI/skeletons'
 import Link from 'next/link'
 
-const SwiperHome = ({
+export default function SwiperHome({
     movies,
     setCurrentIndex,
 }: {
     movies: MoviesAndSeries[] | undefined
     setCurrentIndex: (index: number) => void
-}) => {
+}) {
     const [swiperReady, setSwiperReady] = useState(false)
-
     const windowSize = useWindowSize()
 
     const showMovies = useMemo(() => {
@@ -124,5 +123,3 @@ const SwiperHome = ({
         </div>
     )
 }
-
-export default SwiperHome

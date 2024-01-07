@@ -6,7 +6,11 @@ import { CloseIcon, ArrowRight, MenuIcon } from '@/icons/Icons' // icons
 import { menuItems } from '@/lib/data' // data
 import Link from 'next/link'
 
-const MenuFunction = ({ children }: { children: React.ReactNode }) => {
+export default function MenuFunction({
+    children,
+}: {
+    children: React.ReactNode
+}) {
     const [isMenuOpen, setIsMenuOpen] = useState(false) // estado global
 
     const menuContainerClasses = clsx(
@@ -83,5 +87,3 @@ const MenuFunction = ({ children }: { children: React.ReactNode }) => {
         </>
     )
 }
-
-export default MenuFunction

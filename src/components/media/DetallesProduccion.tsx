@@ -3,7 +3,7 @@ import type { Media, ProductionCompany, ProductionCountry } from '@/types/types'
 import { useEffect, useRef, useState } from 'react'
 import TitleProducction from './TitleProducction'
 
-const DetallesProduccion = ({ data }: { data: Media }) => {
+export default function DetallesProduccion({ data }: { data: Media }) {
     // Calcular ganancias
     const ganancias = data.revenue
 
@@ -88,5 +88,3 @@ const DetallesProduccion = ({ data }: { data: Media }) => {
         </article>
     )
 }
-
-export default DetallesProduccion

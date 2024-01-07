@@ -6,7 +6,7 @@ import { monthNames } from '@/lib/data' // meses
 import TrailerTrigerBtn from '../UI/Btn/TrailerTrigerBtn'
 import Link from 'next/link'
 
-const Header = ({ data, type }: { data: Media; type: string }) => {
+export default function Header({ data, type }: { data: Media; type: string }) {
     const releaseDate = data.release_date || data.last_air_date
     const parsedDate = new Date(releaseDate)
 
@@ -120,5 +120,3 @@ const Header = ({ data, type }: { data: Media; type: string }) => {
         </header>
     )
 }
-
-export default Header

@@ -4,7 +4,7 @@ import { getGenreNamesByIds } from '@/utils/getGenreNamesByIds'
 import Link from 'next/link'
 import EspaciadoLayout from '../layout/EspaciadoLayout'
 
-const InfoSection = ({
+export default function InfoSection({
     movies,
     currentIndex,
     genresMovies,
@@ -12,7 +12,7 @@ const InfoSection = ({
     movies: MoviesAndSeries[]
     currentIndex: number
     genresMovies: GenreTv
-}) => {
+}) {
     const genreNamesByIds = getGenreNamesByIds(
         genresMovies.genres,
         movies[currentIndex]?.genre_ids
@@ -54,5 +54,3 @@ const InfoSection = ({
         </EspaciadoLayout>
     )
 }
-
-export default InfoSection

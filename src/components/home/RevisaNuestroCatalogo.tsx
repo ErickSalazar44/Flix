@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import '@/styles/scrollAnimate.css'
 
-const RevisaNuestroCatalogo = () => {
+export default function RevisaNuestroCatalogo() {
     return (
         <section className='py-14 sm:pt-20 RevisaTodoNuestroCatalogo relative w-full grid place-content-center'>
             <div className='flex flex-col gap-8 items-center'>
@@ -28,5 +28,3 @@ const RevisaNuestroCatalogo = () => {
         </section>
     )
 }
-
-export default RevisaNuestroCatalogo

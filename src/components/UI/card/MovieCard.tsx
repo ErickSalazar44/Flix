@@ -3,7 +3,13 @@ import Image from 'next/image'
 import { Play } from '@/icons/Icons'
 import '@/styles/scrollAnimate.css'
 
-const MovieCard = ({ result, animate }: { result: any; animate?: boolean }) => {
+export default function MovieCard({
+    result,
+    animate,
+}: {
+    result: any
+    animate?: boolean
+}) {
     const title = result.title ?? result.name
     const time = result.release_date ?? result.first_air_date
 
@@ -35,5 +41,3 @@ const MovieCard = ({ result, animate }: { result: any; animate?: boolean }) => {
         </div>
     )
 }
-
-export default MovieCard

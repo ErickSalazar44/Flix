@@ -6,13 +6,13 @@ import InfoSection from './InfoSection'
 import SwiperHome from './SwiperHome'
 import EspaciadoLayout from '../layout/EspaciadoLayout'
 
-const HomeHeader = ({
+export default function HomeHeader({
     moviesTrends,
     genresMovies,
 }: {
     moviesTrends: MoviesAndSeries[]
     genresMovies: GenreTv
-}) => {
+}) {
     const [currentIndex, setCurrentIndex] = useState(0)
 
     return (
@@ -40,5 +40,3 @@ const HomeHeader = ({
         </div>
     )
 }
-
-export default HomeHeader

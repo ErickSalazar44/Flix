@@ -7,7 +7,7 @@ interface RepartoCardProps {
     type: string
 }
 
-const RepartoCard = ({ actor, type }: RepartoCardProps) => {
+export default function RepartoCard({ actor, type }: RepartoCardProps) {
     return (
         <Link
             href={`/actor/${actor.id}-${type}`}
@@ -43,5 +43,3 @@ const RepartoCard = ({ actor, type }: RepartoCardProps) => {
         </Link>
     )
 }
-
-export default RepartoCard

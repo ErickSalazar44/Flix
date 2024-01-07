@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from 'react' // REACT
 import { Galeria } from '@/types/types' // TYPES
 import '@/styles/scrollAnimate.css' // STYLES
@@ -7,7 +6,7 @@ import { useParams } from 'next/navigation'
 import { ImageInfo } from '@/types/types'
 import Loading from '@/app/loading'
 
-const Galeria = () => {
+export default function Galeria() {
     const [galeria, setGaleria] = useState<Galeria | null>(null)
     const [showImages, setShowImages] = useState(false)
     const [loading, setLoading] = useState(false)
@@ -72,5 +71,3 @@ const Galeria = () => {
         </div>
     )
 }
-
-export default Galeria

@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import { Logo } from '../icons/Icons'
 import EspaciadoLayout from '../layout/EspaciadoLayout'
 
-const NavSearch = ({
+export default function NavSearch({
     type,
     children,
     duration = 0,
@@ -14,7 +14,7 @@ const NavSearch = ({
     type: string
     children: React.ReactNode
     duration?: number
-}) => {
+}) {
     const [lastScrollTop, setLastScrollTop] = useState(0)
 
     useEffect(() => {
@@ -87,5 +87,3 @@ const NavSearch = ({
         </EspaciadoLayout>
     )
 }
-
-export default NavSearch

@@ -4,7 +4,7 @@ import ModalTrailer from '../UI/modal/ModalTrailer'
 import useTrailer from '@/store/useTrailer'
 import { useTransition, animated } from 'react-spring'
 
-const ShowTrailer = () => {
+export default function ShowTrailer() {
     const { modalIsOpen, selectedVideoId } = useTrailer((state) => state)
 
     const transitions = useTransition(modalIsOpen, {
@@ -33,5 +33,3 @@ const ShowTrailer = () => {
         </>
     )
 }
-
-export default ShowTrailer

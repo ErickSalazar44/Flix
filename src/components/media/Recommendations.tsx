@@ -8,7 +8,13 @@ import Link from 'next/link'
 import EspaciadoLayout from '../layout/EspaciadoLayout'
 import ImagesGridLayout from '../layout/ImagesGridLayout'
 
-const Recommendations = async ({ id, type }: { id: string; type: string }) => {
+export default async function Recommendations({
+    id,
+    type,
+}: {
+    id: string
+    type: string
+}) {
     const recomendacion = await fetchRecomendacionMovie(type, id)
 
     if (recomendacion.total_results === 0) return
@@ -48,5 +54,3 @@ const Recommendations = async ({ id, type }: { id: string; type: string }) => {
         </EspaciadoLayout>
     )
 }
-
-export default Recommendations

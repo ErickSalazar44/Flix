@@ -1,4 +1,4 @@
-const MenuItem = ({ item }: { item: string }) => {
+export default function MenuItem({ item }: { item: string }) {
     return (
         <span
             className={`cursor-pointer hover:text-white hover:opacity-100 transition-colors duration-300 text-sm`}
@@ -7,5 +7,3 @@ const MenuItem = ({ item }: { item: string }) => {
         </span>
     )
 }
-
-export default MenuItem
