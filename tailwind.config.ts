@@ -19,7 +19,8 @@ const config: Config = {
                     'linear-gradient(0deg, rgba(0,0,0,0.6951155462184874) 0%, rgba(0,0,0,0) 80%)',
                 gradiantTop2:
                     'linear-gradient(180deg, rgba(0,0,0,0.5914740896358543) 0%, rgba(0,0,0,0) 34%)',
-                footerGradiant: 'linear-gradient(180deg,#0000,#0890b23c)',
+                footerGradiant:
+                    'linear-gradient(180deg,#0000,oklch(61.64% 0.111 222.57 / 23.53%))',
             },
             colors: {
                 txtGray1: '#999999',
