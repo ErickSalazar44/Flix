@@ -57,7 +57,7 @@ export default async function Home({
                 <DynamicSliderContainer
                     path='/trending/tv/week'
                     page='2'
-                    title='FAVORITAS DE FESTIVALES DE CINE'
+                    title='SERIES DESTACADAS'
                 />
                 <DynamicSliderContainer
                     path='/movie/top_rated'

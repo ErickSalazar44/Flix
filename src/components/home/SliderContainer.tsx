@@ -17,7 +17,7 @@ export default async function SliderContainer({
     return (
         <section>
             <header className='mb-2'>
-                <h3 className='font-medium text-sm text-txtGray1 '>{title}</h3>
+                <h3 className='font-medium text-sm text-txtGray1'>{title}</h3>
             </header>
             <SliderMedia data={data} type={type} />
         </section>

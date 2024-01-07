@@ -54,7 +54,7 @@ export default function Header({ data, type }: { data: Media; type: string }) {
                 </span>
 
                 <TrailerTrigerBtn videos={data.videos}>
-                    <div className='hidden lg:flex uppercase border rounded-xl px-2 py-1 items-center text-xs font-bold justify-center'>
+                    <div className='hidden lg:flex uppercase border rounded-xl px-2 py-1 items-center text-xs font-bold justify-center hover:scale-105 transition-transform duration-300 hover:[backdrop-filter:blur(20px)_saturate(180%)]'>
                         <span className='w-6 block'>
                             <Play />
                         </span>

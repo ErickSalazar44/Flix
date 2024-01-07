@@ -28,20 +28,29 @@ export default function Footer() {
                             </h4>
                             <ul className='text-txtGray1 text-xs flex flex-col gap-4'>
                                 <li>
-                                    <Link href={'/search/movie'}>
+                                    <Link
+                                        href={'/search/movie'}
+                                        className='hover:text-white transition-opacity'
+                                    >
                                         Explora lo más popular
                                     </Link>
                                 </li>
 
                                 <li>
-                                    <Link href={'/search/tv'}>
+                                    <Link
+                                        href={'/search/tv'}
+                                        className='hover:text-white transition-opacity'
+                                    >
                                         Explorar series populares
                                     </Link>
                                 </li>
 
                                 <li>
-                                    <Link href={'/search/movie?genre=27'}>
-                                        Explorar generos
+                                    <Link
+                                        href={'/search/movie?genre=27'}
+                                        className='hover:text-white transition-opacity'
+                                    >
+                                        Explorar géneros
                                     </Link>
                                 </li>
 
@@ -50,6 +59,7 @@ export default function Footer() {
                                         href='https://aluraflix-ericksalazar.netlify.app/#/'
                                         target='_blank'
                                         rel='noopener noreferrer'
+                                        className='hover:text-white transition-opacity'
                                     >
                                         Visitar version anterior
                                     </a>
@@ -63,7 +73,7 @@ export default function Footer() {
                             <ul className='text-txtGray1 text-xs flex flex-col gap-2'>
                                 <li>
                                     <a
-                                        className='flex items-center gap-2'
+                                        className='flex items-center gap-2 hover:text-white transition-opacity'
                                         href='https://github.com/ErickSalazar44/Flix'
                                         target='_blank'
                                         rel='noopener noreferrer'
@@ -71,13 +81,13 @@ export default function Footer() {
                                         <span>
                                             <GitHub />
                                         </span>
-                                        <span>Git-Hub</span>
+                                        <span>GitHub</span>
                                     </a>
                                 </li>
 
                                 <li>
                                     <a
-                                        className='flex items-center gap-2'
+                                        className='flex items-center gap-2 hover:text-white transition-opacity'
                                         href='https://newportafolio-one.vercel.app/'
                                         target='_blank'
                                         rel='noopener noreferrer'
@@ -91,7 +101,7 @@ export default function Footer() {
 
                                 <li>
                                     <a
-                                        className='flex items-center gap-2'
+                                        className='flex items-center gap-2 hover:text-white transition-opacity'
                                         href='https://www.linkedin.com/in/erick-josep-salazar-8b8b6024b/'
                                         target='_blank'
                                         rel='noopener noreferrer'
@@ -105,7 +115,7 @@ export default function Footer() {
 
                                 <li>
                                     <a
-                                        className='flex items-center gap-2'
+                                        className='flex items-center gap-2 hover:text-white transition-opacity'
                                         href='https://www.instagram.com/erickcsalazar22/'
                                         target='_blank'
                                         rel='noopener noreferrer'

@@ -24,7 +24,7 @@ export default function FilterPanel() {
             <SelectDesign
                 options={optionsGenre}
                 paramName='genre'
-                title='Generos'
+                title='Géneros'
             />
         </div>
     )
