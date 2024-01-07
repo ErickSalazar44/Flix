@@ -65,7 +65,7 @@ export default function ScrollInfinity({ totalPages }: { totalPages: number }) {
                     return fetchDataPage()
                 }
             },
-            { threshold: 1 }
+            { rootMargin: '100px' }
         )
 
         loadingObserver.observe(currentRef)
