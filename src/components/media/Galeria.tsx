@@ -40,6 +40,9 @@ export default function Galeria() {
                 <button
                     onClick={handleClick}
                     className='text-white/60 bg-black/70 uppercase border rounded-xl px-4 py-2 text-xs font-bold hover:text-white transition-colors duration-300'
+                    aria-label={
+                        showImages ? 'Ocultar Galeria' : 'Desplegar Galeria'
+                    }
                 >
                     {showImages ? 'Ocultar Galeria' : 'Desplegar Galeria'}
                 </button>

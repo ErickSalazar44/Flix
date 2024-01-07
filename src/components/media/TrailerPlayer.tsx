@@ -31,6 +31,7 @@ export default function TrailerPlayer({ videoId }: { videoId: string | null }) {
                 <button
                     onClick={ReproductorPantallaGrande}
                     className='w-8 h-8 opacity-0 group-hover:opacity-100'
+                    aria-label='Mostrar trailer'
                 >
                     <Extender />
                 </button>
@@ -43,6 +44,7 @@ export default function TrailerPlayer({ videoId }: { videoId: string | null }) {
                 <button
                     onClick={CerrarReproductor}
                     className='flex justify-center items-center'
+                    aria-label='Cerrar Reproductor'
                 >
                     <CloseIcon />
                 </button>

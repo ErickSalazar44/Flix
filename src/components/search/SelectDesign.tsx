@@ -34,6 +34,7 @@ export default function SelectDesign({
             <button
                 onClick={handleActiveSelect}
                 className='w-full rounded-lg text-xs lg:text-sm hover:text-white'
+                aria-label='Desplegar opciones'
             >
                 {title}
             </button>
