@@ -88,7 +88,7 @@ export default function Footer() {
                                 <li>
                                     <a
                                         className='flex items-center gap-2 hover:text-white transition-opacity'
-                                        href='https://newportafolio-one.vercel.app/'
+                                        href='https://erick-cs-portafolio.vercel.app/'
                                         target='_blank'
                                         rel='noopener noreferrer'
                                     >
