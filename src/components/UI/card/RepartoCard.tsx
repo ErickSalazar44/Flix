@@ -1,5 +1,4 @@
 import { Cast } from '@/types/types'
-import Image from 'next/image'
 import Link from 'next/link'
 
 interface RepartoCardProps {
@@ -18,7 +17,7 @@ export default function RepartoCard({ actor, type }: RepartoCardProps) {
                 id='contenedorImageReparto'
                 className='w-40 lg:w-48 xl:w-[230px] relative after:content-[""] after:absolute after:inset-0 after:bg-gradiantBottonCard'
             >
-                <Image
+                <img
                     src={`https://image.tmdb.org/t/p/w342/${actor.profile_path}`}
                     alt={`Actor ${actor.name}`}
                     width={342}
@@ -29,7 +28,6 @@ export default function RepartoCard({ actor, type }: RepartoCardProps) {
                         viewTransitionName: `actor-${actor.id}`,
                     }}
                     className='rounded-lg saturate-[1.2] w-auto h-auto'
-                    quality={100}
                 />
             </figure>
             <footer className='text-center absolute bottom-0 w-full py-2 sm:p-[13px] sm:text-left sm:text-[#fff] bg-transparent'>

@@ -17,13 +17,12 @@ export default function MovieCard({
         <div
             className={`relative before:content-[''] before:top-0 before:w-full before:h-full before:bg-gradiantBottonCard before:absolute group before:z-10 h-full`}
         >
-            <Image
+            <img
                 src={`https://image.tmdb.org/t/p/w780${result.backdrop_path}`}
                 alt={`Poster ${title}`}
                 width={500}
                 height={282}
                 className='w-full saturate-[1.1] rounded-lg h-full'
-                placeholder='empty'
             />
             <div
                 className={`absolute ${

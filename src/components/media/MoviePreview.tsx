@@ -1,4 +1,3 @@
-import Image from 'next/image' // Next
 import { Media } from '@/types/types' // Type
 import { Hd, Play } from '../icons/Icons' // Icons
 import { formatDate } from '@/utils/formatDate' // utils
@@ -18,7 +17,7 @@ export default function MoviePreview({ result }: { result: Media }) {
                         {formatDate(time)}{' '}
                     </span>
                 </div>
-                <Image
+                <img
                     src={`https://image.tmdb.org/t/p/w780${result.backdrop_path}`}
                     alt={`Poster ${title}`}
                     width={500}

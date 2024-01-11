@@ -1,4 +1,3 @@
-import Image from 'next/image' // NEXT
 import GetStartRating from '../UI/puntuacion/GetStartRating' // componentes
 import { Play, Time } from '../icons/Icons' // Icons
 import type { Media } from '@/types/types' // types
@@ -107,7 +106,7 @@ export default function Header({ data, type }: { data: Media; type: string }) {
             </div>
 
             <div className='hidden xl:flex 2xl:flex-1 justify-end min-h-[270px]'>
-                <Image
+                <img
                     src={`https://image.tmdb.org/t/p/w342${data.poster_path}`}
                     alt={`Poster ${title}`}
                     width={180}
